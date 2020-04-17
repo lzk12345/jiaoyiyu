@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/paymentindex.css"/>
+    <script src="/js/jquery-3.1.min.js"></script>
+</head>
+<body>
+<div class="top-one">
+    <div class="inter-one">
+        <span>订单支付</span>
+    </div>
+    <div class="inter-two">
+        <div class="one">
+            <span>订单支付</span>
+        </div>
+        <div class="two">
+            <div class="left-one">
+                <span>选择支付方式:</span>
+                <input type="radio" name="money" value="alipay"/>
+            </div>
+            <img class="left-two" src="/img/tuceng84.png" alt=""/>
+            <div class="left-three">
+                <input type="radio" name="money" value="mx"/>
+            </div>
+            <img class="left-four" src="/img/tuceng85.png" alt=""/>
+            <div style="clear:both;"></div>
+        </div>
+        <hr/>
+        <div class="three">
+            <span>订单明细</span>
+        </div>
+        <div class="four">
+            <ul>
+                <li>应付总额：￥<span class="zong" th:text="${totalAmount}">0</span></li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="six">
+            <input class="select" type="checkbox" onclick="jinyong()"/>
+            <span style="color:rgba(153,153,153,1);">同意</span>
+            <span class="select" style="color:rgba(255,82,81,1);">《小红鱼任务发布协议》</span>
+            <div class="six-inter">
+                <button disabled="disabled" id="paynow">立即支付</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form   method="post" id="paymentForm">
+    <input type="hidden" name="totalAmount" th:value="${totalAmount}" >
+    <input type="hidden" name="outTradeNo" th:value="${orderId}" >
+</form>
+<script type="text/javascript">
+    var select = document.getElementsByClassName("select");
+    var btn = document.getElementsByTagName("button");
+
+    function jinyong() {
+        if (select[0].checked == true) {
+            btn[0].disabled = false;
+            btn[0].style.backgroundColor = "#ff5251";
+        } else {
+            btn[0].disabled = "disabled";
+            btn[0].style.backgroundColor = "";
+        }
+    }
+
+    function getCookie(cookieName) {
+        var strCookie = document.cookie;
+        var arrCookie = strCookie.split("; ");
+        for (var i = 0; i < arrCookie.length; i++) {
+            var arr = arrCookie[i].split("=");
+            if (cookieName == arr[0]) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+
+    //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    $("#paynow").click(function () {
+        var paytype = $('input:radio[name="money"]:checked').val();
+        if (paytype == null) {
+            alert("请选择支付方式");
+        }else {
+            $("#paymentForm").attr("action","/payment/"+paytype+"/zhongbiaosubmit")  ;
+            $("#paymentForm").submit();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>比目鱼</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/layui/layui.js"></script>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/buy_production.css" />
+    <style>
+        .bordernone{
+            width: 600px;
+            height: 200px;
+            border:1px solid #999999;/*黑色1像素粗边框*/
+        }
+        .bordernone td{
+            border:none;/*这个是单元格，不给他要边框*/
+        }
+        .bottonborder{
+            background-color: white;
+            border: solid 1px #BCBCBC;
+            float: left;
+            outline:none;
+            width: 100px;height: 30px;
+        }
+        .fontsize font{
+            font-size: 14px ;
+            color:#FF5251;
+            margin-left: 15px;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            //jQuery代码;
+            layui.use(['element', 'laydate', 'layer'], function () {
+                var element = layui.element;
+                var laydate = layui.laydate;
+                var layer = layui.layer;
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#test1' //指定元素
+                });
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#test11' //指定元素
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">我发布的任务</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div style="float: left"  >
+            <div class="panel panel-default" style="margin-left: 17px;margin-top: 10px;padding-bottom: 20px" >
+                <div class="panel-body" style="width: 1002px;" >
+                    <div style="width: 975px;height: 46px;border-bottom:solid 1px #E7E7E7">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2x.png" width="6px" height="20px" style="margin-top: 10px;margin-left: 22px" ></div>
+                        <div style="margin-top: 5px;float: left">
+                            <font style="font-size: 20px;margin-left: 16px;"><b>发布购买的设计</b></font></div>
+
+                    </div>
+                    <div class="left-four">
+                        <div id="alldingdanbtn">所有订单</div>
+                        <div id="daifukuanbtn">待付款</div>
+                        <div id="jinxingzhongbtn">进行中</div>
+                        <div id="daipingjiabtn">待评价</div>
+                        <div id="yijieshubtn">已结束</div>
+                    </div>
+
+
+                    <div style="width: 975px;height: 180px;font-size: 12px "  >
+                        <div style="float: left;margin-left: 16px;margin-top: 27px;width: 975px">
+                            <input id="sousuoinput"  type="text" style="width: 238px;height: 27px;;float: left;margin-left: 15px;padding-left: 10px;border:solid 1px #bcbcbc;border-right:0px";  placeholder="输入商品标题或订单号进行搜索"  >
+                            <button id="sousuobtn" button style="position: absolute; outline: none;border:solid 1px #bcbcbc ;background:#F4F4F4;height: 27px;width: 83px;float: left">订单搜索</button>
+
+                        </div>
+                        <!-- Single button -->
+                        <div style="width: 230px;float: left;margin-top: 20px;margin-left: 30px;" >
+                            <div>
+                                <label>订单类型</label>
+                                <select id="dingdantypeselect" style="width: 152px;height: 28px;margin-left: 15px;color: #999999;border:solid 1px #bcbcbc;">
+                                    <option value="全部"  >&nbsp;&nbsp;全部</option>
+                                    <option value="投标模式"  >&nbsp;&nbsp;投标模式</option>
+                                    <option value="测试投标"  >&nbsp;&nbsp;测试投标</option>
+                                    <option value="单人悬赏"  >&nbsp;&nbsp;单人悬赏</option>
+                                    <option value="多人悬赏"  >&nbsp;&nbsp;多人悬赏</option>
+                                    <option value="计件悬赏"  >&nbsp;&nbsp;计件悬赏</option>
+                                </select>
+                            </div>
+                            <div style="margin-top: 10px">
+                                <label>评价状态</label>
+                                <select style="width: 152px;height: 28px;margin-left: 15px;color: #999999;border:solid 1px #bcbcbc;">
+                                    <option value="" >&nbsp;&nbsp;全部</option>
+                                    <option value=""  >&nbsp;&nbsp;待评价</option>
+                                    <option value=""  >&nbsp;&nbsp;已评价</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div style="width: 400px;float: left;margin-top: 20px;margin-left: 30px;" >
+                            <div>
+                                <label style="float: left;margin-top: 5px">成交时间</label>
+                                <input  type="text" id="test1" style="width: 152px;height: 28px;margin-left: 18px;float: left;padding-left: 10px;border:solid 1px #bcbcbc; "  placeholder="请选择时间范围起始" >
+                                <span style="display: inline-block;width: 12px;height: 28px;line-height: 28px;float: left;text-align: center;margin: 0 5px;" >一</span>
+                                <input  type="text" id="test11" style="width: 152px;height: 28px;float: left;padding-left: 10px;border:solid 1px #bcbcbc;"  placeholder="请选择时间范围结束" >
+                            </div>
+<!--                            <div style="margin-top: 39px">-->
+<!--                                <label>评价状态</label>-->
+<!--                                <select style="width: 152px;height: 28px;margin-left: 15px;color: #999999;border:solid 1px #bcbcbc;">-->
+<!--                                    <option value="" >&nbsp;&nbsp;全部</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!--订单header-->
+                <div class="left-eight">
+                    <span>订单</span>
+                    <span>金额</span>
+                    <span>类型</span>
+                    <span>订单状态</span>
+                    <span>操作</span>
+                </div>
+                <!--订单body-->
+                <div class="left-nine renwuline" th:each="personPublishTaskVO:${personPublishTaskVOList}">
+                    <div>
+                        <span>任务编号</span>
+                        <span th:text="${personPublishTaskVO.id}"></span>
+                    </div>
+                    <table style="width: 940px;margin-left: 30px;margin-top: 19px">
+                        <tr >
+                            <td style="width: 420px"> <a th:text="${personPublishTaskVO.title}" style="color: #008bf4" th:href="@{/shejishi/index(assignmentId=${personPublishTaskVO.id})}">设计四个字与已有LOGO组合配套</a>
+                            </td>
+                            <td style="font-size: 20px;color: #ff5251;width: 190px"><span th:text="${'¥ ' + personPublishTaskVO.totalMoney}"></span></td>
+                            <td th:if="${personPublishTaskVO.taskModeTypeId eq 1}" style="width: 130px;color: #666666"><span>投标模式</span></td>
+                            <td th:if="${personPublishTaskVO.taskModeTypeId eq 2}" style="width: 130px;color: #666666"><span>测试投标</span></td>
+                            <td th:if="${personPublishTaskVO.taskModeTypeId eq 3}" style="width: 130px;color: #666666"><span>单人悬赏</span></td>
+                            <td th:if="${personPublishTaskVO.taskModeTypeId eq 4}" style="width: 130px;color: #666666"><span>多人悬赏</span></td>
+                            <td th:if="${personPublishTaskVO.taskModeTypeId eq 5}" style="width: 130px;color: #666666"><span>计件悬赏</span></td>
+                            <td style="color: #666666" th:if="${personPublishTaskVO.taskOrderStatus eq 0}"><span class="daifukuan">待付款</span></td>
+                            <td style="color: #666666" th:if="${personPublishTaskVO.taskOrderStatus eq 1}"><span class="jinxingzhong">进行中</span></td>
+                            <td style="color: #666666" th:if="${personPublishTaskVO.taskOrderStatus eq 2}"><span class="daipingjia">待评价</span></td>
+                            <td style="color: #666666" th:if="${personPublishTaskVO.taskOrderStatus eq 3}"><span class="yijieshu">已结束</span></td>
+                            <td style="color: #666666"><a>评价</a>/删除</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 12px;color: #333333">订单号：<span th:text="${personPublishTaskVO.ordeno}">5646541354</span>
+                            </td>
+                            <td style="font-size: 12px;color: #666666" th:if="${personPublishTaskVO.testStatus eq 1}">（含测试金<span th:text="${personPublishTaskVO.testMoneyNum}">¥5250，000</span>）</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 12px;color: #333333"> <span>提交时间：</span><span th:text="${personPublishTaskVO.pubtime}">2019-01-01 01:01:01</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+<script>
+    $("#clickToChangeColor   button").click(function(){
+        $("#clickToChangeColor  button").css("background","white");
+        $("#clickToChangeColor button").css("border","solid 1px #999999");
+        $("#clickToChangeColor button").css("color","#333333");
+        $(this).css("border","solid 1px #ff5251")
+        $(this).css("color","#ff5251")
+    });
+
+   // 点击各种订单的状态来筛选页面中的数据
+    $("#alldingdanbtn").click(function () {
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            renwulineList[i].style.display = 'block';
+        }
+    });
+    $("#daifukuanbtn").click(function () {
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            let child = renwulineList[i].children[1].children[0].children[0].children[3].children[0];
+            if (child.innerText != '待付款') {
+                renwulineList[i].style.display = 'none';
+            }else{
+                renwulineList[i].style.display = 'block';
+            }
+        }
+    });
+    $("#daipingjiabtn").click(function () {
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            let child = renwulineList[i].children[1].children[0].children[0].children[3].children[0];
+            if (child.innerText != '待评价') {
+                renwulineList[i].style.display = 'none';
+            }else{
+                renwulineList[i].style.display = 'block';
+            }
+        }
+    });
+    $("#yijieshubtn").click(function () {
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            let child = renwulineList[i].children[1].children[0].children[0].children[3].children[0];
+            if (child.innerText != '已结束') {
+                renwulineList[i].style.display = 'none';
+            }else{
+                renwulineList[i].style.display = 'block';
+            }
+        }
+    });
+    $("#jinxingzhongbtn").click(function () {
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            let child = renwulineList[i].children[1].children[0].children[0].children[3].children[0];
+            if (child.innerText != '进行中') {
+                renwulineList[i].style.display = 'none';
+            }else{
+                renwulineList[i].style.display = 'block';
+            }
+        }
+    });
+    $("#sousuobtn").click(function () {
+        let val = $("#sousuoinput").val();
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            let child = renwulineList[i].children[1].children[0].children[0].children[0].children[0];
+            if(child.innerText.indexOf(val) != -1)
+            {
+                renwulineList[i].style.display = 'block';
+            }else{
+                renwulineList[i].style.display = 'none';
+            }
+        }
+    });
+    $("#dingdantypeselect").change(function(){
+        let renwulineList = document.getElementsByClassName("renwuline");
+        for (var i = 0; i < renwulineList.length; i++) {
+            let child = renwulineList[i].children[1].children[0].children[0].children[2].children[0];
+            if ($(this).children('option:selected').val() == '全部') {
+                //全部
+                renwulineList[i].style.display = 'block';
+            }
+            if ($(this).children('option:selected').val() == '投标模式') {
+                //投标
+                if (child.innerText != '投标模式') {
+                    renwulineList[i].style.display = 'none';
+                }else{
+                    renwulineList[i].style.display = 'block';
+                }
+            }
+            if ($(this).children('option:selected').val() == '测试投标') {
+                //测试
+                if (child.innerText != '测试投标') {
+                    renwulineList[i].style.display = 'none';
+                }else{
+                    renwulineList[i].style.display = 'block';
+                }
+            }
+            if ($(this).children('option:selected').val() == '单人悬赏') {
+                //单人
+                if (child.innerText != '单人悬赏') {
+                    renwulineList[i].style.display = 'none';
+                }else{
+                    renwulineList[i].style.display = 'block';
+                }
+            }
+            if ($(this).children('option:selected').val() == '多人悬赏') {
+                //多人
+                if (child.innerText != '多人悬赏') {
+                    renwulineList[i].style.display = 'none';
+                }else{
+                    renwulineList[i].style.display = 'block';
+                }
+            }
+            if ($(this).children('option:selected').val() == '计件悬赏') {
+                //计件
+                if (child.innerText != '计件悬赏') {
+                    renwulineList[i].style.display = 'none';
+                }else{
+                    renwulineList[i].style.display = 'block';
+                }
+            }
+        }
+    })
+
+
+
+</script>
+</html>
+
+
+
+
+

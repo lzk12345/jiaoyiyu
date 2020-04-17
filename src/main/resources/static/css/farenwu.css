@@ -1,0 +1,76 @@
+
+.needinput {
+    height: 140px
+}
+
+.needinput p {
+    float: left;
+    margin-left: 55px;
+    margin-top: 10px;
+}
+.needinput div {
+    float: left;
+    margin-left: 10px;
+}
+
+
+.needinput textarea {
+    width: 460px;
+    height: 80px;
+    float: left;
+    margin-left: 111px;
+    resize: none;
+}
+
+.modal-phonenum {
+    margin-left: 45px;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.modal-phonenum p {
+    float: left
+}
+
+.modal-phonenum input {
+    width: 400px;
+    height: 30px;
+    border: solid 1px #999999;
+    border-right: none;
+    float: left;
+    padding-left: 10px;
+    margin-left: 6px;
+    outline:none;
+}
+
+.modal-phonenum button {
+    position: absolute;
+    color: white;
+    outline: none;
+    border: none;
+    background: #ff5251;
+    height: 30px;
+    width: 60px;
+    float: left;
+}
+
+.messageprotect p {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ff5251;
+    margin-left: 226px;
+}
+
+.messageprotect button {
+    position: absolute;
+    color: white;
+    outline: none;
+    border: none;
+    background: #ff5251;
+    height: 37px;
+    width: 212px;
+    float: left;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 207px;
+}

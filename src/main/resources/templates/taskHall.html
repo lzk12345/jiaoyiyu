@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:unionpay="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>任务大厅</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<script th:src="@{/js/paging.js}"></script>
+<link rel="stylesheet" th:href="@{/css/layui.css}">
+<link href="/css/task_hall.css" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/farenwu.css">
+<link rel="stylesheet" href="/css/header.css">
+<body>
+<div>
+    <div class="headerpage" th:replace="header :: header">
+
+    </div>
+</div>
+<div>
+    <div class="contain-page">
+        <div class="nav-head">
+            <div class="banner-tb">
+                <br>
+                <div>
+                    <div class="welcome">
+                        <p th:text="${nickname}">尊敬的欧文，欢迎您回来！</p>
+                        <p th:text="${viptypeandlevel}">当前为普通会员,lv12</p>
+                    </div>
+                    <div class="Headportrait">
+                        <img src="/img/stouxiang.png">
+                    </div>
+                </div>
+
+            </div>
+            <div style="margin-top: 20px;width: 100%;position: relative;">
+                <div class="input-form">
+                    <!--                    <span class="caret"></span>-->
+                    <div style="height: 50px;border: none;outline: none">
+                        <input type="text" class="search-content" style="outline: none" placeholder="设计类型" id="sdsd"/>
+                        <button style="outline: none" onclick="sousuo()">搜&nbsp;索</button>
+                    </div>
+
+                    <script>
+                        // 点击搜索后出发的函数
+                        function sousuo() {
+                            var keyword = $("#sdsd").val();
+                            if (keyword == null || keyword == "") {
+                                alert("请输入要搜索的内容");
+                            } else {
+                                window.location.href = "/taskhall/index?keyword=" + keyword;
+                            }
+                        }
+                    </script>
+                    <div class="nav-title-par">
+                        <div class="contain-title">
+                            <span class="nav-title"></span>
+                            <ul>
+                                <li><a href="/openvip/index">会员订购</a></li>
+                                <li><a href="/taskhall/index?categoryid=2">平面广告</a></li>
+                                <li><a href="/taskhall/index?categoryid=1">游戏</a></li>
+                                <li><a href="/taskhall/index?categoryid=3">影视动漫</a></li>
+                                <li><a href="/taskhall/index?categoryid=4">建筑设计</a></li>
+                                <li><a href="/taskhall/index?categoryid=5">IT网页</a></li>
+                                <li><a href="/taskhall/index?categoryid=8">其他</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+
+                <div class="content-all">
+                    <div style="margin-left: 360px">
+
+                        <a style="border: solid 1px #cccccc" th:each="baseAttrValueSelected:${attrValueSelectedList}"
+                           th:href="'index?'+${baseAttrValueSelected.urlParam}"
+                           th:utext=" ${baseAttrValueSelected.valueName} +'<b> ✖ </b>'"> 2G<b> ✖ </b></a>
+                    </div>
+                    <div class="list-item">
+
+                        <ul class="u1" style="display: block">
+                            <li>任务分类:</li>
+                            <li>全部</li>
+                            <li th:each="catalog:${catalog1}">
+                                <a th:href="'/taskhall/index?'+${urlParam}+'&categoryid='+${catalog.id}"
+                                   th:text="${catalog.name}">属性值</a>
+                            </li>
+                        </ul>
+
+                        <ul class="u2" style="display: block">
+                            <li>任务时间:</li>
+                            <li>全部</li>
+                            <li th:each="TimeType:${taskTimeType}">
+                                <a th:href="'/taskhall/index?'+${urlParam}+'&taskTimeTypeId='+${TimeType.id}"
+                                   th:text="${TimeType.taskTimeType}">属性值</a>
+                            </li>
+                        </ul>
+
+                        <ul class="u3" style="display: block">
+                            <li>任务模式:</li>
+                            <li>全部</li>
+                            <li th:each="ModeType:${taskModeType}">
+                                <a th:href="'/taskhall/index?'+${urlParam}+'&tasktype='+${ModeType.id}"
+                                   th:text="${ModeType.taskModeType}">属性值</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+
+                <div class="content">
+                    <div class="left-one">
+                        <div class="left-two" style="margin-left:17px;">
+                            <span>进行中</span>
+                        </div>
+                        <div class="left-two">
+                            <span>圆满结束</span>
+                        </div>
+                        <hr/>
+                        <div class="left-three" style="margin-left:16px;">
+                            <span>发布时间</span>
+                            <img src="/img/bjiantou.jpg" height="10" width="10" alt=""/>
+                        </div>
+                        <div class="left-three">
+                            <span>剩余时间</span>
+                            <img src="/img/bjiantou.jpg" height="10" width="10" alt=""/>
+                        </div>
+                        <div class="left-three" style="border-right:1px solid rgba(231,231,231,1);">
+                            <span>价格排序</span>
+                            <img src="/img/bjiantou.jpg" height="10" width="10" alt=""/>
+                        </div>
+                        <div class="left-four" style="margin-left:116px;">
+                            <select name="">
+                                <option value="">价格区间</option>
+                                <option value="">1111111</option>
+                                <option value="">2222222</option>
+                            </select>
+                        </div>
+                        <div class="left-four" style="margin-left:10px;">
+                            <select name="" id="">
+                                <option value="">地域选择</option>
+                                <option value="">3333333</option>
+                                <option value="">4444444</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="title-name">
+                        <ul>
+                            <li>赏金/标题</li>
+                            <li>类型/状态</li>
+                        </ul>
+                    </div>
+                    <div class="title-content" th:each="assignmentES:${assignmentESList}">
+
+                        <!--                    <input type="hidden" th:value="${urlParam}" id="urlParamHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.taskDetailType}" id="taskDetailTypeHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.differTimeHour}" id="differTimeHourHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.tasktype}" id="tasktypeHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.testStatus}" id="testStatusHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.xuanshangPrice}" id="xuanshangPriceHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.minMoney}" id="minMoneyHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.maxMoney}" id="maxMoneyHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.toubiaoPrice}" id="toubiaoPriceHidden">-->
+                        <!--                    <input type="hidden" th:value="${assignmentES.categoryId}" id="categoryIdHidden">-->
+
+                        <div class="task-list">
+                            <div class="left-box">
+                                <ul>
+                                    <li th:if="${assignmentES.taskDetailType} le '1'">
+                                        <font th:if="${assignmentES.toubiaoPrice} ne 'null'"
+                                              th:text="'￥' + ${assignmentES.toubiaoPrice}">
+
+                                        </font>
+                                    </li>
+                                    <li th:if="${assignmentES.taskDetailType} le '1'">
+                                        <font style="color:red;font-size:14px"
+                                              th:if="${assignmentES.toubiaoPrice} eq 'null'"
+                                              th:text="'￥' + ${assignmentES.minMoney} + '-' + ${assignmentES.maxMoney}">
+                                        </font>
+                                    </li>
+                                    <li th:if="${assignmentES.taskDetailType} ge '2'">
+                                        <font th:text="'￥' + ${assignmentES.xuanshangPrice}">
+
+                                        </font>
+                                    </li>
+                                    <li><a style="font-size: 16px" th:text="${assignmentES.title}"
+                                           th:href="@{/shejishi/index(assignmentId=${assignmentES.id})}">小胡LOGO设计</a>
+                                    </li>
+                                    <li>
+                                        <span th:if="${assignmentES.urgent} gt '0'"><img src="/img/jiajimix.png"></span>
+                                        <!--                                    <span th:if="${assignmentES.urgent} gt '0'">加价</span>-->
+                                        <span th:if="${assignmentES.top} gt '0'"><img src="/img/zhidingmix.png"></span>
+                                    </li>
+                                </ul>
+                                <div style="clear:both;"></div>
+                                <ul>
+                                    <li><font th:text="${assignmentES.browsePeopleNum}">0</font>人浏览/　<b
+                                            th:text="${assignmentES.partPeopleNum}">0</b>人已经参与
+                                    </li>
+                                    <li th:text="${assignmentES.category1Name}">logo设计</li>
+                                    <li th:text="${assignmentES.category2Name}">VI 设计</li>
+                                </ul>
+                            </div>
+                            <div class="right-box">
+                                <ul>
+                                    <li th:if="${assignmentES.taskDetailType} eq '0'">投标模式</li>
+                                    <li th:if="${assignmentES.taskDetailType} eq '1'">测试投标</li>
+                                    <li th:if="${assignmentES.taskDetailType} eq '2'">单人悬赏</li>
+                                    <li th:if="${assignmentES.taskDetailType} eq '3'">多人悬赏</li>
+                                    <li th:if="${assignmentES.taskDetailType} eq '4'">稿件悬赏</li>
+                                </ul>
+                                <ul>
+                                    <!--                                th:text="(${assignmentES.differTimeHour} / 24)"-->
+                                    <li><b unionpay:string="longTextFormat:(${assignmentES.differTimeHour} / 24)"
+                                           prec=2>12</b>天<b th:text="(${assignmentES.differTimeHour} % 24)">8</b>小时后投稿截止
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                分页-->
+                    <ul class="pagination" style="margin-left: 240px"></ul>
+                    <div class="content-list">
+                        <div class="right-nav-head">
+                            <div class="center"><span>小红鱼为你精准推荐</span></div>
+                            <div class="center"><span>登录/注册</span></div>
+                        </div>
+                        <div class="right-nav-banner">
+                            <!--                        <div class="center"><p>创意设计交易</p></div>
+                                                    <div class="center"><p>为什么选择<b>小红鱼？</b></p></div>-->
+                            <div><img src="/img/宣传框.png"></div>
+                        </div>
+                        <div class="title-text">案例赏析</div>
+                        <div class="case-view">
+                            <div class="view-list">
+                                <div class="view-img"><img src="/img/56.png" width="100px" height="100px"></div>
+                                <div class="view-content">
+                                    <ul>
+                                        <li>欧文LOGO</li>
+                                        <li>赏金：<b>¥581，000</b></li>
+                                        <li>参与：<b>10</b>人</li>
+                                        <li>任务详情 ></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 重复 -->
+                            <div class="view-list">
+                                <div class="view-img"><img src="/img/56.png" width="100px" height="100px"></div>
+                                <div class="view-content">
+                                    <ul>
+                                        <li>欧文LOGO</li>
+                                        <li>赏金：<b>¥581，000</b></li>
+                                        <li>参与：<b>10</b>人</li>
+                                        <li>任务详情<img src="/img/rkuohaoicon.png"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="view-list">
+                                <div class="view-img"><img src="/img/56.png" width="100px" height="100px"></div>
+                                <div class="view-content">
+                                    <ul>
+                                        <li>欧文LOGO</li>
+                                        <li>赏金：<b>¥581，000</b></li>
+                                        <li>参与：<b>10</b>人</li>
+                                        <li>任务详情<img src="/img/rkuohaoicon.png"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="view-list">
+                                <div class="view-img"><img src="/img/56.png" width="100px" height="100px"></div>
+                                <div class="view-content">
+                                    <ul>
+                                        <li>欧文LOGO</li>
+                                        <li>赏金：<b>¥581，000</b></li>
+                                        <li>参与：<b>10</b>人</li>
+                                        <li>任务详情<img src="/img/rkuohaoicon.png"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="view-list">
+                                <div class="view-img"><img src="/img/56.png" width="100px" height="100px"></div>
+                                <div class="view-content">
+                                    <ul>
+                                        <li>欧文LOGO</li>
+                                        <li>赏金：<b>¥581，000</b></li>
+                                        <li>参与：<b>10</b>人</li>
+                                        <li>任务详情<img src="/img/rkuohaoicon.png"></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 重复 -->
+                        </div>
+                        <div class="title-text">最活跃的小鱼</div>
+                        <div class="active-fish">
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>1</span>
+                                    <span>猫与书</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <!-- 重复 -->
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>2</span>
+                                    <span>路路的操作</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>3</span>
+                                    <span>我是小红鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>4</span>
+                                    <span>我是小黄鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>5</span>
+                                    <span>我是小白鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>6</span>
+                                    <span>我是小金鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>7</span>
+                                    <span>我是小花鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>8</span>
+                                    <span>我是大马哈鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <div class="fish-box">
+                                <div class="border-box">
+                                    <span>9</span>
+                                    <span>我是大鲨鱼</span>
+                                    <img src="/img/rkuohaoicon.png">
+                                </div>
+                            </div>
+                            <!-- 重复 -->
+                        </div>
+                        <div class="title-text">热门任务</div>
+                        <div class="hot-task">
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <!-- 重复 -->
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <div class="hot-box">
+                                <div class="box-border">
+                                    <span><img src="/img/Group7.png"></span>
+                                    <span>¥3，000</span>
+                                    <span>BID LOGO设计</span>
+                                </div>
+                            </div>
+                            <!-- 重复 -->
+                        </div>
+
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    function GetQueryString(name) {
+                        var reg = eval("/" + name + "/g");
+                        var r = window.location.search.substr(1);
+                        var flag = reg.test(r);
+                        if (flag) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                    function changeURLArg(url, arg, arg_val) {
+                        var pattern = arg + '=([^&]*)';
+                        var replaceText = arg + '=' + arg_val;
+                        if (url.match(pattern)) {
+                            var tmp = '/(' + arg + '=)([^&]*)/gi';
+                            tmp = url.replace(eval(tmp), replaceText);
+                            return tmp;
+                        } else {
+                            if (url.match('[\?]')) {
+                                return url + '&' + replaceText;
+                            } else {
+                                return url + '?' + replaceText;
+                            }
+                        }
+                        return url + '\n' + arg + '\n' + arg_val;
+                    }
+
+                    $(function () {
+                        var a = {color: 'red', sex: 'black', border: '1px solid #ddd'};
+
+                        var b = {background: 'black'};
+
+                        var recordNum = 10;
+                        $(".pagination").Paging({
+                            // classStyle:a,//a标签样式的对象,也可以不定义使用默认值
+                            // backClass:b,//选中的页数的背景，也可以不定义使用默认值
+                            isFirst: true,   //首页按钮是否显示
+                            isPre: true,     //下一页按钮是否显示
+                            showRecordNum: recordNum, // 一页列表数量
+                            totalNum: [[${queryTotal}]],   // 总列表数量
+                            current: [[${currentPage}]],
+                            showNum: function (data1, data2) {
+                                let currentPage = getUrlParam("currentPage");
+                                let recordNum = getUrlParam("recordNum");
+                                var str = window.location.href;
+                                let b1 = GetQueryString("keyword");
+                                let b2 = GetQueryString("categoryid");
+                                let b3 = GetQueryString("taskTimeTypeId");
+                                let b4 = GetQueryString("tasktype");
+                                if (b1 == true || b2 == true || b3 == true || b4 == true) {
+                                    str = window.location.href;
+                                    if (currentPage == null || recordNum == "") {
+                                        str = str + "&currentPage=" + data1;
+                                    } else {
+                                        str = changeURLArg(str, "currentPage", data1);
+                                    }
+                                    if (recordNum == null || recordNum == "") {
+                                        str = str + "&recordNum=" + data2;
+                                    } else {
+                                        str = changeURLArg(str, "recordNum", data2);
+                                    }
+                                } else {
+                                    str = window.location.href + "?";
+                                    if (currentPage == null || recordNum == "") {
+                                        str = str + "currentPage=" + data1;
+                                    } else {
+                                        str = changeURLArg(str, "currentPage", data1);
+                                    }
+                                    if (recordNum == null || recordNum == "") {
+                                        str = str + "&recordNum=" + data2;
+                                    } else {
+                                        str = changeURLArg(str, "recordNum", data2);
+                                    }
+                                }
+
+                                window.location.href = str;
+                            }
+                        });
+
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/js/taskhall.js"></script>
+
+
+</html>

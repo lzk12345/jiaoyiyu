@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: rgba(244, 244, 244, 1);
+        }
+
+        .hc_problem_solvingContainer {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hc_problem_solvingContainer * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .hc_problem_solvingContainer > .m1 {
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .hc_problem_solvingContainer > .m2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 {
+            width: 178px;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c2 {
+            width: 1002px;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .hc_problem_solvingContainer > .m2 h3 {
+            font-size: 20px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+            border-bottom: 1px solid #E7E7E7;
+            padding: 20px 0 10px 20px;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c2 h3 {
+            padding-left: 50px;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div {
+            padding: 20px 0 0 10px;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div:last-of-type {
+            padding-bottom: 20px;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div > span {
+            display: inline-block;
+            width: 80%;
+            cursor: pointer;
+            background-image: url("../resources/statics/images/help/downarrow.png");
+            background-size: 10px 6px;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div > ul {
+            padding-left: 20px;
+            display: none;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div > ul > li {
+            list-style: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div > ul > .toggle {
+            color: #FF5251;
+        }
+
+        .hc_problem_solvingContainer > .m2 > .c1 > div > ul > li:first-of-type {
+            padding-top: 10px;
+        }
+
+        .hc_problem_solvingContainer >.m2 >.c2 >.r1{
+            padding-right: 20px;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .hc_problem_solvingContainer >.m2 >.c2 >.r1 input{
+            height: 30px;
+            padding-left: 10px;
+            border: 1px solid #919191;
+            border-right: 0;
+        }
+        .hc_problem_solvingContainer >.m2 >.c2 >.r1 input:focus{
+            border-bottom: 0;
+            border-bottom-left-radius: 1px;
+        }
+
+        .hc_problem_solvingContainer >.m2 >.c2 >.r1 span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background:url("../resources/statics/images/help/search.png") no-repeat ;
+            background-position: center center;
+            background-size: 21px 20px;
+            border: 1px solid #919191;
+            border-left: 0;
+        }
+        .hc_problem_solvingContainer >.m2 >.c2 >.r2{
+            height: 550px;
+        }
+        .hc_problem_solvingContainer >.m2 >.c2 >.r2 ul{
+            width: 500px;
+            margin: 10px 0 0 64px;
+        }
+
+        .hc_problem_solvingContainer >.m2 >.c2 >.r2 ul li{
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script src="../resources/statics/js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="hc_problem_solvingContainer">
+    <div class="m1">
+        首页>帮助中心>问题解答
+    </div>
+    <div class="m2">
+        <div class="c1">
+            <h3>问题解答分类</h3>
+            <div>
+                <span>常见问题</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\frequently_asked_questions\reward_task_flow.html">悬赏任务流程</li>
+                    <li router=".\resources\statics\html\help\problem_solving\frequently_asked_questions\noun_interpretation.html">名词解释</li>
+                    <li router=".\resources\statics\html\help\problem_solving\frequently_asked_questions\hot_issues.html">热门问题</li>
+                </ul>
+            </div>
+            <div>
+                <span>账号管理</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\account_management\register.html">注册</li>
+                    <li router=".\resources\statics\html\help\problem_solving\account_management\login.html">登录</li>
+                    <li router=".\resources\statics\html\help\problem_solving\account_management\secret_safe.html">密码安全</li>
+                    <li router=".\resources\statics\html\help\problem_solving\account_management\data_management.html">资料设置</li>
+                </ul>
+            </div>
+            <div>
+                <span>关于认证</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\about_authentication\email_authentication.html">邮箱认证</li>
+                    <li router=".\resources\statics\html\help\problem_solving\about_authentication\real_name_authentication.html">实名认证</li>
+                    <li router=".\resources\statics\html\help\problem_solving\about_authentication\establishment_authentication.html">企业认证</li>
+                    <li router=".\resources\statics\html\help\problem_solving\about_authentication\phone_authentication.html">手机认证</li>
+                    <li router=".\resources\statics\html\help\problem_solving\about_authentication\bank_card_authentication.html">银行卡认证</li>
+                </ul>
+            </div>
+            <div>
+                <span>发包方帮助</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\publisher_help\mixed_use_area.html">综合区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\publisher_help\num_count_task_area.html">计件任务区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\publisher_help\bidding_mission_area.html">招标、雇佣任务区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\publisher_help\mission_coupon.html">任务优惠券</li>
+                    <li router=".\resources\statics\html\help\problem_solving\publisher_help\full_reward_mission_area.html">全额悬赏任务区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\publisher_help\direct_employment_mission_area.html">直接雇佣任务区</li>
+                </ul>
+            </div>
+            <div>
+                <span>设计师帮助</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\designer_credit.html">设计师信誉</li>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\mixed_use_area.html">综合区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\num_count_task_area.html">计件任务区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\bidding_mission_area.html">招标、雇佣任务区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\mission_coupon.html">任务优惠券</li>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\full_reward_mission_area.html">全额悬赏任务区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\designer_help\direct_employment_mission_area.html">直接雇佣任务区</li>
+                </ul>
+            </div>
+            <div>
+                <span>支付账户管理</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\pay_account_management\pay_method.html">支付方式</li>
+                    <li router=".\resources\statics\html\help\problem_solving\pay_account_management\recharge_and_withdrawal.html">充值和提现</li>
+                </ul>
+            </div>
+            <div>
+                <span>商铺管理</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\shops_management\open_shops.html">开通商城</li>
+                    <li router=".\resources\statics\html\help\problem_solving\shops_management\shops_operate.html">商铺经营</li>
+                    <li router=".\resources\statics\html\help\problem_solving\shops_management\shops_business.html">商铺交易</li>
+                </ul>
+            </div>
+            <div>
+                <span>小鱼塘帮助</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\xyt_help\xyt_definition.html">小鱼塘定义</li>
+                    <li  router=".\resources\statics\html\help\problem_solving\xyt_help\xyt_show.html">小鱼塘展示</li>
+                </ul>
+            </div>
+            <div>
+                <span>设计学院帮助</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\school_design_help\school_design_definition.html">设计学院定义</li>
+                    <li router=".\resources\statics\html\help\problem_solving\school_design_help\post_area.html">帖子专区</li>
+                    <li router=".\resources\statics\html\help\problem_solving\school_design_help\integrated_special_area.html">积分专区</li>
+                </ul>
+            </div>
+            <div>
+                <span>考核认证帮助</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\examination_certification_help\examination_certification_definition.html">考核认证定义</li>
+                    <li router=".\resources\statics\html\help\problem_solving\examination_certification_help\certification_benefits.html">认证好处</li>
+                </ul>
+            </div>
+            <div>
+                <span>网站规则</span>
+                <ul>
+                    <li router=".\resources\statics\html\help\problem_solving\website_rules\refund.html">退款</li>
+                    <li router=".\resources\statics\html\help\problem_solving\website_rules\report.html">举报</li>
+                    <li router=".\resources\statics\html\help\problem_solving\website_rules\complain.html">投诉</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="c2">
+            <h3>常见问题</h3>
+            <div class="r1"><input type="text" placeholder="关键字"><span></span></div>
+            <div class="r2">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getHtmlContent(e,url) {
+        $.ajax({
+            url: url,
+            cache: true,
+            async: false,
+            dataType: "html",
+            success: function (html) {
+                $(e).html('');
+                $(e).append(html);
+            }
+        });
+    }
+    $(function () {
+        $(".hc_problem_solvingContainer >.m2>.c1>div").on('click', function () {
+            $(this).find('span').css('background-image','url(\'./resources/statics/images/help/uparrow.png\')');
+            $(this).siblings().find('span').css('background-image','url(\'./resources/statics/images/help/downarrow.png\')');
+            $(this).siblings().find('ul').slideUp('speed');
+            $(this).find('ul').slideDown('speed');
+        });
+        $(".hc_problem_solvingContainer >.m2>.c1>div li").on('click', function () {
+            $(".hc_problem_solvingContainer >.m2>.c1>div li").removeClass('toggle');
+            $(this).addClass('toggle');
+            var router=$(this).attr('router');
+            var e=$(" .hc_problem_solvingContainer >.m2 >.c2 >.r2");
+            if(!router){
+                return;
+            }
+            getHtmlContent(e,router);
+            $(".hc_problem_solvingContainer > .m2 > .c2 h3").text($(this).parent().siblings('span').text());
+        });
+
+        $(".hc_problem_solvingContainer >.m2 >.c2 >.r2 ul li").on('click',function () {
+
+        });
+        $(".hc_problem_solvingContainer >.m2>.c1>div:first-of-type").trigger('click');
+        $(".hc_problem_solvingContainer >.m2>.c1>div:first-of-type li:first-of-type").trigger('click');
+    });
+</script>
+</body>
+</html>

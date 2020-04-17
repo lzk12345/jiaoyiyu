@@ -1,0 +1,349 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.hr-one{
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e7e7e7;
+    margin-top: 20px;
+}
+.logo{
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.top-one{
+    width: 902px;
+    height: 155px;
+    border-right: 1px solid #e7e7e7;
+    float: left;
+    margin-top: -8px;
+}
+.inter-one{
+    width: 893px;
+    margin-top: 8px;
+    font-size:26px;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.inter-two{
+    width: 65px;
+    height: 20px;
+    margin-top: 5px;
+}
+.inter-two span{
+    font-size:14px;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.inter-three{
+    width: 870px;
+    height: 20px;
+    margin-top: 10px;
+}
+.inter-three ul{
+    padding-left: 0;
+}
+.inter-three ul li{
+    list-style: none;
+    display: inline-block;
+}
+.inter-three ul li:nth-child(1){
+    width: 640px;
+    font-size:14px;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.inter-three ul li:nth-child(2){
+    font-size:10px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(82,82,82,1);
+}
+.top-two{
+    width: 257px;
+    height: 150px;
+    float: left;
+    margin-left: 20px;
+}
+.inter-four{
+    width:257px;
+    height:42px;
+    background:rgba(244,244,244,1);
+    line-height: 42px;
+}
+.inter-four span:nth-child(1){
+    font-size:14px;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+    margin-left: 13px;
+    position: relative;
+    top: -3px;
+}
+.inter-four span:nth-child(2){
+    font-size:16px;
+    font-weight:500;
+    color:rgba(255,82,81,1);
+    margin-left: 36px;
+    position: relative;
+    top: -3px;
+}
+.inter-four span:nth-child(3){
+    font-size:26px;
+    font-weight:500;
+    color:rgba(255,82,81,1);
+    margin-left: 6px;
+}
+.inter-five{
+    width: 219px;
+    height:17px;
+    font-size:12px;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+    margin-top: 12px;
+}
+.inter-six{
+    width: 90px;
+    height: 40px;
+    background-color: #ff5251;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+.inter-six span{
+    font-size:16px;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+}
+.top-three{
+    width: 1200px;
+    height: 107px;
+    border-bottom: 1px solid #e7e7e7;
+    margin-top: 16px;
+}
+.zhi{
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-top: 6px;
+}
+.zhi img{
+    border-radius: 50%;
+}
+.inter-seven{
+    width: 163px;
+    height: 85px;
+    float: left;
+    margin-left: 17px;
+}
+.center-one{
+    width: 45px;
+    height: 20px;
+}
+.center-one span{
+    font-size:14px;
+    font-weight:500;
+    color:rgba(74,74,74,1);
+}
+.center-two{
+    width: 70px;
+    height: 17px;
+    margin-top: 2px;
+}
+.center-two span{
+    font-size:12px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(155,155,155,1);
+}   
+.center-three{
+    width: 163px;
+    height: 27px;
+    margin-top: 19px;
+}
+.inter-eight{
+    width: 69px;
+    height: 27px;
+    background-color: #ff5251;
+    text-align: center;
+    line-height: 23px;
+    float: left;
+    cursor: pointer;
+}
+.inter-eight span{
+    font-size:13px;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+}
+.inter-nine{
+    width: 67px;
+    height: 25px;
+    border:1px solid rgba(151,151,151,1);
+    text-align: center;
+    line-height: 23px;
+    margin-left: 24px;
+    float: left;
+    cursor: pointer;
+}
+.inter-nine span{
+    font-size:13px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(74,74,74,1);
+}
+.center-four{
+    width: 1200px;
+    margin-top: 43px;
+    text-align: center;
+    font-size:14px;
+    font-weight:500;
+    color:rgba(102,102,102,1);
+}
+.shipin{
+    width: 1200px;
+    text-align: center;
+    margin-top: 53px;
+}
+.tupian{
+    width: 1200px;
+    margin-top: 36px;
+    padding-bottom: 30px;
+}
+.tupian img{
+    margin-top: 20px;
+}
+.center-five{
+    width: 577px;
+    height: 286px;
+    margin: 0 auto;
+    margin-top: 53px;
+}
+.center-six{
+    width: 1200px;
+    height: 675px;
+    margin: 0 auto;
+    margin-top: 81px;
+}
+
+.center-seven{
+    width: 150px;
+    height: 60px;
+    background:rgba(255,82,81,1);
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.center-seven img{
+    margin-top: 9px;
+    margin-left: 54px;
+}
+.relatedworks{
+    background:#F4F4F4;width: 100%;padding: 20px 0 100px 0
+}
+.relatedworks>div:nth-child(1){
+    width: 1200px;margin-left: 18.5%
+}
+.rw-title{
+    background: #ffffff;height:54px;line-height: 54px;padding: 0 20px 0 20px
+}
+.rw-title span{
+    float: left;
+}
+.rw-title a{
+    float: right;
+}
+.rw-works{
+    width: 227px;background:#FFFFFF;margin-top: 10px;float: left;height: 210px;margin-left: 16px;
+}
+.rw-works:nth-child(1){
+    margin-left: 0px;
+}
+.rw-works img{
+  width: 227px;
+    height: 170px;
+}
+.rw-works span{
+    padding: 0 15px 0 15px;
+    line-height: 30px;
+}
+.leavemsg {
+    width: 1200px;;
+    background: #FFFFFF;
+    padding: 36px 0 30px 0;
+    margin-top: 20px;
+}
+.leavemsg-comments{
+    width: 1200px;border-bottom: solid 1px #E7E7E7;
+    padding:0 80px 30px 80px;
+}
+.leavemsg-comments button{
+    float: right;
+    width:95px;
+    height:36px;
+    background:rgba(244,244,244,1);
+    border: none;
+}
+.leavetbhead {
+    margin:30px 0 0 40px;
+}
+.leavetbhead font {
+    color: #9B9B9B;
+}
+
+.leavetable {
+    width: 1000px;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.leavetable tr td {
+    padding: 30px 0 20px 0;
+}
+
+.leavetable tr {
+    border-bottom: solid 1px #D8D8D8;
+}
+
+.leavetable tr:last-child {
+    border-bottom: none;
+}
+
+.leavetable tr td:nth-child(1) {
+    display: block;
+}
+
+.leavetable tr td:nth-child(1) img {
+    width: 52px;
+    border-radius: 50%;
+}
+
+.leavetable tr td:nth-child(2) {
+    font-size: 16px;
+    width: 830px;
+
+}
+
+.leavetable tr td:nth-child(2) font:nth-child(2) {
+    font-size: 12px;
+    color: #9B9B9B;
+}
+
+.leavetable tr td:nth-child(3) {
+    padding-left: 50px;
+
+}
+.worksname{
+    position:relative
+}
+
+.worksname textarea{
+    background:#F4F4F4;border: solid 1px #E7E7E7;overflow:hidden;resize: none;width: 1040px;height: 180px;
+    padding: 10px 20px 10px 10px;
+
+}
+.worksname .wordwrap{ position:absolute; right: 10px; bottom: 10px;}
+.worksname .word{ color: red; padding: 0 4px;}

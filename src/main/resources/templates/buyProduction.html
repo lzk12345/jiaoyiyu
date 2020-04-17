@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/buy_production.css" />
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">我购买的设计</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div class="left-one" style="margin-left: 20px;margin-top: 10px;float: left">
+            <div class="left-two">
+                <img src="/img//Rectangle.png" height="20" width="6" alt="" />
+                <span>我购买的作品</span>
+            </div>
+            <div class="left-three"></div>
+            <div class="left-four">
+                <div>所有订单</div>
+                <div>待付款</div>
+                <div>进行中</div>
+                <div>待评价</div>
+                <div>已结束</div>
+            </div>
+
+            <div style="float: left;margin-left: 16px;margin-top: 27px;width: 975px">
+                <input  type="text" style="width: 238px;height: 27px;;float: left;margin-left: 15px;padding-left: 10px;border:solid 1px #bcbcbc;border-right:0px";  placeholder="输入商品标题或订单号进行搜索"  >
+                <button  style="position: absolute; outline: none;border:solid 1px #bcbcbc ;background:#F4F4F4;height: 27px;width: 83px;float: left">订单搜索</button>
+
+            </div>
+            <div class="clear"></div>
+            <div class="left-six">
+                <div>
+                    <span>订单类型</span>
+                    <select name="" id="">
+                        <option value="">全部</option>
+                        <option value="">类型一</option>
+                        <option value="">类型二</option>
+                    </select>
+                </div>
+                <div>
+                    <span>成交时间</span>
+                    <input type="text" placeholder="请选择时间范围起始" />
+                    <input type="text" placeholder="请选择时间范围结束" />
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="left-seven">
+                <div>
+                    <span>评价状态</span>
+                    <select name="" >
+                        <option value="">全部</option>
+                        <option value="">类型一</option>
+                        <option value="">类型二</option>
+                    </select>
+                </div>
+                <div>
+                    <span>交易状态</span>
+                    <select name="" >
+                        <option value="">全部</option>
+                        <option value="">类型一</option>
+                        <option value="">类型二</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="left-eight">
+                <span>订单</span>
+                <span>金额</span>
+                <span>类型</span>
+                <span>订单状态</span>
+                <span>操作</span>
+            </div>
+
+
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+            <div class="left-nine">
+                <div>
+                    <span>任务编号</span>
+                    <span>468721</span>
+                    <span>稿件编号</span>
+                    <span>456854</span>
+                </div>
+                <div>
+                    <span>设计四个字与已有LOGO组合配套</span>
+                    <span>¥5250，000</span>
+                    <span>作品购买</span>
+                    <span>交易成功</span>
+                    <span>评价/删除</span>
+                </div>
+                <div>
+                    <span>订单号：</span>
+                    <span>5646541354</span>
+                </div>
+                <div>
+                    <span>提交时间：</span>
+                    <span>2019-01-01 01:01:01</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

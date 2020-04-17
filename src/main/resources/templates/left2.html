@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="panel panel-default" style="margin-top: 10px;border-radius: 0"  th:fragment="left2">
+
+    <div class="panel-body panel-body-l1"  >
+
+        <font  style="font-size: 20px;color: #333333"><b>账号管理</b></font>
+        <font style="font-size: 12px;margin-left: 12px;"><a style=" color: #1B69CD" id="personalHome2">个人中心</a></font>
+
+    </div>
+    <div class="panel-body " style="width: 178px;margin: 0;padding: 0" id="clickToChangeColor"  >
+
+        <div style="margin-top: 18px" class="hover2"  >
+            <font style="font-size: 16px;padding-left: 10px">
+                <b>个人资料</b>
+            </font>
+
+            <p style="margin-top: 20px" id="information"><a>基本资料</a></p>
+
+
+        </div>
+        <div style="margin-top: 18px" class="hover2">
+            <font style="font-size: 16px;padding-left: 10px">
+                <b>账号认证</b>
+            </font>
+
+            <p style="margin-top: 20px" id="autonym"><a >实名认证</a></p>
+
+            <p id="bankcard"  ><a>银行卡认证</a></p>
+            <!--<p ><a >微信认证</a></p>-->
+            <!--<p ><a >支付宝认证</a></p>-->
+
+        </div>
+        <div style="margin-top: 18px" class="hover2">
+            <font style="font-size: 16px;padding-left: 10px">
+                <b>修改密码</b>
+            </font>
+
+            <p style="margin-top: 20px" id="loginpwdmodify"><a >登陆密码修改</a></p>
+            <p id="pwdmodify" ><a >支付密码修改</a></p>
+
+        </div>
+
+        <div style="margin-top: 18px" class="hover2">
+            <font style="font-size: 16px;padding-left: 10px">
+                <b>账号绑定</b>
+            </font>
+
+            <!--<p  id="phonebinding"><a >手机、邮箱绑定</a></p>-->
+            <p style="margin-top: 20px" id="emailauthentication"><a >邮箱认证</a></p>
+            <p id="phonecertification"><a >手机认证</a></p>
+            <p  id="QQbinding"><a >第三方账号绑定</a></p>
+
+        </div>
+
+    </div>
+    <script>
+        $("#clickToChangeColor div p").click(function(){
+            // $("#clickToChangeColor div p").css("background","");
+            // $("#clickToChangeColor div p a").css("color","#999999");
+            $(this).css("background","#FFE6E6");
+            $(this).find("a:eq(0)").css("color","#ff5251");
+        });
+    </script>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="container bgc-header"  th:fragment="header">
+    <div class="body-header">
+        <div  style="">
+            <img src="/img/BIMUYU.png" >
+        </div>
+
+        <div class="body-header-li"  >
+
+
+            <nav >
+                <div >
+                    <div class="" id="clickToChangeColor1"  style="font-size: 18px;" >
+                        <ul class="nav navbar-nav" >
+                            <li><a href="/index"  style="color: #333333" >首页</a></li>
+                            <li class="active"><a href="/taskhall/index" style="color: #333333">交易大厅 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="/xyt/index"  style="color: #333333">小鱼塘</a></li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: left;color: #333333" >我的小红鱼<span class="caret"></span> </a>
+                                <ul class="dropdown-menu" >
+                                    <li><a href="/publishperson"  >我发布购买计划</a></li>
+                                    <li><a href="/partTask"  >参与出售的设计</a></li>
+                                    <li><a href="/taskCollection"  >我的收藏</a></li>
+                                    <li><a href="/collectionofPosts"  >我的足迹</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/personal/index">我的小红鱼</a></li>
+                                </ul>
+                            </li>
+<!--                            <li><a href="#" style="color: #333333">设计学院</a></li>-->
+                            <li class="dropdown">
+                                <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #333333">更多<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/access/index" >考核</a></li>
+                                    <li><a href="/openvip/index" >会员订购</a></li>
+                                    <li><a href="/helpcenter/index" >帮助中心</a></li>
+                                    <li><a href="/rule/index" >规则中心</a></li>
+                                    <li><a href="/uploadworks/index" >上传作品</a></li>
+                                    <li><a href="/sellworkservice/index" >出售设计服务</a></li>
+                                </ul>
+                            </li>
+
+
+
+                        </ul>
+
+
+                    </div><!-- /.navbar-collapse -->
+
+                </div><!-- /.container-fluid -->
+            </nav>
+
+        </div>
+
+    </div>
+    <button type="button" style="margin-left: 80px;border-radius: 0;background-color: #FF5251;width: 84px;height: 34px;float: left;margin-top: 31px;"  class="btn btn-default" data-toggle="modal" data-target="#myModal">
+        <font color="white">
+            发任务
+        </font>
+    </button>
+    <div style="margin-top: 31px;width: 240px;float: left;margin-left: 20px;font-size: 18px">
+        <p class="registerlogin" style="float: left;margin-top: 5px;display: block">
+            <a href="http://localhost:80/passport/index?returnUrl=http://localhost:80/index" style="margin-left: 30px;color: #333333" >登录</a>
+        </p>
+        <p style="float: left;">
+        <li class="dropdown" style="list-style: none;position: relative;display: none;" id="headp">
+            <img class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 52px;height: 52px;border-radius: 50%;" src="/img/y.jpg" id="headPic" alt="">
+            <ul class="dropdown-menu">
+                <li><a href="/personal/index" >个人中心</a></li>
+                <li><a href="/accountManagemet" >账号管理</a></li>
+                <li><a href="/message/index" ><span style="float: left;">消息</span><div style="width: 32px;height: 20px;color: white;float: left;border-radius: 10px;background-color: #ff5251;text-align: center;margin-left: 10px;">125</div></a></li>
+                <li><a href="/growup/index" >店铺管理</a></li>
+            </ul>
+            <span id="nickname1">小交易鱼</span>
+        </li>
+        </p>
+    </div>
+</div>
+</div>
+</body>
+</html>

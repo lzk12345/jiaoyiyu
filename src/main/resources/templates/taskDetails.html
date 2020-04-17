@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>比目鱼</title>
+    <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/dropzone/5.5.1/min/basic.min.css" rel="stylesheet">
+    <link href="/css/dropzone.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/dropzone/5.5.1/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery.form.js"></script>
+    <script src="/layui/layui.js"></script>
+    <link href="/css/step-progress.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="/css/test_title.css">
+    <link rel="stylesheet" href="/css/taskDetails.css">
+    <link rel="stylesheet" href="/css/city.css">
+    <link rel="stylesheet" type="text/css" href="/css/newtaskuse.css"/>
+
+    <script src="/js/city.js"></script>
+    <script>
+        $(function () {
+            //jQuery代码;
+            layui.use(['element', 'laydate', 'layer'], function () {
+                var element = layui.element;
+                var laydate = layui.laydate;
+                var layer = layui.layer;
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#test1' //指定元素
+                });
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#test11' //指定元素
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div>
+    <div class="headerpage" th:replace="header1 :: header1">
+
+    </div>
+</div>
+<div class="bgc-toubiao">
+    <!--2.-->
+    <div class="banner-tb">
+        <br>
+        <div>
+            <div class="welcome">
+                <p th:text="${nickname}">尊敬的欧文，欢迎您回来！</p>
+                <p th:text="${viptypeandlevel}">当前为普通会员,lv12</p>
+            </div>
+            <div class="Headportrait">
+                <img src="/img/stouxiang.png">
+            </div>
+        </div>
+    </div>
+    <div class="zong">
+        <span><a href="/index">交易大厅</a>><font id="cata1">暂无</font>><font id="cata2">暂无</font>>订单号：未生成</span><br/>
+        <div class="left-top">
+            <div class="left-center">
+                <div class="top-one">
+                    <span style="font-size:26px;color:rgba(51,51,51,1);float: left" id="needtitle">暂无标题</span>
+                    <div style="float: left;margin-left: 9px;margin-top: 10px">
+                        <img style="display: none" id="jiajiimg" src="/img/jiajimix.png">
+                        <img style="display: none" id="jiajiaimg" src="/img/jiajiamix.png">
+                        <img style="display: none" id="zhidingimg" src="/img/zhidingmix.png">
+                        <img style="display: none" id="yingaoimg" src="/img/yingaomix.png">
+
+                    </div>
+
+
+                    <!--                    <span class="perfect" style="font-size:14px;color:rgba(255,82,81,1);margin-left:640px;"><a href="#" data-toggle="modal"data-target="#myModal1"style="text-decoration: none;color:#ff5251;"><span-->
+                    <!--                            class="glyphicon glyphicon-pencil" style="color:#ff5251;"></span>点击完善修改</a></span>-->
+                </div>
+                <div class="top-two">
+                    <span>
+                        <span style="color:rgba(255,82,81,1);">0</span>天
+                        <span style="color:rgba(255,82,81,1);">0</span>小时后投稿截止
+                        <span style="margin-left:30px;">任务金分配：</span>
+                        <span style="color:rgba(255,82,81,1);" id="renwujinfenpei">暂无</span>
+                        <span id="fenpeibiaozhu"></span>
+                    </span>
+                </div>
+
+                <table style="width: 830px;text-align: center;margin-left: 48px;margin-top: 25px" >
+                    <tr style="color: #979797;font-size:14px;font-weight:600;line-height:20px;height: 30px">
+                        <td>编号</td>
+                        <td>类型</td>
+                        <td>报名人数</td>
+                        <td>创建时间</td>
+                        <td>金额</td>
+                        <td>任务类型</td>
+                    </tr>
+                    <tr style="color: #333333;font-size:14px;font-weight:600;line-height:20px;height: 30px">
+                        <td id="bianhaonum">暂无</td>
+                        <td id="leixingtype">暂无</td>
+                        <td>暂无</td>
+                        <td id="chuangjiantime">暂无</td>
+                        <td id="jinemoney1" style="color: #FF5251">暂无</td>
+                        <td id="renwuleixingtype">
+                            <img style="display: none" id="leixing1" src="/img/testtoubiao.png">
+                            <img style="display: none" id="leixing2" src="/img/toubiao.png">
+                            <img style="display: none" id="leixing3" src="/img/onexuanshang.png">
+                            <img style="display: none" id="leixing4" src="/img/morexuanshang.png">
+                            <img style="display: none" id="leixing5" src="/img/countxuanshang.png">
+                        </td>
+                    </tr>
+                </table>
+                <div class="top-five">
+                    <div></div>
+                    <div>
+                        <img src="/img/lujingcopy5.png" height="11" width="8" alt=""/>
+                    </div>
+                    <div></div>
+                    <div>
+                        <img src="/img/lujingcopy5.png" height="11" width="8" alt=""/>
+                    </div>
+                    <div></div>
+                    <div>
+                        <img src="/img/lujingcopy5.png" height="11" width="8" alt=""/>
+                    </div>
+                    <div></div>
+                    <div>
+                        <img src="/img/lujingcopy5.png" height="11" width="8" alt=""/>
+                    </div>
+                    <div></div>
+                    <div>
+                        <img src="/img/lujingcopy5.png" height="11" width="8" alt=""/>
+                    </div>
+                    <div></div>
+                    <div>
+                        <img src="/img/lujingcopy5.png" height="11" width="8" alt=""/>
+                    </div>
+                    <div></div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="top-seven">
+                    <div>
+                        <span style="margin-left:10px;">发布需求</span>
+                        <span style="margin-left:75px;">托管任务金</span>
+                        <span style="margin-left:88px;">选稿</span>
+                        <span style="margin-left:87px;">提交源文件</span>
+                        <span style="margin-left:88px;">公示</span>
+                        <span style="margin-left:90px;">完成/评价</span>
+                    </div>
+                    <div style="margin-top:4px;">
+                        <span id="nowtimeshow"></span>
+                        <span style="margin-left:55px;"></span>
+                        <span style="margin-left:58px;"></span>
+                        <span style="margin-left:58px;"></span>
+                        <span style="margin-left:58px;"></span>
+                        <span style="margin-left:58px;"></span>
+                    </div>
+                </div>
+                <div class="top-six"></div>
+                <div style="border-bottom:dashed 1px #BCBCBC">
+                    <div id="xuangaoceshitidiv" style="display: none">
+                        <div class="one-one">
+                            <span>【选稿测试题】</span>
+                        </div>
+                        <div class="one-two">
+                            <p id="ceshitibiaoti">暂无</p>
+                        </div>
+                        <br/>
+                        <div class="one-two">
+                            <p id="ceshitineirong"></p>
+                        </div>
+                        <div class="one-three">
+                            参考文件：
+                        </div>
+                        <div class="one-four" id="ceshitupianjihe">
+                        </div>
+                    </div>
+                </div>
+                <div class="one-one">
+                    <span>【总任务需求】</span>
+                </div>
+                <div class="one-two">
+                    <p id="xuqiudetailstext">暂无</p>
+                </div>
+                <div class="one-three">
+                    参考文件：
+                </div>
+                <div class="one-four" id="zongtifujian">
+                    <!--                    <p style="font-size:14px;font-weight:500;color:rgba(0,102,204,1);line-height:20px;">-->
+                    <!--                        <img id="zhengchangfujianimg" src="/img/docmix.png">-->
+                    <!--                        叮咚服务科技白皮书.doc-->
+                    <!--                        <font style="width:55px;height:20px;font-size:14px;font-weight:600;color:rgba(153,153,153,1);line-height:20px;">(35.84k)</font>-->
+                    <!--                        <a>下载</a>-->
+                    <!--                    </p>-->
+                </div>
+                <div id="fabaofanginput" style="border-bottom: 1px dashed #bcbcbc;border-top: 1px dashed #bcbcbc;background-color: white;height: 300px">
+                    <textarea id="fabaofangliuyan" class="one-six" oninput="onmouse()" placeholder="发包方备注留言:" style="resize: none;"></textarea>
+
+                    <p  class="one-seven" >
+                        还可输入<span class="number onmouse">500</span>字
+                    </p>
+                    <div style="float: left">
+                        <div style="margin-left: 474px;float: left">(只可留言一次，请尽量一次完备您的要求)</div>
+                        <img id="fabaofangbtn" style="float: left;margin-left: 20px" src="/img/ceshi.png" height="32" width="94" alt=""/>
+                    </div>
+                </div>
+
+                <div style="border-bottom: 1px dashed #bcbcbc;border-top: 1px dashed #bcbcbc;background-color: white;display: none" id="remarkshow">
+                    <p style="height:30px;font-size:22px;font-weight:600;color:rgba(51,51,51,1);line-height:30px;margin-top: 40px;margin-left: 70px;">【发包方备注留言】</p>
+                    <div  style="margin-top: 20px;width:790px;border:1px solid rgba(231,231,231,1);margin-left: 80px;margin-bottom: 50px;padding-left: 10px;padding-top: 10px" >
+                        <p id="fabaofangdetails">
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="one-nine">
+                    <div>
+                        <img style="margin-right:8px;" src="/img/renren.png" height="23" width="23"
+                             alt=""/><a href="/index" style="text-decoration: none;color:#ff5251;">关闭需求</a>
+                        <img style="margin-left:35px;margin-right:8px;" src="/img/renren.png" height="23" width="23"
+                             alt=""/><a href="#" data-toggle="modal"data-target="#myModal1"style="text-decoration: none;color:#ff5251;">完善需求</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="right">
+            <div class="right-top">
+                <div class="right-top-one">
+                    <span>任务发布遇到问题？</span>
+                </div>
+                <div class="right-top-two">
+                    <span>发布咨询</span>
+                </div>
+                <div class="right-top-three">
+                    <span>010-1234567</span>
+                </div>
+            </div>
+            <span>类似任务</span>
+            <div class="right-bottom">
+                <div class="right-bottom-one" style="margin-top:10px;border-bottom:1px solid #e7e7e7;">
+                    <div class="inter-one">
+                        <span>小学LOGO设计</span>
+                    </div>
+                    <div class="inter-two">
+                        <span>进行中</span>
+                        <span class="detail" style="margin-left:85px;margin-right:3px;">任务详情</span>
+                        <img src="/img/lujingcopy6.png" height="11" width="7" alt=""/>
+                    </div>
+                </div>
+                <div class="right-bottom-one" style="border-bottom:1px solid #e7e7e7;">
+                    <div class="inter-one">
+                        <span>小学LOGO设计</span>
+                    </div>
+                    <div class="inter-two">
+                        <span>进行中</span>
+                        <span class="detail" style="margin-left:85px;margin-right:3px;">任务详情</span>
+                        <img src="/img/lujingcopy6.png" height="11" width="7" alt=""/>
+                    </div>
+                </div>
+                <div class="right-bottom-one" style="border-bottom:1px solid #e7e7e7;">
+                    <div class="inter-one">
+                        <span>小学LOGO设计</span>
+                    </div>
+                    <div class="inter-two">
+                        <span>进行中</span>
+                        <span class="detail" style="margin-left:85px;margin-right:3px;">任务详情</span>
+                        <img src="/img/lujingcopy6.png" height="11" width="7" alt=""/>
+                    </div>
+                </div>
+
+                <div class="right-bottom-one" style="border-bottom:1px solid #e7e7e7;">
+                    <div class="inter-one">
+                        <span>小学LOGO设计</span>
+                    </div>
+                    <div class="inter-two">
+                        <span>进行中</span>
+                        <span class="detail" style="margin-left:85px;margin-right:3px;">任务详情</span>
+                        <img src="/img/lujingcopy6.png" height="11" width="7" alt=""/>
+                    </div>
+                </div>
+                <div class="right-bottom-one">
+                    <div class="inter-one">
+                        <span>小学LOGO设计</span>
+                    </div>
+                    <div class="inter-two">
+                        <span>进行中</span>
+                        <span class="detail" style="margin-left:85px;margin-right:3px;">任务详情</span>
+                        <img src="/img/lujingcopy6.png" height="11" width="7" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" overflow="auto">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content Rs-modal-content">
+
+                <div class="modal-body " style="height: 730px">
+
+                    <div class="Rs-title">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                        <b>发布需求</b>
+                        <p>完善需求可以更快匹配到合适的服务商</p>
+                    </div>
+
+
+                    <div>
+                        <div class="Rs-type">
+                            <b>需求标题<font>*</font></b>
+                            <textarea type="text" style="" placeholder="LOGO设计" id="xuqiutitle"></textarea>
+                        </div>
+                        <div class="Rs-type">
+                            <b>您需要的需求类型是</b>
+                            <div>
+                                <font style="float: left"> 需求类型：</font>
+                                <p id="loho" style="float: left"></p>
+                                <a id="Demandtype" data-toggle="modal" data-target="#myModal_Demandtype"
+                                   style="float: left;margin-left: 20px">修改</a>
+                                <script>
+                                    document.getElementById("Demandtype").onclick = function () {
+                                        $('#myModal_Demandtype').show()
+                                    }
+                                </script>
+                            </div>
+                            <!-- Small modal -->
+                        </div>
+                        <div class="Rs-describe">
+                            <b>需求描述<font>*</font></b>
+                            <textarea type="text" placeholder="商标设计" id="xuqiudetails"></textarea>
+                        </div>
+
+                        <div id="dropz" class="dropzone col-lg-2" style="width: 810px;margin-left: 5px;background:#ccc;"></div>
+                        <button id="savethispage" class="savethispage" type="button">
+                            保存此页
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade hideover" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         style="overflow:auto;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content  m2-modal-content">
+                <div class="modal-body">
+                    <div class="m2-title">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <b>选择交易模式，价格和周期</b>
+                    </div>
+                    <div class="modeselect-tb">
+                        <input class="bid" id="bid" name="Standardreward" type="radio" value="0"/>
+                        <!--投标模式-->
+                        <div>
+                            <b>投标模式</b>
+                            <p>先选中标小红鱼，TA再工作。找到中标小红鱼后托管赏金<br>适合开发周期较长的开发，装修类任务</p>
+                            <div class="biddingModuleContainer" id="tbmessage">
+                                <div class="m1">
+                                    <div class="c1">任务金额:</div>
+                                    <div class="c2">
+                                        <div class="r1"><input name="r1" id="r1" type="radio" value="0"><label for="r1">我有具体预算金额，请直接填写赏金数目<font
+                                                style="color: red;font-size: 12px;margin-left: 10px">(预算金额大于2000元可开启测试题功能)</font></label>
+                                        </div>
+                                        <div class="r2 flag"> <div style="float: left;margin-left: 5px;margin-top: 5px"><font>￥</font></div><input
+                                                onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''"
+                                                type="number" id="inputyusuan"
+                                                oninput="if(value.length>9)value=value.slice(0,9)"></div>
+                                        <div class="r1"><input name="r1" id="r2" type="radio" value="1"><label for="r2">我没有具体预算金额，选择价格区间</label>
+                                        </div>
+                                        <div class="r3 flag">
+                                            <input type="hidden">
+                                            <div>
+                                                <h4 id="xialakuangval" class="text_show" min_money="100"
+                                                    max_money="1999">¥100-1999元</h4>
+                                                <span>▼</span>
+                                            </div>
+                                            <ul id="ulyl">
+                                                <li class="toggle ulyl2" min_money="100" max_money="1999">¥100-1999元
+                                                </li>
+                                                <li class="ulyl1" min_money="2000" max_money="4999">¥2000-4999元</li>
+                                                <li class="ulyl1" min_money="5000" max_money="9999">¥5000-9999元</li>
+                                                <li class="ulyl1" min_money="10000" max_money="29999">¥10000-29999元</li>
+                                                <li class="ulyl1" min_money="30000" max_money="49999">¥3万-4.9999万元</li>
+                                                <li class="ulyl1" min_money="50000" max_money="99999">¥5万-9.9999万元</li>
+                                                <li class="ulyl1" min_money="100000" max_money="199999">¥10万-19.9999万元
+                                                </li>
+                                                <li class="ulyl1" min_money="200000" max_money="299999">¥20万-29.9999万元
+                                                </li>
+                                                <li class="ulyl1" min_money="300000" max_money="499999">¥30万-49.9999万元
+                                                </li>
+                                                <li class="ulyl1" min_money="500000" max_money="999999">¥50万-99.9999万元
+                                                </li>
+                                                <li class="ulyl1" min_money="1000000" max_money="100000000">¥100万元以上
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="m2">
+                                    <div class="r1">
+                                        <span>截至投稿日期:</span>
+                                        <input type="text" id="test1" placeholder="yyyy-MM-dd">
+                                    </div>
+                                    <div id="ceshiti" style="display: none;">
+                                        <font style="color:rgba(255,82,81,1);font-size: 18px;font-weight:600;">·</font>
+                                        <font style="font-size:14px;font-weight:600;color:rgba(51,51,51,1);">测试题功能：</font>
+                                        <input type="radio" name="open" style="margin-left: 50px;" id="open3" value="0"
+                                               checked>开启
+                                        <input type="radio" name="open" style="margin-left: 50px;" value="1" id="open4">关闭
+                                        <font style="width:207px;height:14px;font-size:10px;font-weight:600;color:rgba(153,153,153,1);line-height:14px;">（任务金额高于2000元才可使用测试金功能）</font>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px; display:none;height: 500px;" class="test_title1" id="hehe1">
+                                <div class="m1">
+                                    <h3>测试题</h3>
+                                    <span>想知道设计师的实力吗？先来测试一下再选择TA吧！</span>
+
+                                </div>
+                                <div class="m2">
+                                    <p>测试题标题<span>*</span></p>
+                                    <div><input type="text" placeholder="LOGO设计" id="ceshititle"></div>
+                                </div>
+                                <div class="m3">
+                                    <p>测试题描述<span>*</span></p>
+                                    <div>
+                                        <textarea placeholder="商标设计" id="ceshidetails"></textarea>
+                                    </div>
+                                </div>
+                                <!--上传文件-->
+                                <div id="dropz1" class="dropzone col-lg-2" style="width: 635px;background:#ccc;"></div>
+                                <div style="margin-left: 5px;margin-top: 50px;">
+                                    <b style="font-size:14px;font-weight:500;">任务金额内<font
+                                            style="color:#FF5251">测试金</font></b>
+                                    <input id="cehsijinpanduan" type="number"
+                                           style="width:168px;height:32px;background:rgba(255,255,255,1);border:1px solid rgba(231,231,231,1);"
+                                           onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''"
+                                           oninput="if(value.length>9)value=value.slice(0,9)">
+                                    <font style="width:193px;height:14px;font-size:10px;font-weight:600;color:rgba(153,153,153,1);line-height:14px;">（测试金要缴纳总额的10%以上才能生效）</font><font
+                                        id="cuowuhao1" style="display:none;color: red;font-size: 25px"><b>×</b></font>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--悬赏模式-->
+                    <div class="modeselect-tb">
+                        <input id="reward" name="Standardreward" type="radio" value="1"/>
+                        <div>
+                            <b>悬赏模式</b>
+                            <p>小红鱼设计师们先工作，在选中标作品，托管赏金后吸引更多小红鱼设计师。<br>适合简单设计，写作策划类任务，也适合取名祝福，发帖推广，下载注册等基建任务。</p>
+                            <div class="biddingModuleContainer-tb" id="xsmessage">
+                                <div class="m11">
+                                    <div class="c11" style="float: left">任务金额:</div>
+                                    <div style="float: left;margin-left: 20px"><font>￥</font>
+                                        <input type="number" id="renwujine"
+                                               onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''"
+                                               style="width:168px;height:32px;background:rgba(255,255,255,1);border:1px solid rgba(231,231,231,1);"
+                                               oninput="if(value.length>9)value=value.slice(0,9)">
+                                    </div>
+                                </div>
+
+                                <div style="margin-top: 20px">
+                                    <b style="float: left">悬赏方式:</b>
+                                    <input style="margin-left: 49px;float: left" type="radio" name="rewardselect"
+                                           id="personalreward" value="0">
+                                    <font style="margin-left: 15px;font-weight:600;line-height:20px;">单人悬赏，只设置一个中标者</font><br>
+                                    <input style="margin-left: 109px;" type="radio" name="rewardselect" id="manyreward"
+                                           value="1">
+                                    <font style="margin-left: 10px;font-weight:600;line-height:20px;">多人悬赏，设置多人中标分享赏金</font><br>
+
+                                    <div style="margin-left: 139px;margin-top: 5px;font-size: 12px;display: none"
+                                         id="manyselect">
+                                        <select style="width: 42px;height: 24px" name="duorennum" id="huhu">
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select><b>共享该赏金¥<font style="color: #FF5251" id="jinecontext">500</font>，请设定赏金分配金额</b>
+                                        <div>
+                                            <p style="display: block" id="firstp"><font
+                                                    style="margin-top: 10px">一等奖<font
+                                                    id="firstprize">1</font>人，赏金</font><input id="firstmoney"
+                                                                                              value="0.0" type="text"
+                                                                                              style="margin-top: 10px;margin-left: 5px;width:83px;height:32px;background:rgba(255,255,255,1);border:1px solid rgba(231,231,231,1);"
+                                                                                              disabled>
+                                                <select style="width: 60px;height: 24px;" name="zhanbiselect">
+                                                    <option value="0.5">50%</option>
+                                                    <option value="0.6">60%</option>
+                                                    <option value="0.7">70%</option>
+                                                    <option value="0.8">80%</option>
+                                                    <option value="0.9">90%</option>
+                                                </select><font>请选择占比</font></p>
+
+                                            <p style="display: block" id="secondp"><font
+                                                    style="margin-top: 10px">二等奖<font
+                                                    id="secondprize">1</font>人，赏金</font><input id="secondmoney"
+                                                                                               value="0.0" type="text"
+                                                                                               style="margin-top: 10px;margin-left: 5px;width:83px;height:32px;background:rgba(255,255,255,1);border:1px solid rgba(231,231,231,1);"
+                                                                                               disabled></p>
+                                            <p style="display: none" id="thirdp"><font style="margin-top: 10px">三等奖<font
+                                                    id="thirdprize">1</font>人，赏金</font><input id="thirdmoney"
+                                                                                              value="0.0" type="text"
+                                                                                              style="margin-top: 10px;margin-left: 5px;width:83px;height:32px;background:rgba(255,255,255,1);border:1px solid rgba(231,231,231,1);"
+                                                                                              disabled></p>
+                                        </div>
+                                    </div>
+                                    <input style="margin-left: 109px;" type="radio" name="rewardselect" value="2"
+                                           id="countreward">
+                                    <font style="margin-left: 10px;font-weight:600;line-height:20px;">计件悬赏，合格一稿，支付一稿（稿件数量≥2件）</font>
+
+                                    <div style="font-weight: 600;margin-left: 137px;margin-top: 11px;display: none"
+                                         id="countselect">
+                                        <font>我想要</font>
+                                        <input id="gaojiannum" type="number"
+                                               onKeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"
+                                               style="width:168px;height:32px;background:rgba(255,255,255,1);border:1px solid rgba(231,231,231,1);">
+                                        <font>个稿件</font>
+                                    </div>
+
+                                    <script>
+                                        $("#gaojiannum").on('input', function () {
+                                            var renwujinval = $("#renwujine").val();
+                                            if (renwujinval == NaN || renwujinval == "" || renwujinval == null) {
+                                                $("#gaojiannum").val("");
+                                            }
+                                            var val = parseInt($("#renwujine").val());
+                                            if (parseInt($("#gaojiannum").val()) > val) {
+                                                $("#gaojiannum").val("");
+                                            }
+                                        })
+                                    </script>
+
+                                </div>
+                                <div class="m22">
+                                    <div class="r11">
+                                        <span>截至投稿日期:</span>
+                                        <input type="text" id="test11" placeholder="yyyy-MM-dd">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <b style="font-size: 20px">道具服务使用</b>
+
+                    <div align="left">
+                        <table>
+                            <tr class="mode-top">
+                                <td><input type="checkbox" id="checkbox1" onclick="checkboxOnclick1(this)"/></td>
+                                <td width=" 680px">
+                                    <div class="mode-top-content">
+                                        <img src="/img/zhiding2.png">
+                                        <div>
+                                            <p><b>置顶</b><font>80%用户已选</font></p>
+                                            <p><font>任务三天内置顶，提高曝光率和参与度</font></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="Discount-tb">
+                                    <p id="daojup11">¥<font th:text="${propTaskTopUser.moneyUsed}">80.00</font> &nbsp;
+                                        &nbsp;<del th:text="${propTaskTopUser.originalCost}">¥100.00</del>
+                                    </p>
+                                    <p id="daojup12" style="font-weight:600;color:rgba(255,82,81,1);display:none ">剩余次数（<font
+                                            id="topnumfont" th:text="${taskTopResidualTimes}">0</font>）次
+                                    </p>
+                                    <div style="display: none" id="daojup13">
+                                        <p style="color: #FF5251;font-weight:600">剩余次数（ <font
+                                                style="font-size: 20px;color: #2F3CF4">∞</font> ）次
+                                            <br><font style="font-size: 12px;font-weight: 500;color: #333333">你当前处于会员特权状态</font>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="mode-top" style="border-bottom: none">
+                                <td><input type="checkbox" value="" id="checkbox2" onclick="checkboxOnclick2(this)"/>
+                                </td>
+                                <td width="680px">
+                                    <div class="mode-top-content">
+                                        <img src="/img/jiaji2.png">
+                                        <div>
+                                            <p><b>加急</b><font>60%用户已选</font></p>
+                                            <p><font>适合紧急任务，提供多方式推广，提高参与度</font></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="Discount-tb">
+                                    <p id="daojup21">¥<font th:text="${propTaskUrgentUser.moneyUsed}">80.00</font>
+                                        &nbsp; &nbsp;<del th:text="${propTaskUrgentUser.originalCost}">¥100.00</del>
+                                    </p>
+                                    <p id="daojup22" style="font-weight:600;color:rgba(255,82,81,1);display:none ">剩余次数（<font
+                                            id="urgentnumfont" th:text="${taskUrgentResidualTimes}">0</font>）次
+                                    </p>
+                                    <div style="display: none" id="daojup23">
+                                        <p style="color: #FF5251;font-weight:600">剩余次数（ <font
+                                                style="font-size: 20px;color: #2F3CF4">∞</font> ）次
+                                            <br><font style="font-size: 12px;font-weight: 500;color: #333333">你当前处于会员特权状态</font>
+                                        </p>
+                                    </div>
+
+
+                                </td>
+                            </tr>
+                            <tr class="mode-top">
+                                <td><input type="checkbox" value="" id="checkbox3" onclick="checkboxOnclick3(this)"/>
+                                </td>
+                                <td width="680px">
+                                    <div class="mode-top-content">
+                                        <img src="/img/allhide.png" style="width:45px;height: 45px">
+                                        <div>
+                                            <p><b>全部隐藏</b><font>60%用户已选</font></p>
+                                            <p><font>发布任务使用,可隐藏收到的所有稿件，项目更保密</font></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="Discount-tb">
+                                    <p id="daojup31">¥<font th:text="${propAllHideUser.moneyUsed}">80.00</font> &nbsp;
+                                        &nbsp;<del th:text="${propAllHideUser.originalCost}">¥100.00</del>
+                                    </p>
+                                    <div style="display: none" id="daojup33">
+                                        <p style="color: #FF5251;font-weight:600">剩余次数（ <font
+                                                style="font-size: 20px;color: #2F3CF4">∞</font> ）次
+                                            <br><font style="font-size: 12px;font-weight: 500;color: #333333">你当前处于会员特权状态</font>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="settlementlist-tb" align="left">
+                        <b>结算清单</b>
+                        <div>
+                            <p id="tuoguan" style="display: none">托管赏金： ¥<font id="tuoguanmoney"></font></p>
+                            <p id="topservice" style="display: none">置顶服务： ¥<font id="topmoney"
+                                                                                  th:text="${propTaskTopUser.moneyUsed}"></font>
+                            </p>
+                            <p id="urgentservice" style="display: none">加急服务： ¥<font id="urgentmoney"
+                                                                                     th:text="${propTaskUrgentUser.moneyUsed}"></font>
+                            </p>
+                            <p id="hideservice" style="display: none">全部隐藏服务： ¥<font id="hidemoney"
+                                                                                     th:text="${propAllHideUser.moneyUsed}"></font>
+                            </p>
+                            <p>应付总额： ¥<font id="totalmoney1"></font></p>
+                        </div>
+                        <label><input type="checkbox" id="tongyi" value="1"/>
+                            同意<font>《小红鱼任务发布协议》</font>
+                        </label>
+                    </div>
+                    <div class="Rs-btn-tb" align="left">
+                        <button type="button" id="faburenwu" style="background:#ccc;" disabled="true">
+                            发布任务
+                        </button>
+                        <button type="button" id="savebutton" style="background:#ccc;" disabled="true">
+                            保存
+                        </button>
+                        <button type="button" id="returnpre" style="margin-left: 50px;">返回上一步</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal_Demandtype" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" hidden>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"
+             style="margin-left: 15px;margin-top: 350px;width: 810px;height: 390px;border-radius: 0">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel2" style="font-size: 16px;font-weight: 600">选择需求类型</h4>
+
+            </div>
+            <div class="modal-body" style="padding: 20px">
+
+            </div>
+            <div class="modal-footer" style="padding: 0">
+                <div class="three_nav">
+                    <ul class="u1">
+                    </ul>
+                    <ul class="u2" style="list-style-type: none;float: left">
+                    </ul>
+                    <ul class="u3" id="hehe" style="list-style-type: none;float: left">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--隐藏该assignmentId 用来区分那个任务-->
+<input type="hidden" th:value="${assignmentId}" id="assignmentId">
+<!--隐藏该vip类型 用来区分道具的使用情况-->
+<input type="hidden" th:value="${isvip}" id="isvip">
+<script src="/js/taskDetails.js"></script>
+
+</body>
+</html>

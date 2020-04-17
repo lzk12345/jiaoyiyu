@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link href="/css/ruleoverView.css" rel="stylesheet" type="text/css">
+    <script src="/js/rule.js" type="text/javascript"></script>
+    <script src="/js/headpic.js"></script>
+
+
+
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header"></div>
+<div style="background-color: #F4F4F4 ;width: 100% "  >
+    <div style=" background-image: url(../img/redbanner110.png);height: 110px; ">
+
+        <br>
+        <div class="" style="margin-left: 1100px;"  >
+            <div class="row" style="float: left">
+                <div style="padding-top: 30px" >
+                    <input type="text" style="width: 150px;height: 27px;border:none;float: left;padding-left: 10px" placeholder="输入手机号"  >
+                    <div style="float: left">
+                        <input  type="text" style="width: 120px;height: 27px;border:none;float: left;margin-left: 15px;padding-left: 10px;"  placeholder="验证码" >
+                        <button button style="position: absolute; color: red;outline: none;border:none;background:white;height: 27px;width: 40px;float: left">获取</button></div>
+                    <button type="button" style="background-color: #FF5251;width: 57px;height: 27px;border:solid 1px #ffffff;;margin-left: 55px"  >
+                        <font color="white">
+                            登陆
+                        </font>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="all">
+
+        <p class="p1"><a href="#">规则中心</a> > <a href="#">规则总览</a></p>
+        <div class="panel1"  >
+
+            <div class="panel-body1" id=""   >
+                <a class="a1"href="#" style="color:#ff5251;" >规则总览</a>
+                <a class="a1"href="ruleUpdateNotice.html" >规则更新公告</a>
+                <a class="a1"href="ViolationPublicity.html" >违规公示</a>
+
+            </div>
+
+        </div>
+
+        <div class="panel2"  >
+
+            <div class="panel-body" >
+
+                <input  type="text" class="sousuokuang"  placeholder="请输入搜索内容" >
+                <button  class="ssbotton"><img src="../img/fdj.png" width="20px"></button>
+
+                <table>
+                    <tr>
+                        <td class="t1">【BMY-GZ-20190505版】比目鱼平台知识工作者管理规则</td>
+                        <td class="t2">发布时间:2019-12-10</td>
+                    </tr>
+                    <tr>
+                        <td class="t1">【BMY-GZ-20190505版】比目鱼平台知识工作者管理规则</td>
+                        <td class="t2">发布时间:2019-12-10</td>
+                    </tr>
+                    <tr>
+                        <td class="t1">【BMY-GZ-20190505版】比目鱼平台知识工作者管理规则</td>
+                        <td class="t2">发布时间:2019-12-10</td>
+                    </tr>
+                    <tr>
+                        <td class="t1">【BMY-GZ-20190505版】比目鱼平台知识工作者管理规则</td>
+                        <td class="t2">发布时间:2019-12-10</td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+        <div style="margin: 35px 0" id="paging"  frm="xyt_pushForm" pageIndex="1" totalPageCount="10" totalCount="100">
+            <script>
+                $.ajax({
+                    url : "../rollpage.html",
+                    cache : true,
+                    async : false,
+                    dataType:"html",
+                    success : function(html) {
+                        $("#paging").html('');
+                        $("#paging").append(html);
+                    }
+                });
+            </script>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".headerpage").load("../header/header.html");
+    });
+</script>
+</body>
+</html>

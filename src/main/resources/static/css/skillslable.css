@@ -1,0 +1,370 @@
+body {
+    font-family: PingFangSC-Medium;
+}
+
+.liao {
+    margin-left: 75px;
+    display: flex;
+}
+
+.liao * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    list-style: none;
+    font-style: normal;
+}
+
+.liao .label_addButton {
+    width: 100px;
+    height: 31px;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.liao > .label_addButton > span:nth-of-type(1) {
+    display: inline-block;
+    width: 62px;
+    height: 31px;
+    text-align: center;
+    line-height: 31px;
+    background: rgba(253, 84, 81, 1);
+    color: white;
+}
+
+.liao > .label_addButton > span:nth-of-type(2) {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background: rgba(255, 153, 151, 1);
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.liao .label_addButton > .label_list {
+    display: none;
+}
+
+.liao .label_addButton:hover > .label_list {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 31px;
+    z-index: 99;
+}
+
+.liao .label_addButton .label_list .u3 {
+    width: 102px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+.liao .label_addButton .label_list .u3 li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 8px 0 4px 11px;
+    background: white;
+    color: black;
+}
+
+.liao .label_addButton .label_list .u3 li:hover {
+    background: rgba(244, 244, 244, 1);
+}
+
+.liao .label_addButton .label_list .u3 li input {
+    width: 15px;
+    height: 15px;
+    background: rgba(244, 244, 244, 1);
+    border: 1px solid rgba(188, 188, 188, 1);
+    margin-right: 8px;
+}
+
+.liao .label_addButton .label_list .u3 li span {
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+}
+
+.liao .label_addButton .label_list .u3_s2 {
+    width: 240px;
+}
+
+.liao .label_addButton .label_list .u3_s2 li {
+    color: #999;
+}
+
+.liao .label_addButton .label_list .u3_s2 li:hover {
+    color: black;
+}
+
+.u3_s2_checked_color{
+    color: black;
+}
+
+.liao .label_addButton > .label_list .u1, .u2 {
+    height: 393px;
+    background: white;
+    z-index: 9;
+    border-right: 1px solid #ccc;
+}
+
+.liao .label_addButton > .label_list > .u1 {
+    width: 135px;
+}
+
+.liao .label_addButton > .label_list > .u1 li {
+    height: 28px;
+    padding: 4px 19px 4px 17px;
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+    line-height: 20px;
+    background-color: white;
+    /*background-image: url("../img/guanbi-2.png");*/
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    background-size: 8px 11px;
+}
+
+.liao .label_addButton > .label_list > .u2 {
+    width: 228px;
+}
+
+.liao .label_addButton > .label_list > .u2 li {
+    height: 28px;
+    padding: 4px 19px 4px 11px;
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+    line-height: 20px;
+    margin-bottom: 4px;
+    background-color: white;
+    /*background-image: url("../img/路径 copy@2x (1).png");*/
+    background-repeat: no-repeat;
+    background-position: 90% center;
+    background-size: 8px 11px;
+}
+
+.liao .label_addButton .label_list ul .toggle {
+    background-color: rgba(244, 244, 244, 1);
+    color: rgba(51, 51, 51, 1);
+}
+.liao .label_tap span{
+    box-sizing: border-box;
+    display: inline-block;
+    height:31px;
+    border:1px solid rgba(255,153,151,1);
+    line-height:30px ;
+    padding-left: 10px;
+    padding-right: 44px;
+    font-size:14px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,82,81,1);
+    position: relative;
+    margin-right: 5px;
+}
+.liao .label_tap span e{
+    display: inline-block;
+    width:50px;
+    background:rgba(253,84,81,1);
+    font-size:14px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-right: 0;
+    position: relative;
+    right: 10px;
+}
+
+
+.liao .label_tap span i{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 12px;
+    top: 7px;
+    background:rgba(255,82,81,1) url("/img/guanbi-2.png") no-repeat center center;
+    background-size:9px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.center-one {
+    width: 6px;
+    height: 20px;
+    float: left;
+    margin-left: 22px;
+    margin-top: 29px;
+    background-color: red;
+}
+
+.center-two {
+    width: 120px;
+    height: 28px;
+    float: left;
+    margin-left: 14px;
+    margin-top: 25px;
+    line-height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+}
+
+.center-three {
+    width: 878px;
+    height: 80px;
+    margin-top: 34px;
+    margin-left: 64px;
+    background: rgba(255, 82, 81, 1);
+    opacity: 0.1974;
+}
+
+.center-four {
+    width: 708px;
+    height: 22px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+    margin-left: 34px;
+    position: relative;
+    left: 98px;
+    top: -53px;
+}
+
+.center-five {
+    width: 400px;
+    height: 37px;
+    line-height: 37px;
+    margin-left: 75px;
+    margin-top: 116px;
+}
+
+.center-five span {
+    font-weight: 500;
+}
+
+.center-six {
+    width: 270px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    margin-left: 75px;
+    margin-top: 12px;
+}
+.center-six .ones {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 82, 81, 1);
+    margin-left: 9px;
+    margin-right: 8px;
+}
+
+.center-interone {
+    width: 31px;
+    height: 31px;
+    float: right;
+    line-height: 31px;
+    background: rgba(255, 153, 151, 1);
+    text-align: center;
+}
+
+.left-one {
+    width: 540px;
+    height: 37px;
+    line-height: 37px;
+    margin-left: 75px;
+    margin-top: 90px;
+}
+
+.left-one span {
+    font-weight: 500;
+}
+
+.left-two {
+    width: 270px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    margin-left: 75px;
+    margin-top: 12px;
+}
+
+.left-two .ones {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 82, 81, 1);
+    margin-left: 9px;
+    margin-right: 8px;
+}
+
+.right-one {
+    width: 363px;
+    height: 37px;
+    line-height: 37px;
+    margin-left: 75px;
+    margin-top: 90px;
+}
+
+.right-one span {
+    font-weight: 500;
+}
+
+.right-two {
+    width: 270px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    margin-left: 75px;
+    margin-top: 12px;
+}
+
+.right-two .ones {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 82, 81, 1);
+    margin-left: 9px;
+    margin-right: 8px;
+}
+
+.right-two span {
+    font-weight: 500;
+}
+
+.end-one {
+    width: 274px;
+    height: 55px;
+    margin-left: 364px;
+    margin-top: 205px;
+    text-align: center;
+    line-height: 55px;
+    background: rgba(255, 82, 81, 1);
+    cursor: pointer;
+    margin-bottom: 180px;
+}
+
+.end-one span {
+    font-size: 24px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+}

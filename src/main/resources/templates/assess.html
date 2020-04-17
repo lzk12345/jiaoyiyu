@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/assess.css" />
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/headpic.js"></script>
+
+</head>
+<body>
+
+<div class="headerpage" th:replace="header :: header"></div>
+    <div class="shadow" style="width:1201px;height:2427px;background-color:#f4f4f4;font-family:PingFangSC-Semibold;margin:47px auto">
+
+        <div class="left-one">
+            <div class="inter-one">
+                <span>比目鱼认证设计大师</span>
+                <span>您当前尚未认证大咖身份</span>
+            </div>
+            <div class="inter-two">
+                <span>“在设计的浩瀚大海，你会是耀眼的小鱼吗？”</span>
+            </div>
+            <div class="inter-three">
+                <span class="inner-one">比目鱼认证标识</span>
+                <img class="inner-two" src="/img/fenzu4.png" alt="" />
+                <span class="inner-three">真实身份，易于辨识</span><br />
+                <span class="inner-three">更加权威，提高可信度</span>
+            </div>
+            <div class="inter-four">
+                <span class="inner-one">发包方青睐</span><br />
+                <img class="inner-two" src="/img/握手.png" alt="" /><br />
+                <span class="inner-three">能力曝光，易于接单</span><br />
+                <span class="inner-three">雇主选择，受到青睐</span>
+            </div>
+            <div class="inter-five">
+                <span class="inner-one">粉丝服务站</span><br />
+                <img class="inner-two" src="/img/粉丝.png" alt="" /><br />
+                <span class="inner-three">更丰富的粉丝互动形式</span><br />
+                <span class="inner-three">促进个人媒体成长</span>
+            </div>
+            <div class="inter-six">
+                <span class="inner-one">网站推荐</span><br />
+                <img class="inner-two" src="/img/排名.png" /><br />
+                <span class="inner-three">能力的认可，身份象征</span><br />
+                <span class="inner-three">展示与推荐，提高名气</span>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="left-two">
+            <img src="/img/99copy.png" alt="" />
+            <div class="shen" onclick="dredge()">
+                <span>申请考核认证</span>
+            </div>
+            <div class="inter-seven">
+                <span>关于比目鱼设计大咖认证细节</span>
+            </div>
+            <div class="inter-eight">
+                <span>考核公告</span>
+            </div>
+            <div class="inter-nine" style="width:80px;margin-left:15px;">
+                <span>天下大同001</span><br />
+                <span>天下大同002</span><br />
+                <span>小飞鱼001</span><br />
+                <span>小飞鱼002</span>
+            </div>
+            <div class="inter-nine" style="width:120px;margin-left:1px;">
+                <span>通过了考核，给予认证</span><br />
+                <span>通过了考核，给予认证</span><br />
+                <span>未通过考核</span><br />
+                <span>通过了考核，给予认证</span>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="bottom-one">
+            <div class="end-one">
+                <span>筛选:</span>
+                <select name="">
+                    <option value="">全部推荐</option>
+                    <option value="">推荐1</option>
+                    <option value="">推荐2</option>
+                </select>
+                <select name="" >
+                    <option value="">不限城市</option>
+                    <option value="">城市1</option>
+                    <option value="">城市2</option>
+                </select>
+                <span style="margin-left:85%;">排序:</span>
+                <select name="" id="">
+                    <option value="">人气最高</option>
+                    <option value="">人气1</option>
+                    <option value="">人气2</option>
+                </select>
+            </div>
+
+            <div class="bottom-two">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="bottom-three" style="border-bottom:0;">
+                <div class="end-two">
+                    <img src="/img/y.jpg" alt="" />
+                </div>
+                <div class="end-three">
+                    <div class="end-three-one">
+                        <span>猫与书</span>
+                        <img src="/img/独有身份标识.png" alt="" />
+                    </div>
+                    <div class="end-three-two" style="">
+                        <span>北京</span>
+                        <span>|</span>
+                        <span>平面设计师</span>
+                    </div>
+                    <div class="end-three-three">
+                        <span>创作</span>
+                        <span>313</span>
+                        <span>|</span>
+                        <span>粉丝</span>
+                        <span>246145</span>
+                    </div>
+                    <div class="end-three-four">
+                        <span>我的微信号：an15704561171</span>
+                    </div>
+                    <div class="end-three-five">
+                        <span>关注</span>
+                    </div>
+                </div>
+                <div class="end-four">
+                    <img src="/img/1.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/2.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/3.png" alt="" />
+                    <img style="margin-left:10px;" src="/img/4.png" alt="" />
+                </div>
+                <div class="end-five">
+                    <div></div>
+                    <div style="margin-top:3px;"></div>
+                    <div style="margin-top:3px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+            <div style="margin: 35px 0" id="paging"  frm="xyt_pushForm" pageIndex="1" totalPageCount="10" totalCount="100">
+                <script>
+                    $.ajax({
+                        url : "/rollpage.html",
+                        cache : true,
+                        async : false,
+                        dataType:"html",
+                        success : function(html) {
+                            $("#paging").html('');
+                            $("#paging").append(html);
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <!--2570-->
+    <div class="shadow" style="width:1072px;height:744px;background-color:white;position: relative;top:-2400px;left:405px;font-family:PingFangSC-Medium;display:none;">
+        <div class="renzheng">
+            <span>亲爱的比目鱼，请完成认证要求后提交考核认证</span>
+            <img class="img" src="/img/路径.png" alt="" onclick="cha()" />
+        </div>
+        
+        <div class="center" style="margin-left:104px;">
+            <div class="center-one" style="margin-left:17px;">
+                <img src="/img/logo店铺.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:35px;">店铺开通</span>
+            <div class="center-two">
+                <div class="yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">您的店铺未开通<span class="put" style="display:none;">1</span></span>
+            </div>
+            <div class="center-three">
+                <span>去完成</span>
+            </div>
+        </div>
+
+        <div class="center" style="margin-left:109px;">
+            <div class="center-one" style="margin-left:17px;">
+                <img src="/img/logo订单完成.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:28px;">完成过订单</span>
+            <div class="center-two">
+                <div class="yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">您已完成<span class="put">22</span>笔订单</span>
+            </div>
+            <div class="center-three">
+                <span>去完成</span>
+            </div>
+        </div>
+
+        <div class="center" style="margin-left:118px;">
+            <div class="center-one" style="margin-left:12px;">
+                <img src="/img/logo关注.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:23px;">关注数≥30</span>
+            <div class="center-two">
+                <div class="yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">您已关注<span class="put">40</span>人</span>
+            </div>
+            <div class="center-three">
+                <span>去完成</span>
+            </div>
+        </div>
+
+        <div class="center" style="margin-left:118px;">
+            <div class="center-one" style="margin-left:12px;">
+                <img src="/img/logo粉丝.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:20px;">粉丝数≥100</span>
+            <div class="center-two">
+                <div class="yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">粉丝数<span class="put">250</span>人</span>
+            </div>
+            <div class="center-three">
+                <span>去完成</span>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+
+        <div class="right-one" style="width:137px;margin-left:215px;width: 150px">
+            <div class="center-one" style="margin-left:13px;">
+                <img src="/img/logo点赞.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:0px;">获得点赞数≥500</span>
+            <div class="center-two">
+                <div class="yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">已获得点赞数<span class="put">700</span></span>
+            </div>
+            <div class="center-three">
+                <span>去完成</span>
+            </div>
+        </div>
+
+        <div class="right-one" style="width:137px;margin-left:118px;">
+            <div class="center-one" style="margin-left:6px;">
+                <img src="/img/logo发布作品.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:3px;">作品发布数≥10</span>
+            <div class="center-two">
+                <div class="yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">已发布作品<span class="put">52</span></span>
+            </div>
+            <div class="center-three">
+                <span>去完成</span>
+            </div>
+        </div>
+
+        <div class="right-one" style="width:190px;margin-left:70px;">
+            <div class="center-one" style="margin-left:48px;">
+                <img src="/img/logo审核.png" alt="" />
+            </div>
+            <span class="ok" style="margin-left:67px;">简历过审</span>
+            <div class="right-two">
+                <div class="right-three yes" style="background-color: #666666;">
+                    <span style="color:white;">!</span>
+                </div>
+                <span class="jing">您还未上传简历或未审核通过<span class="put" style="display:none;">1</span></span>
+            </div>
+            <div class="center-three" style="margin-left:61px;">
+                <span>去完成</span>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="last-one">
+            <div class="last-two">
+                <span>提交考核认证</span>
+            </div>
+            <span class="last-three">
+                <input class="select" type="checkbox" onclick="cli()" />
+                <span style="color:rgba(153,153,153,1);">我已阅读</span>
+                <span class="select" style="color:rgba(255,82,81,1);">《小红鱼设计大咖认证细则》</span>
+            </span>
+        </div>
+    </div>
+<script>
+    $(function () {
+        $(".headerpage").load("/header/header.html");
+    })
+</script>
+    <script type="text/javascript">
+    var body=document.getElementsByTagName("body");
+    var shadow=document.getElementsByClassName("shadow");
+    var lasttwo=document.getElementsByClassName("last-two")[0];
+    var num=0;
+    function cha(){
+        shadow[1].style.display="none";
+        body[0].style.backgroundColor="#f4f4f4";
+        shadow[0].style.backgroundColor="#f4f4f4";
+        shadow[0].style.opacity="";
+    }
+    var centerone=document.getElementsByClassName("center-one");
+    var yes=document.getElementsByClassName("yes");
+    var jing=document.getElementsByClassName("jing");
+    var centerthree=document.getElementsByClassName("center-three");
+    var put=document.getElementsByClassName("put");
+    function dredge(){
+        shadow[1].style.display="block";
+        body[0].style.backgroundColor="#919191";
+        shadow[0].style.backgroundColor="#919191";
+        shadow[0].style.opacity="0.4";
+        if(put[0].innerText==1){
+            centerone[0].children[0].src="/img/logo店铺1.png";
+            yes[0].style.backgroundColor="#4bc500";
+            yes[0].children[0].innerText="√";
+            centerthree[0].style.display="none";
+            jing[0].innerText=="您的店铺已开通";
+        }else{
+            centerone[0].children[0].src="/img/logo店铺.png";
+            yes[0].style.backgroundColor="#666666";
+            yes[0].children[0].innerText="!";
+            centerthree[0].style.display="";
+            jing[0].innerText=="您的店铺未开通";
+        }
+        if(put[1].innerText>=10){
+            centerone[1].children[0].src="/img/logo订单完成1.png";
+            yes[1].style.backgroundColor="#4bc500";
+            yes[1].children[0].innerText="√";
+            centerthree[1].style.display="none";
+        }else{
+            centerone[1].children[0].src="/img/logo订单完成.png";
+            yes[1].style.backgroundColor="#666666";
+            yes[1].children[0].innerText="!";
+            centerthree[1].style.display="";
+        }
+        if(put[2].innerText>=30){
+            centerone[2].children[0].src="/img/logo关注1.png";
+            yes[2].style.backgroundColor="#4bc500";
+            yes[2].children[0].innerText="√";
+            centerthree[2].style.display="none";
+        }else{
+            centerone[2].children[0].src="/img/logo关注.png";
+            yes[2].style.backgroundColor="#666666";
+            yes[2].children[0].innerText="!";
+            centerthree[2].style.display="";
+        }
+        if(put[3].innerText>=100){
+            centerone[3].children[0].src="/img/logo粉丝1.png";
+            yes[3].style.backgroundColor="#4bc500";
+            yes[3].children[0].innerText="√";
+            centerthree[3].style.display="none";
+        }else{
+            centerone[3].children[0].src="/img/logo粉丝.png";
+            yes[3].style.backgroundColor="#666666";
+            yes[3].children[0].innerText="!";
+            centerthree[3].style.display="";
+        }
+        if(put[4].innerText>=500){
+            centerone[4].children[0].src="/img/logo点赞1.png";
+            yes[4].style.backgroundColor="#4bc500";
+            yes[4].children[0].innerText="√";
+            centerthree[4].style.display="none";
+        }else{
+            centerone[4].children[0].src="/img/logo点赞.png";
+            yes[4].style.backgroundColor="#666666";
+            yes[4].children[0].innerText="!";
+            centerthree[4].style.display="";
+        }
+        if(put[5].innerText>=10){
+            centerone[5].children[0].src="/img/logo发布作品1.png";
+            yes[5].style.backgroundColor="#4bc500";
+            yes[5].children[0].innerText="√";
+            centerthree[5].style.display="none";
+        }else{
+            centerone[5].children[0].src="/img/logo发布作品.png";
+            yes[5].style.backgroundColor="#666666";
+            yes[5].children[0].innerText="!";
+            centerthree[5].style.display="";
+        }
+        if(put[6].innerText==1){
+            centerone[6].children[0].src="/img/logo审核1.png";
+            yes[6].style.backgroundColor="#4bc500";
+            yes[6].children[0].innerText="√";
+            centerthree[6].style.display="none";
+            jing[6].innerText=="您的简历已过审";
+        }else{
+            centerone[6].children[0].src="/img/logo审核.png";
+            yes[6].style.backgroundColor="#666666";
+            yes[6].children[0].innerText="!";
+            centerthree[6].style.display="";
+            jing[6].innerText=="您还未上传简历或未审核通过";
+        }
+        for(var i=0;i<yes.length;i++){
+            if(yes[i].children[0].innerText=="√"){
+                num++;
+            }
+        }
+    }
+    var select=document.getElementsByClassName("select")[0];
+    function cli(){
+        if(num%7==0){
+            if(select.checked==true){
+                lasttwo.style.backgroundColor="#ff5251";
+            }else{
+                lasttwo.style.backgroundColor="";
+            }
+        }else{
+            select.checked=false;
+        }
+    }
+
+    </script>
+
+</body>
+</html>

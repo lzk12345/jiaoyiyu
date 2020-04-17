@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>比目鱼</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/groupUp.css">
+    <script src="/js/headpic.js"></script>
+    <script src="/js/growUp.js"></script>
+    <script src="../../../../../jq22jqueryupload4999201810242316/jqueryupload/upload.js"></script>
+
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+
+<div class="growup">
+    <div>
+
+        <p>个人空间</p>
+        <!--个人信息面板和封面-->
+        <div>
+            <!--左-->
+            <div class="pmsgpanel">
+                <div>
+                    <img th:src="${user.headPic}" src="/img/ythmh.png">
+                    <div class="psmname">
+                        <p th:text="${user.nickName}">小路ge</p>
+                        <p>
+                            <span th:text="${user.firstAddr}">北京</span>
+                            <img th:if="${user.vipType eq 0}" src="/img/shenfen.png">
+                        </p>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="expintegral">
+                            <span>
+                                积分：<font th:text="${user.points}">1597</font>
+                            </span>
+                        <span>
+                                等级：<font th:text="${user.userLevel}">23</font>
+                            </span>
+                        <span>
+                                信誉值：<font th:text="${user.reputationValue}">1597</font>
+                            </span>
+                    </div>
+                </div>
+                <div class="skillabel">
+                            <span th:each="tag:${tagList}">
+                                <span th:text="${tag.name}">UI设计</span>
+                            </span>
+
+                </div>
+                <div class="followpletter" align="center">
+
+                    <button>
+                        关注
+                    </button>
+                    <button>
+                        私信
+                    </button>
+
+                    <button>
+                        雇佣TA
+                    </button>
+                    <p>上次登录时间：<font th:text="${timeHour}">12</font>小时前</p></div>
+
+            </div>
+            <!--右-->
+            <div class="rightcover">
+
+                <img src="/img/blog.png">
+
+
+            </div>
+
+            <div style="clear: both"></div>
+        </div>
+        <!--需求表-->
+        <div class="needtable">
+            <font style="font-size: 26px;font-weight:500;">他的需求</font>
+            <div class="transactionmsg">
+                <font>交易次数:<span>15</span></font>
+                <font>交易额:<span>¥23948,4000</span></font>
+                <font>成交额:<span>¥1435,4000</span></font>
+            </div>
+            <table class="tasktable">
+                <tr>
+                    <td>
+                        <font>¥5348,4000</font>
+                        <br>
+                        <font>小胡工作室</font>
+                    </td>
+                    <td>
+                        <img src="/img/jiaji.png">
+                    </td>
+                    <td>
+                        <font>13人已浏览/<span>1</span>人已参与</font>
+                    </td>
+                    <td>
+                        <b>比稿</b>
+                        <p>12天8小时后截止</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font>¥5348,4000</font>
+                        <br>
+                        <font>小胡工作室</font>
+                    </td>
+                    <td>
+                        <img src="/img/jiaji.png">
+                    </td>
+                    <td>
+                        <font>13人已浏览/<span>1</span>人已参与</font>
+                    </td>
+                    <td>
+                        <b>比稿</b>
+                        <p>12天8小时后截止</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font>¥5348,4000</font>
+                        <br>
+                        <font>小胡工作室</font>
+                    </td>
+                    <td>
+                        <img src="/img/jiaji.png">
+                    </td>
+                    <td>
+                        <font>13人已浏览/<span>1</span>人已参与</font>
+                    </td>
+                    <td>
+                        <b>比稿</b>
+                        <p>12天8小时后截止</p>
+                    </td>
+                </tr>
+
+            </table>
+            <div align="center">
+                <span style="font-size: 22px">查看更多 ⏷</span>
+            </div>
+
+        </div>
+        <!--导航条-->
+        <div style=" ;width: 1200px;margin-top: 30px;background:#FFFFFF;padding-top: 20px">
+            <div style="height: 60px;">
+                <nav class="navbar">
+                    <div class="collapse navbar-collapse" id="" style="font-size: 22px;line-height: 40px"
+                         align="center">
+                        <ul class="nav navbar-nav">
+                            <li style="width: 160px"> 首页</li>
+                            <li style="width: 160px" id="jypjside">交易评价</li>
+                            <li style="width: 160px">资料</li>
+                            <li style="width: 160px">成长历程</li>
+                            <li style="width: 160px">店铺服务</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <!--首页-->
+        <div style="width: 1200px;display: none">
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div class="growupindexcard">
+
+                <img src="/img/img1.png" alt="">
+
+                <div class="growupindexfont">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="/img/评论.png">
+                            <span>12345</span>
+                        </div>
+                        <div>
+                            <img src="/img/赞.png">
+                            <span>1234</span>
+                        </div>
+                        <div>
+                            <img src="/img/icon_预览.png">
+                            <span>3123</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="color: #FF5251">¥1880.00</span>
+                        <span style="float: right">1天前</span>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            <!--分页-->
+            <div align="center" style="margin-top: 50px">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--交易评价-->
+        <div class="jypj" style="display: none">
+            <div class="growupjypj">
+                <img src="/img/pingjialeixing.png">
+                <div style="clear: both"></div>
+                <table>
+                    <tr>
+                        <td><img src="/img/68.png"></td>
+                        <td>比目鱼吃小鱼</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                        </td>
+                        <td>
+                            <div>
+                                好评
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2019-04-19 22:18</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="growupjypj">
+                <img src="/img/pingjialeixing.png">
+                <div style="clear: both"></div>
+                <table>
+                    <tr>
+                        <td><img src="/img/68.png"></td>
+                        <td>比目鱼吃小鱼</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                            教程一如既往的给力,别的不说,好评必须先给上,大力推荐,一如既往的好,非常nice
+                        </td>
+                        <td>
+                            <div>
+                                好评
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2019-04-19 22:18</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <!--资料-->
+        <div class="psndata" style="display: none">
+            <p>基本资料
+                <button>修改</button>
+            </p>
+
+            <table>
+                <tr>
+                    <td>用户名:</td>
+                    <td>小路哥</td>
+                </tr>
+                <tr>
+                    <td>性别:</td>
+                    <td>男</td>
+                </tr>
+                <tr>
+                    <td>职业:</td>
+                    <td>UI设计师</td>
+                </tr>
+                <tr>
+                    <td>签名:</td>
+                    <td>设计永不停息,做好设计就来比目鱼</td>
+                </tr>
+                <tr>
+                    <td>注册时间:</td>
+                    <td>2018-21-8</td>
+                </tr>
+                <tr>
+                    <td>个人简介:</td>
+                    <td>
+                        小红鱼是一家由国内著名众包平台,其课程涉及了多个领域，如游戏原画、概念设计、插画、影视气氛等。
+                        并建立了完善的培训计划和教学体制，让热爱美术的学习者能更加稳定的掌握电脑绘画知识。小红鱼是一家由国内著名众包平台,其课程涉及了多个领域，如游戏原画、概念设计、插画、影视气氛等。
+                        并建立了完善的培训计划和教学体制，让热爱美术的学习者能更加稳定的掌握电脑绘画知识。
+
+                    </td>
+                </tr>
+            </table>
+            <p>联系方式
+                <button>修改</button>
+            </p>
+            <table>
+                <tr>
+                    <td>微信:</td>
+                    <td>15910480032</td>
+                </tr>
+                <tr>
+                    <td>QQ:</td>
+                    <td>2508659576</td>
+                </tr>
+                <tr>
+                    <td>手机号:</td>
+                    <td>15946144860</td>
+                </tr>
+            </table>
+
+
+        </div>
+
+        <!--成长历程-->
+        <div class="growupmsg">
+            <table style="width: 1090px;">
+                <tr>
+                    <td>
+                        <img src="/img/fishhead%20(2).png" style="width: 26px">
+                    </td>
+                    <td width="120px">小路哥</td>
+                    <td>发布了作品</td>
+                    <td width="600px">
+                        比目鱼:请收下我的膝盖请收下我的膝盖请
+                    </td>
+                    <td>2019-03-24</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="/img/fishhead%20(2).png" style="width: 26px">
+                    </td>
+                    <td width="120px">小路哥</td>
+                    <td>发布了作品</td>
+                    <td width="600px">
+                        比目鱼:请收下我的膝盖请收下我的膝盖请
+                    </td>
+                    <td>2019-03-24</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <!--店铺服务-->
+        <div class="shopservice">
+            <div class="shopcard"  >
+
+                <img src="/img/img1.png" alt="">
+                <div class="shopcardfont">
+                    <span >¥2000/起</span>
+                    <span style="float: right">成交量（10）</span>
+                    <p>品牌策划 品牌定位 品牌起名 品 牌推广</p>
+                </div>
+            </div>
+            <div class="shopcard"  >
+
+                <img src="/img/img1.png" alt="">
+                <div class="shopcardfont">
+                    <span >¥2000/起</span>
+                    <span style="float: right">成交量（10）</span>
+                    <p>品牌策划 品牌定位 品牌起名 品 牌推广</p>
+                </div>
+            </div>
+            <div class="shopcard"  >
+
+                <img src="/img/img1.png" alt="">
+                <div class="shopcardfont">
+                    <span >¥2000/起</span>
+                    <span style="float: right">成交量（10）</span>
+                    <p>品牌策划 品牌定位 品牌起名 品 牌推广</p>
+                </div>
+            </div>
+            <div class="shopcard"  >
+
+                <img src="/img/img1.png" alt="">
+                <div class="shopcardfont">
+                    <span >¥2000/起</span>
+                    <span style="float: right">成交量（10）</span>
+                    <p>品牌策划 品牌定位 品牌起名 品 牌推广</p>
+                </div>
+            </div>
+            <div class="shopcard"  >
+
+                <img src="/img/img1.png" alt="">
+                <div class="shopcardfont">
+                    <span >¥2000/起</span>
+                    <span style="float: right">成交量（10）</span>
+                    <p>品牌策划 品牌定位 品牌起名 品 牌推广</p>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div align="center" style="margin-top: 50px">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!--访客和留言-->
+        <div style="width: 1200px;margin-top: 30px">
+            <!--左-->
+            <div style="width: 270px;height: 420px;background:#FFFFFF;padding-top: 20px;float: left;">
+                <p style="font-size: 20px;margin: 0px 0 20px 20px">访客</p>
+
+                <div th:each="tbVisitor:${tbVisitorList}" style="width: 90px;height: 90px;float: left" align="center">
+                    <a  th:href="'http://localhost/growup/visitor?uid=' + ${tbVisitor.visitorUid}"><img style="border-radius: 50%;width: 70px" th:src="${tbVisitor.headPic}" src="/img/68.png"></a>
+                    <p>
+                        <font th:text="${tbVisitor.nickName}">kona</font>
+                        <br/>
+
+                        <font th:text="${tbVisitor.dayage}">2</font>天前
+                    </p>
+                </div>
+                <div style="clear: both"></div>
+                <!--分页-->
+                <div align="center" style="margin-top: 20px">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+
+                                <a href="" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+            <!--右-->
+            <div class="leavemsg">
+                <div class="leavetbhead">
+                    <b>全部留言</b>
+                    <font><span>10</span>条</font>
+
+                </div>
+                <table class="leavetable">
+
+                    <tr>
+                        <td><img src="/img/ythmh.png"></td>
+                        <td>
+                            <b>小小鱼</b>
+                            <font><span>20</span>天前</font>
+                            <br>
+                            <font>我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···</font>
+
+                        </td>
+                        <td><img src="/img/pinglun.png" width="19px"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/ythmh.png"></td>
+                        <td>
+                            <b>小小鱼</b>
+                            <font><span>20</span>天前</font>
+                            <br>
+                            <font>我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···
+                            </font>
+
+                        </td>
+                        <td><img src="/img/pinglun.png" width="19px"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="/img/ythmh.png"></td>
+                        <td>
+                            <b>小小鱼</b>
+                            <font><span>20</span>天前</font>
+                            <br>
+                            <font>我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···
+                                ···我就说是大佬嘛···我就说是大佬嘛···我就说是大佬嘛···</font>
+
+                        </td>
+                        <td><img src="/img/pinglun.png" width="19px"></td>
+                    </tr>
+
+
+                </table>
+                <!--留言分页-->
+                <div align="center" style="margin-top: 30px">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    $("#jypjside").click(function () {
+        $(".jypj").show()
+    })
+
+</script>
+
+
+</body>
+</html>

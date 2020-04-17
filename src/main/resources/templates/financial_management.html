@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的小红鱼>个人中心>财务管理</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="../resources/statics/js/jquery-3.3.1.js"></script>
+    <style>
+        .financial_managementContainer {
+            height: 900px;
+            background: rgba(244, 244, 244, 1);
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        .financial_managementContainer * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .financial_managementContainer > .m1 {
+            width: 1200px;
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(125, 125, 125, 1);
+            line-height: 20px;
+            margin: 20px auto 10px;
+        }
+
+        .financial_managementContainer > .m2 {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 {
+            width: 178px;
+            height: 179px;
+            background: url("../resources/statics/images/help/Combined Shape@2x.png") no-repeat;
+            background-size: 178px 179px;
+            padding: 11px 14px 29px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:first-of-type {
+            display: flex;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #FF8D8C;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:first-of-type img {
+            display: inline-block;
+            width: 54px;
+            height: 54px;
+            margin-right: 6px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:first-of-type h3 {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 600;
+            color: rgba(51, 51, 51, 1);
+            line-height: 20px;
+            margin-bottom: 14px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:first-of-type a {
+            width: 20px;
+            height: 14px;
+            font-size: 10px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(255, 82, 81, 1);
+            line-height: 14px;
+            margin-right: 17px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:first-of-type > div:nth-of-type(2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:last-of-type p:nth-of-type(1) {
+            width: 60px;
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(102, 102, 102, 1);
+            line-height: 20px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r1 > div:last-of-type p:nth-of-type(2) {
+            width: 105px;
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(102, 102, 102, 1);
+            line-height: 20px;
+            margin-top: 18px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r2 {
+            width: 178px;
+            height: 160px;
+            background: rgba(255, 255, 255, 1);
+            margin-top: 10px;
+            padding: 31px 0 30px 30px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r2 > a {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(153, 153, 153, 1);
+            line-height: 20px;
+        }
+
+        .financial_managementContainer > .m2 > .c1 > .r2 > .toggle {
+            color: rgba(255, 82, 81, 1);
+        }
+
+        .financial_managementContainer > .m2 > .c2 {
+            width: 1002px;
+            background: rgba(255, 255, 255, 1);
+        }
+    </style>
+    <link rel="stylesheet" href="../resources/statics/css/help/financial_details.css">
+    <link rel="stylesheet" href="../resources/statics/css/help/user_recharge.css">
+    <link rel="stylesheet" href="../resources/statics/css/rollpage.css">
+    <link rel="stylesheet" href="../resources/statics/css/help/user_withdraw_deposit.css">
+</head>
+<body>
+<div class="financial_managementContainer">
+    <div class="m1">
+        我的小红鱼>个人中心>财务管理><span class="financial_management_router"></span>
+    </div>
+    <div class="m2">
+        <div class="c1">
+            <div class="r1">
+                <div>
+                    <div>
+                        <img src="../resources/statics/images/help/头像@2x.png" alt="">
+                    </div>
+                    <div>
+                        <h3>猫与书</h3>
+                        <p><a href="#">充值</a><a href="#">提现</a></p>
+                    </div>
+                </div>
+                <div>
+                    <p>账户余额:</p>
+                    <p>¥500000000.00</p>
+                </div>
+            </div>
+            <div class="r2">
+                <a href="javascript:void(0);" router="./resources/statics/html/help/user_recharge.html">我要充值</a>
+                <a href="javascript:void(0);" router="./resources/statics/html/help/user_withdraw_deposit.html">我要提现</a>
+                <a href="javascript:void(0);" router="./resources/statics/html/help/financial_details.html"
+                   class="toggle">财务明细</a>
+            </div>
+        </div>
+        <div class="c2">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".financial_managementContainer .financial_management_router").text($(".financial_managementContainer .m2 .c1 .r2 .toggle").text());
+    $(".financial_managementContainer .m2 .c1 .r2>a").on('click', function () {
+        $(this).addClass('toggle').siblings().removeClass('toggle');
+        $(".financial_managementContainer .financial_management_router").text($(this).text());
+        var router = $(this).attr('router');
+        if (router) {
+            getHtmlToEle(router);
+        }
+    });
+    function getHtmlToEle(url) {
+        $.ajax({
+            url: url,
+            cache: true,
+            async: false,
+            dataType: "html",
+            success: function (html) {
+                $(".financial_managementContainer .m2 .c2").html('');
+                $(".financial_managementContainer .m2 .c2").append(html);
+            }
+        });
+    }
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)
+            return decodeURI(r[2]);
+        return null;
+    }
+    pageChange(parseInt(GetQueryString("guide")));
+    function pageChange(num) {
+        if(!num)
+            num=3;
+        $($(".financial_managementContainer .m2 .c1 .r2>a")[num-1]).trigger('click');
+    }
+
+</script>
+</body>
+</html>

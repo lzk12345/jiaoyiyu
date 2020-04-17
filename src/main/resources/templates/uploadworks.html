@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>比目鱼</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/uploadworks.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/headpic.js"></script>
+    <script src="/js/easyUploader.js"></script>
+    <script src="/layui/layui.js"></script>
+
+    <script>
+        $(function () {
+            //jQuery代码;
+            layui.use(['element', 'laydate', 'layer'], function () {
+                var element = layui.element;
+                var laydate = layui.laydate;
+                var layer = layui.layer;
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#test1' //指定元素
+                });
+            });
+        });
+    </script>
+
+</head>
+<body >
+<div class="headerpage" th:replace="header :: header">
+</div>
+
+<div  class="bgc-uw">
+    <!--2.-->
+    <div class="banner-uw">
+        <br>
+        <div >
+            <div class="welcome-uw">
+                <p >尊敬的欧文，欢迎您回来！</p>
+                <p>当前为普通会员,lv12</p>
+            </div>
+            <div class="Headportrait-uw">
+                <img src="/img/stouxiang.png">
+            </div>
+        </div>
+    </div>
+
+    <div class=" btn-upwd"  >
+
+            <div>
+                <a href="#">上传作品</a>
+            </div>
+            <div >
+                <a href="/sellworkservice/index">出售设计服务</a>
+            </div>
+
+
+    </div>
+
+    <div class="right-uw">
+        <div class="panel panel-default right-uw-1" >
+            <p>上传作品</p>
+        </div>
+        <div class="panel panel-default right-uw-2" >
+            <div class="panel-heading">
+                <p>作品信息</p>
+            </div>
+            <div class="panel-body" >
+                <div class="worksname"id="wordCount">
+                    <font>·</font>
+                    <textarea placeholder="作品名称" id="worksTitle"></textarea>
+                    <span class="wordwrap"><var class="word">20</var>/20</span>
+
+                </div>
+                <div class="select-type" id="wordCount1">
+                    <font>·</font>
+                    <select id="workType">
+                        <option value ="0">请选择行业分类</option>
+                        <option th:value ="${catalog1.id}" th:each="catalog1:${catalog1List}" th:text="${catalog1.name}"></option>
+                    </select>
+                    <select id="industry">
+                        <option value ="0">请选择作品类型</option>
+                    </select>
+                    <textarea placeholder="作品说明" id="workDetail"></textarea>
+                    <span class="wordwrap"><var class="word">2000</var>/2000</span>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="panel panel-default right-uw-3" >
+            <div class="panel-heading">
+                <p>上传图片</p>
+                <p>注：每个大小不超过2MB，最多可上传5张</p>
+            </div>
+            <div class="panel-body"  >
+                <div id="uploader"></div>
+            </div>
+        </div>
+        <div class="panel panel-default right-uw-4" >
+            <div class="panel-heading">
+                <p>上传视频</p>
+                <p>最多上传/导入3个视频，单个视频不超过500M，视频作品将会展示在作品队列首位</p>
+            </div>
+            <div class="panel-body"  >
+                <div id="uploaderAv"></div>
+            </div>
+        </div>
+        <div class="panel panel-default right-uw-5" >
+            <div class="panel-heading">
+                <p>上传封面</p>
+
+            </div>
+            <div class="panel-body"  >
+                <div id="uploaderCover"></div>
+            </div>
+        </div>
+        <div class="panel panel-default right-uw-6" >
+            <div class="panel-heading">
+                <p>出售设置</p>
+                <p>作品售卖 价格设置 添加附件 创作时间等 </p>
+            </div>
+            <div class="panel-body"  >
+                <div class="set-sell" >
+                    <font >·</font>
+                    <table>
+                        <tr>
+                            <td>出售</td>
+                            <td>
+                                <input type="radio" name="sell" value="1"> 是
+                                <input type="radio" name="sell" value="0"> 否
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td >
+                              <div class="uploadworkprice">
+                                  作品价格：<input type="number" id="price"> 元（ 作品成交后，平台收取2%的手续费 ）
+                              </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>创作时间</td>
+                            <td><input  type="text" id="test1"  placeholder="请选择时间" ></td>
+                        </tr>
+                        <tr>
+                            <td>上传附件</td>
+                            <td>
+                                <div id="uploaderZip"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="uw-ConsentAgreement">
+            <input type="checkbox" id="xiaohongyu">
+            <font>我已阅读并同意 </font><a>《小红鱼诚信保证金协议》</a>
+
+            <br>
+            <button id="sureToSub">确认发布</button>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<script>
+    $("#workType").change(function(){
+        let idval = $(this).children('option:selected').val();
+        $.post("/index/getCatalog2", {catalog1Id: idval}, function (result) {
+            $.each(result, function (key, val) {
+                var temp = " <option value =\""+val.id+"\">"+val.name+"</option>";
+                $("#industry").append(temp);
+            })
+        });
+    })
+</script>
+<script src="/js/uploadworks.js"></script>
+
+</body>
+</html>

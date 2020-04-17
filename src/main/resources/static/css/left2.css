@@ -1,0 +1,25 @@
+.panel-body-l1 {
+    width: 178px;
+    height: 60px;
+    border-bottom: solid 3px #F4F4F4;
+}
+
+.hover2 > p:hover {
+    background-color: #FFE6E6;
+}
+
+.hover2 > p {
+
+    height: 40px;
+    line-height: 40px;
+}
+
+.hover2 > p > a {
+    margin-left: 45px;
+    font-size: 14px;
+    color: #999999;
+}
+
+.hover2 > font {
+    margin-left: 15px;
+}

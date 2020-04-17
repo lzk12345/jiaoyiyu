@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <style>
+        *{
+
+        }
+        .panel-body-myrefund{
+            width: 1002px;background-color: white;
+
+        }
+        .panel-header-myrefund{
+            width: 970px;height: 46px;border-bottom:solid 1px #E7E7E7
+        }
+        .panel-header-myrefund div:nth-child(1) img    {
+            margin-top: 10px;margin-left: 22px;width: 6px;height: 20px;
+        }
+        .panel-header-myrefund div:nth-child(2)  {
+            margin-top: 5px;float: left
+        }
+        .panel-header-myrefund div:nth-child(2) b  {
+            font-size: 20px;margin-left: 16px;
+        }
+        .panel-body-btn button{
+            width:143px;
+            height:33px;
+            background:rgba(244,244,244,1);
+            font-size:16px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(153,153,153,1);
+            border: none;
+            margin-top: 31px;
+        }
+        .panel-body-btn button:nth-child(1){
+            margin-left: 39px;
+        }
+        .panel-body-btn button:nth-child(2){
+            margin-left: 17px;
+        }
+        /*.panel-body-myrefund div:nth-child(3){*/
+
+        /*}*/
+
+        .table-myrefund{
+
+            padding: 0;
+            text-align: left;
+            width: 962px;
+            border-spacing: 0;
+            font-size:14px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+
+            line-height:17px;
+
+
+        }
+        .table-myrefund tr:nth-child(1){
+            width:962px;
+            height:41px;
+            background:rgba(244,244,244,1);
+            border:1px solid rgba(229,229,229,1);
+            color:rgba(153,153,153,1);
+
+        }
+        .table-myrefund tr{
+           height: 123px;
+            border-bottom: solid 1px #ECECEC;
+
+        }
+        .table-myrefund tr:nth-last-child(1){
+            border-bottom: none;
+        }
+        .ss-myrefund{
+            margin-left: 9px;
+            margin-top: 30px;
+
+        }
+        .ss-myrefund input{
+            width:238px;
+            height: 27px;
+            background:rgba(255,255,255,1);
+            border:1px solid rgba(188,188,188,1);
+            float: left;
+            padding-left: 5px;
+            border-right: none;
+        }
+        .ss-myrefund button{
+            width:83px;
+            height:27px;
+            background:rgba(244,244,244,1);
+            border:1px solid rgba(188,188,188,1);
+            float: left;
+            border-left: none;
+        }
+        .ss-select{
+
+            font-size:12px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(51,51,51,1);
+            line-height:17px;
+            float: left;
+            width: 962px;
+            margin-top: 20px;
+
+
+        }
+        .ss-select select{
+            width:152px;
+            height:28px;
+            background:rgba(255,255,255,1);
+            border:1px solid rgba(188,188,188,1);
+            padding-left: 5px;
+        }
+        .ss-select div{
+           float: left;
+            margin-left: 9px;
+        }
+        .ss-select input{
+            width:152px;
+            height:28px;
+            background:rgba(255,255,255,1);
+            border:1px solid rgba(188,188,188,1);
+            padding-left: 5px;
+            margin-left: 10px;
+        }
+        .ss-select div:nth-child(2){
+            margin-left: 34px;
+        }
+        .ss-select div:nth-child(3){
+            margin-left: 34px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">我的退款</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div style="">
+            <div class="panel panel-default"  style="margin-left: 210px;margin-top: 10px;" >
+                <div class="panel-body panel-body-myrefund"  >
+                    <div class="panel-header-myrefund">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2x.png" >
+                        </div>
+                        <div >
+                            <b >我的退款</b>
+                        </div>
+                    </div>
+                    <div style="height: 110px">
+                        <div class="ss-myrefund">
+                            <input type="text" >
+                            <button>订单搜索</button>
+                        </div>
+
+                        <div class="ss-select">
+                            <div>
+                                订单类型 <select>
+                                <option value ="volvo">Volvo</option>
+                                <option value ="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            </div>
+                            <div>
+                                订单类型 <select>
+                                <option value ="volvo">Volvo</option>
+                                <option value ="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            </div>
+                            <div>
+                                退款申请时间<input><input>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="table-myrefund" >
+                            <tr>
+                                <td>
+                                    <font style="margin-left: 40px;">订单</font>
+                                </td>
+                                <td >类型</td>
+                                <td>退款金额</td>
+                                <td>退款状态</td>
+                                <td>操作</td>
+
+
+                            </tr>
+                            <tr>
+                                <td width="350px" >
+                                    <div style="float: left;margin-left: 20px;">
+                                        <img src="/img/logo.png" ></div>
+                                    <div style="float:left; margin-left: 10px;margin-top:10px;">
+                                        <font style="">某某餐厅LOGO</font>
+                                        <p style="">
+                                            订单号146959527
+                                            <br>申请时间：2019-01-10 09:22:11
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>比稿</td>
+                                <td>¥5250，000<br>(含测试金: ¥1000)</td>
+                                <td>退款成功</td>
+                                <td>删除</td>
+                            </tr>
+                            <tr>
+                                <td width="350px" >
+                                    <div style="float: left;margin-left: 20px;">
+                                        <img src="/img/logo.png" ></div>
+                                    <div style="float:left; margin-left: 10px;margin-top:10px;">
+                                        <font style="">某某餐厅LOGO</font>
+                                        <p style="">
+                                            订单号146959527
+                                            <br>申请时间：2019-01-10 09:22:11
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>比稿</td>
+                                <td>¥5250，000<br>(含测试金: ¥1000)</td>
+                                <td>退款成功</td>
+                                <td>删除</td>
+                            </tr>
+                            <tr>
+                                <td width="350px" >
+                                    <div style="float: left;margin-left: 20px;">
+                                        <img src="/img/logo.png" ></div>
+                                    <div style="float:left; margin-left: 10px;margin-top:10px;">
+                                        <font style="">某某餐厅LOGO</font>
+                                        <p style="">
+                                            订单号146959527
+                                            <br>申请时间：2019-01-10 09:22:11
+                                        </p>
+                                    </div>
+                                </td>
+                                <td>比稿</td>
+                                <td>¥5250，000<br>(含测试金: ¥1000)</td>
+                                <td>退款成功</td>
+                                <td>删除</td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+            <div style="margin: 35px 0" id="paging"  frm="xyt_pushForm" pageIndex="1" totalPageCount="10" totalCount="100">
+                <script>
+                    $.ajax({
+                        url : "../rollpage.html",
+                        cache : true,
+                        async : false,
+                        dataType:"html",
+                        success : function(html) {
+                            $("#paging").html('');
+                            $("#paging").append(html);
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

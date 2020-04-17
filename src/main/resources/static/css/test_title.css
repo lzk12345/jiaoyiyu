@@ -1,0 +1,159 @@
+.test_title1 {
+    margin: 0;
+    padding: 15px 10px 9px;
+    box-sizing: border-box;
+    width: 655px;
+    height: 420px;
+    background: rgba(244, 244, 244, 1);
+}
+
+.test_title1 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.test_title1 > .m1 {
+    display: flex;
+    position: relative;
+}
+
+.test_title1 > .m1 > h3 {
+    width: 65px;
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFangSC-Medium;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+    line-height: 22px;
+}
+
+.test_title11 > .m1 > span {
+    font-size: 10px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    align-self: flex-end;
+}
+.test_title1 > .m1 div{
+    position:absolute;
+    right: 10px;
+}
+.test_title1 > .m1 div>label{
+    display: inline-block;
+    width:19px;
+    height:19px;
+    text-align: center;
+    line-height: 19px;
+    background:rgba(255,82,81,1);
+    color: rgba(255,82,81,1);
+    user-select: none;
+}
+
+
+.test_title1 > .m1 div>input{
+    display: none;
+}
+
+
+.test_title1 > .m2 {
+    margin-top: 30px;
+}
+
+.test_title1 > .m2 > p {
+    width: 85px;
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+}
+
+.test_title1 > .m2 > p > span {
+    color: #FF7E33;
+}
+
+.test_title1 > .m2 > div > input {
+    width: 635px;
+    height: 32px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(231, 231, 231, 1);
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+    padding-left: 15px;
+    margin-top: 10px;
+}
+
+.test_title1 > .m3{
+    margin-top: 20px;
+}
+
+.test_title1 >.m3>p{
+    font-size:14px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(102,102,102,1);
+    margin-bottom: 8px;
+}
+.test_title1 >.m3>p span{
+    color: #FF7E33;
+}
+
+.test_title1 > .m3 > div > textarea {
+    width: 635px;
+    height: 140px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(231, 231, 231, 1);
+    padding: 9px 15px;
+    resize: none;
+    font-size:14px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+
+.test_title1 > .m4 {
+    padding: 10px 20px;
+    width: 635px;
+    height: 60px;
+    background: rgba(244, 244, 244, 1);
+    border: 1px solid rgba(231, 231, 231, 1);
+    display: flex;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.test_title1 > .m4 > div:nth-of-type(1) {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(244, 244, 244, 1);
+    border: 1px solid rgba(188, 188, 188, 1);
+    font-size: 25px;
+    margin-right: 10px;
+    color: rgba(188, 188, 188, 1);
+}
+
+.test_title1 > .m4 > div:nth-of-type(2) > p {
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+    line-height: 20px;
+}
+
+.test_title1 >.m5{
+    height:14px;
+    font-size:10px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(102,102,102,1);
+    line-height:14px;
+    text-align: right;
+    margin-top: 10px;
+}

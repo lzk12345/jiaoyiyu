@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/headpic.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/store.css" />
+
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+    <div class="left-one">
+        <div class="left-two">我的店铺>服务详情</div>
+        <div class="left-three">
+            <div class="left-four">
+                <div class="left-five">
+                    <img id="zhao" src="/img/kuaizhao1.png" height="300" width="300" alt="" />
+                    <div class="left-six">
+                        <img class="imgs" onclick="tupian(0)" style="margin-left:0;" src="/img/kuaizhao1.png" height="52" width="52" alt="" />
+                        <img class="imgs" onclick="tupian(1)" src="/img/kuaizhao2.png" height="52" width="52" alt="" />
+                        <img class="imgs" onclick="tupian(2)" src="/img/kuaizhao3.png" height="52" width="52" alt="" />
+                        <img class="imgs" onclick="tupian(3)" src="/img/kuaizhao4.png" height="52" width="52" alt="" />
+                        <img class="imgs" onclick="tupian(4)" src="/img/kuaizhao5.png" height="52" width="52" alt="" />
+                    </div>
+                </div>
+                <div class="left-seven">
+                    <div class="left-eight"th:text="${sellService.serviceName}">
+                        LOGO设计
+                    </div>
+                    <div class="left-nine">
+                        服务分类：创意设计>VI设计
+                    </div>
+                    <div class="left-ten">
+                        <span style="font-size:14px;font-family:PingFangSC-Regular;font-weight:400;color:rgba(51,51,51,1);margin-left:18px;">价格</span>
+                        <span style="font-size:24px;font-family:PingFangSC-Semibold;font-weight:600;color:rgba(255,82,81,1);margin-left:18px;"th:text="${sellService.price}">￥120000</span>
+                        <span style="font-size:14px;font-family:PingFangSC-Regular;font-weight:400;color:rgba(255,82,81,1);margin-left:7px;">元</span>
+                        <span style="font-size:12px;font-weight:500;color:rgba(51,51,51,1);margin-left:125px;">评分</span>
+                        <div class="fen" style="font-size:12px;font-family:PingFangSC-Semibold;font-weight:600;color:rgba(51,51,51,1);margin-left:2px;">4.5</div>
+                        <img class="xing" style="margin-left:10px;" src="/img/Path.png" height="16" width="17" alt="" />
+                        <img class="xing" src="/img/Path.png" height="16" width="17" alt="" />
+                        <img class="xing" src="/img/Path.png" height="16" width="17" alt="" />
+                        <img class="xing" src="/img/banman.png" height="16" width="17" alt="" />
+                        <img class="xing" src="/img/xiankuang.png" height="16" width="17" alt="" />
+                    </div>
+                    <div class="center-one">
+                        <div class="center-two" style="border-right:1px dashed #e7e7e7;">
+                            <span>近期交易：</span>
+                            <span>0</span>
+                        </div>
+                        <div class="center-two">
+                            <span>累计评价：</span>
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <div class="center-three">
+                        <div class="center-four">
+                            <span>购买服务</span>
+                        </div>
+                        <img src="/img/shoucang.png" height="17" width="19" alt="" />
+                        <span style="margin-left:5px;">添加收藏(<span>1</span>)</span>
+                    </div>
+                    <div class="center-five">
+                        卖家保证金<span style="color: #ff5251;">0</span>元，承诺以下保障，违约先行赔付
+                    </div>
+                    <div class="center-six">
+                        <span>分享：</span>
+                        <img style="margin-left:-5px;" src="/img/QQkongjian.png" height="24" width="24" alt="" />
+                        <img src="/img/weibo.png" height="24" width="24" alt="" />
+                        <img src="/img/weixin1.png" height="24" width="24" alt="" />
+                        <img src="/img/renren.png" height="24" width="24" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="center-seven">
+                <div class="center-eight" onclick="fuwu(0)" style="margin-left:0;margin-top: 0;background-color: white;border-top: 3px solid #ff5251;">
+                    <span>服务详情</span>
+                </div>
+                <div class="center-eight" onclick="fuwu(1)">
+                    <span>服务评价</span>
+                </div>
+
+            </div>
+
+            <div class="display" style="display:block;">
+                <div class="center-nine">
+                    <div class="center-ten">
+                        <span th:text="${sellService.serviceName}">SHOW&TIME</span>
+                    </div>
+                    <div class="right-one">
+                        <span th:text="${sellService.serviceDetails}">新推大众点评、美团网店装修套餐，更具性价比的价格，享受品牌级推广团队服务。让您的店铺点击率上升，从而带来更多客户转化</span>
+
+                    </div>
+                    <img src="/img/11.png" width="100%">
+
+                </div>
+                <div class="right-two">
+                    <div class="right-three">
+                        <span>服务流程</span>
+                    </div>
+                    <div class="right-four">
+                        <img style="margin-left:46px;" src="/img/liaojie.png" height="115" width="114" alt="" />
+                        <img style="margin-left:20px;position: relative;" src="/img/lujingcopy7.png" height="31" width="21" alt="" />
+                        <img style="margin-left:18px;" src="/img/xiadan.png" height="115" width="114" alt="" />
+                        <img style="margin-left:24px;position: relative;" src="/img/lujingcopy7.png" height="31" width="21" alt="" />
+                        <img style="margin-left:13px;" src="/img/tuoguan.png" height="115" width="114" alt="" />
+                        <img style="margin-left:25px;position: relative;;" src="/img/lujingcopy7.png" height="31" width="21" alt="" />
+                        <img style="margin-left:16px;" src="/img/gongwenbao.png" height="115" width="114" alt="" />
+                        <img style="margin-left:24px;position: relative;;" src="/img/lujingcopy7.png" height="31" width="21" alt="" />
+                        <img style="margin-left:16px;" src="/img/yanshou.png" height="115" width="114" alt="" />
+                    </div>
+                    <div class="right-five">
+                        <spam style="margin-left:70px;">了解产品</spam>
+                        <spam style="margin-left:114px;">在线购买</spam>
+                        <spam style="margin-left:112px;">托管金额</spam>
+                        <spam style="margin-left:110px;">服务商工作</spam>
+                        <spam style="margin-left:100px;">验收并收款</spam>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="display">
+                <div class="zhong-one">
+                    <table class="table-one">
+                        <tr>
+                            <td>平均好评率</td>
+                            <td>付款及时性</td>
+                            <td>合作愉快度</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">4.5</td>
+                            <td>
+                                <div class="fen tables">4.5</div>
+                                <img class="xing" style="margin-left:6px;" src="/img/Path.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/Path.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/Path.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/banman.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/xiankuang.png" height="16" width="17" alt="" />
+                            </td>
+                            <td>
+                                <div class="fen tables">4.5</div>
+                                <img class="xing" style="margin-left:6px;" src="/img/Path.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/Path.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/Path.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/banman.png" height="16" width="17" alt="" />
+                                <img class="xing" src="/img/xiankuang.png" height="16" width="17" alt="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="zhong-two">2</span>人评价</td>
+                            <td><span class="zhong-two">2</span>人评价</td>
+                        </tr>
+                    </table>
+                    <div class="zhong-three">
+                        <div class="zhong-four">
+                            全部评论(<span>0</span>)
+                        </div>
+                        <span class="zhong-five" style="margin-left:35px;">好评(<span>0</span>)</span>
+                        <span class="zhong-five">中评(<span>0</span>)</span>
+                        <span class="zhong-five">差评(<span>0</span>)</span>
+                        <span class="zhong-five">有图(<span>0</span>)</span>
+                    </div>
+                    <div class="wu" style="height: 309px;">
+                        <hr class="hr-one" />
+                        <div class="zhong-eight">
+                            <img src="/img/Shape.png" height="119" width="216" alt="" />
+                            <div>暂无评价</div>
+                        </div>
+                    </div>
+                    <div class="wu">
+                        <div class="zhong-six">
+                            <span style="margin-left:112px;">评价</span>
+                            <span style="margin-left:201px;">用户名</span>
+                            <span style="margin-left:149px;">订单详情</span>
+                            <span style="margin-left:153px;">操作</span>
+                        </div>
+                        <div class="zhong-seven">
+<!--                            有无评价的判断条件没写-->
+                            <table class="table-two">
+                                <tr class="tr-one">
+                                    <td>做的很nice啊～～挺有潜力的设…</td>
+                                    <td>猫与书</td>
+                                    <td>吉祥物设计</td>
+                                    <td>删除</td>
+                                </tr>
+                                <tr class="tr-two">
+                                    <td>2012-11-28 18:00:18</td>
+                                    <td colspan="3">¥<span>50，000</span></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="top-four">
+                <span>同类服务推荐</span>
+                <span>更多></span>
+            </div>
+            <div class="fuwu-one">
+                <div class="top-five">
+                    <img src="/img/tupian.png" height="200" width="224" alt="" />
+                    <div class="top-six">
+                        <span>¥2000/起</span>
+                        <span>成交量(10)</span>
+                    </div>
+                    <div class="top-seven">产品宣传画册定制</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="top-eight">
+            <div class="top-nine">
+                <img src="/img/touxiang.png" height="200" width="200" alt="" />
+                <div class="top-ten" onclick="gy(0)" style="margin-top:20px;margin-left:20px;">
+                    <span style="color:#ffffff;">雇佣</span>
+                </div>
+                <div class="top-ten" style="margin-top:20px;margin-left:14px;">
+                    <span style="color:#ffffff;">快速沟通</span>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="top-ten" style="margin-top:10px;margin-left:20px;background-color:#e7e7e7;">
+                    <span style="color:#666666;">收藏</span>
+                </div>
+                <div class="top-ten" style="margin-top:10px;margin-left:14px;background-color:#e7e7e7;">
+                    <span style="color:#666666;">邀请</span>
+                </div>
+            </div>
+            <div class="bottom-one">
+                <div class="bottom-two">
+                    <span>本店其他服务</span>
+                    <span>更多></span>
+                </div>
+                <div class="bottom-three">
+                    <img style="float:left;" src="/img/Bitmap3.png" height="60" width="60" alt="" />
+                    <div class="bottom-four">
+                        <div class="bottom-five">
+                            <span>大众点评 、美团网店装修</span>
+                        </div>
+                        <span style="font-size:14px;font-weight:500;color:rgba(255,82,81,1);">¥5000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-six">
+                <div class="bottom-two">
+                    <span>案例展示</span>
+                    <span style="margin-left:95px;">更多></span>
+                </div>
+                <div class="bottom-seven">
+                    <img src="/img/Bitmap8.png" height="120" width="200" alt="" />
+                    <span>鲨鱼沙拉系统</span>
+                </div>
+            </div>
+            <div class="bottom-eight">
+                <div class="bottom-nine">
+                    <span>LOGO设计活动</span>
+                </div>
+                <div class="bottom-ten">
+                    LOGO设计 2套方案 30天内修改满意<br />
+                    logo设计商标企业公司品牌网站卡通<br />
+                    实体店门头商标设计、品牌设计！<br />
+                    LOGO设计/限量版开业有礼/总监<br />
+                    品牌logo设计，产品logo设计，字体<br />
+                    企业品牌logo、产品logo、网站
+                </div>
+            </div>
+            <div class="one">
+                <div class="two">
+                    <span>浏览与收藏</span>
+                </div>
+                <div class="three">
+                    交易次数：<span>5</span>次<br />
+                    访问次数：<span>9594</span>次<br />
+                    收藏人数：<span>9</span>人
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="guyong gu">
+        <div class="guyong-one">
+            <span>发布需求</span>
+            <img class="guyong-img" onclick="yincang()" src="/img/lujing.png" height="18" width="18" alt="" />
+        </div>
+        <div class="guyong-two">
+            <span>我需要:</span>
+        </div>`
+        <div class="guyong-three">
+            <input type="text" placeholder="商标设计" />
+            <div></div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="guyong-four">
+            <span>手机号码:</span>
+            <input type="text" />
+            <div>修改</div>
+        </div>
+        <div class="guyong-five">
+            <span>信息保护中,仅小红鱼项目方可见</span>
+        </div>
+        <div class="guyong-six" onclick="gy(1)">
+            <span>免费发布需求</span>
+        </div>
+    </div>
+    <div class="guyong1 gu">
+        <div class="guyong1-one">
+            <span style="font-size:26px;color:rgba(51,51,51,1);margin-left:20px;">完善需求</span>
+            <span style="font-size:10px;color:rgba(153,153,153,1);margin-left:9px;">完善需求可以更快匹配到合适的服务商</span>
+            <img class="guyong-img" onclick="yincang()" src="/img/lujing.png" height="17" width="17" alt="" />
+        </div>
+        <div class="guyong1-two">
+            <span style="float:left;">当前完善值<span style="margin-left:6px;">55</span>分，详细的需求描述可增加完善值！</span>
+            <div class="guyong1-three">
+                <span>完美需求，更多曝光</span>
+            </div>
+            <div class="guyong1-four"></div>
+            <div style="clear:both;"></div>
+            <div class="guyong1-five">
+                <div></div>
+            </div>
+            <span style="font-size:12px;font-weight:500;color:rgba(255,82,81,1);margin-left:639px;">80分</span>
+        </div>
+        <div class="guyong1-six">
+            需求标题<span>*</span>
+        </div>
+        <input class="guyong1-seven" type="text" placeholder="LOGO设计" />
+        <div class="guyong1-eight">
+            <span>您需要的需求类型是：</span>
+        </div>
+        <div class="guyong1-nine">
+            <span>需求类型：</span>
+            <span>LOGO</span>
+            <span>修改</span>
+        </div>
+        <div class="guyong1-six" style="margin-top:20px;width:113px;">
+            工期要求/预算<span>*</span>
+        </div>
+        <div class="guyong1-ten">
+            <span>工期要求：</span>
+            <input type="text" />
+            <span style="font-weight:500;color:rgba(51,51,51,1);">前完成</span>
+        </div>
+        <div class="guyong2-one">
+            <span style="font-size:14px;font-family:PingFangSC-Semibold;font-weight:600;color:rgba(153,153,153,1);float:left;">初步预算：</span>
+            <div class="guyong2-two" onclick="qian(0)">
+                <span>0～2000元</span>
+            </div>
+            <div class="guyong2-two" onclick="qian(1)">
+                <span>2000～5000元</span>
+            </div>
+            <div class="guyong2-two" onclick="qian(2)">
+                <span>5000～10000元</span>
+            </div>
+            <div class="guyong2-two" onclick="qian(3)">
+                <span>10000～50000元</span>
+            </div> 
+            <div class="guyong2-two" onclick="qian(4)">
+                <span>50000以上</span>
+            </div>
+            <input type="text" placeholder="自定义" />
+        </div>
+        <div class="guyong1-six" style="margin-top:25px;">
+            需求描述<span>*</span>
+        </div>
+        <div class="guyong2-three" contenteditable="true">
+            <span>商标设计</span>
+        </div>
+        <div class="guyong2-four">
+            <div class="guyong2-five">
+                <span>+</span>
+            </div>
+            <div class="guyong2-six">
+                <span>拖拽可上传附件<br />最多可添加五个附件 每个大小不超过50M</span>
+            </div>
+        </div>
+        <div class="guyong2-seven">
+            <span>结算清单</span>
+        </div>
+        <div class="guyong2-eight">
+            托管赏金：¥<span class="jine">100</span>
+        </div>
+        <div class="guyong2-eight" style="margin-top:10px;">
+            置顶服务：¥<span class="jine">80</span>
+        </div>
+        <div class="guyong2-nine">
+            应付总额：¥<span class="zong"></span>
+        </div>
+        <div class="guyong2-ten">
+            <input type="checkbox" />
+            同意<span style="color:#ff5251;">《小红鱼任务发布协议》</span>
+        </div>
+        <div class="theend-one">
+            <span>发布任务</span>
+        </div>
+        <div class="theend-one" style="width:82px;margin-left:29px;">
+            <span>保存</span>
+        </div>
+        <div class="theend-two" onclick="gy(0)">
+            返回上一步
+        </div>
+    </div>
+    <div class="di"></div>
+    <div id="hui"></div>
+    <script type="text/javascript">
+        //图片
+        var imgs=document.getElementsByClassName("imgs");
+        var zhao=document.getElementById("zhao");
+        function tupian(s) {
+            zhao.src=imgs[s].src;
+        }
+        //雇佣
+        var gu=document.getElementsByClassName("gu");
+        var guyongsix=document.getElementsByClassName("guyong-six");
+        var hui=document.getElementById("hui");
+        var theendtwo=document.getElementsByClassName("theend-two");
+        function gy(s){
+            hui.style.display="block";
+            if(s==0){
+                gu[0].style.display="block";
+                gu[1].style.display="none";
+            }else{
+                gu[1].style.display="block";
+                gu[0].style.display="none";
+            }
+        }
+        //关闭
+        var guyongimg=document.getElementsByClassName("guyong-img");
+        function yincang() {
+            for(var i=0;i<gu.length;i++){
+                gu[i].style.display="none";
+            }
+            hui.style.display="none";
+        }
+        //服务详情评价保障
+        var centereight=document.getElementsByClassName("center-eight");
+        var display=document.getElementsByClassName("display");
+        function fuwu(s){
+            for(var i=0;i<display.length;i++){
+                display[i].style.display="none";
+                centereight[i].style.marginTop="";
+                centereight[i].style.backgroundColor="";
+                centereight[i].style.borderTop="";
+            }
+            //调用服务评价函数
+            if(s==1){
+                pingjia();
+            }
+            display[s].style.display="block";
+            centereight[s].style.marginTop="0";
+            centereight[s].style.backgroundColor="white";
+            centereight[s].style.borderTop="3px solid #ff5251";
+        }
+        //服务评价
+        var wu=document.getElementsByClassName("wu");
+        function pingjia(){
+            for (var i=0;i<wu.length;i++) {
+                wu[i].style.display="none";
+            }
+            //判断有无评价
+            // if(){
+            //     //无评价
+            //     wu[0].style.display="block";
+            // }else{
+            //     wu[1].style.display="block";
+            // }
+        }
+        //初步预算背景颜色
+        var guyong2two=document.getElementsByClassName("guyong2-two");
+        function qian(s) {
+            for(var i=0;i<guyong2two.length;i++){
+                guyong2two[i].style.backgroundColor="";
+                guyong2two[i].children[0].style.color="";
+            }
+            guyong2two[s].style.backgroundColor="#ff5251";
+            guyong2two[s].children[0].style.color="white";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>交易鱼</title>
+    <style>
+    </style>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div th:fragment="PersonalHome">
+    <div class="personal_homeContainer"  >
+        <div class="m1">
+            <div class="r1">
+                <div class="title">
+                    <img src="/img/Rectangle@2x.png" alt="">
+                    <span>我的个人信息</span>
+                </div>
+                <div class="content">
+                    <div class="c1">
+                        <div><a id="uploadImg" href="javascript:void(0);"><img
+                                src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1583819355&di=f7ca3d68469ecf72522108381397d206&src=http://a0.att.hudong.com/78/52/01200000123847134434529793168.jpg" alt="" width="107px"
+                                height="107px" th:src="${uploadImg}"></a></div>
+                        <div>
+                            <div class="d1" th:text="${nicknames}">小路ge</div>
+                            <div class="d2" th:text="${personlevel}">LV.12</div>
+                            <div class="d3">
+                                <a href="/autonym" class="d3a" th:class="${isRealNameCheck == 1 ? 'bgred' : 'd3a'}">实名认证<span th:if="${isRealNameCheck eq 1}">√</span></a>
+                                <a href="/phonecertification" class="d3a" th:class="${isMobileCheck == 1  ? 'bgred' : 'd3a'}">手机认证<span th:if="${isMobileCheck eq 1}">√</span></a>
+                                <a href="/emailAuthentication" class="d3a" th:class="${isEmailCheck == 1  ? 'bgred' : 'd3a'}">邮箱认证<span th:if="${isEmailCheck eq 1}">√</span></a>
+                                <a href="#" class="d3a" th:class="${isPayCheck == 1  ? 'bgred' : 'd3a'}" >支付认证<span th:if="${isPayCheck eq 1}">√</span></a>
+                            </div>
+                            <div class="d4">
+                                <img src="/img/发送短信.png" alt="">
+                                <a href="/message/index">未读站内信(<span>0</span>)</a>
+                                <a href="/message/index">进入消息管理中心</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c2">
+                        <div class="d1"><span>当前积分:</span><span th:text="${points}">0</span></div>
+                        <div class="d2"><span>当前余额:</span><span th:text="${'￥' + accountBalance}">0</span></div>
+                        <div class="d3"><span>已经赚取:</span><span th:text="${'￥' + earnTheAmount}">0</span></div>
+                        <div class="d4"><a href="javascript:void(0);">查看财务明细</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="r2">
+                <div class="title">
+                    <img src="/img/Rectangle@2x.png" alt="">
+                    <span>道具总览</span>
+                </div>
+                <div class="content">
+                    <div>
+                        <div>
+                            <div><img src="/img/加急%20copy@2x.png" alt=""></div>
+                            <div>
+                                <h3>任务加急</h3>
+                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
+                            </div>
+                        </div>
+                        <div>
+                            剩余次数(<span th:text="${taskUrgentResidualTimes}">3</span>)次
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div><img src="/img/置顶@2x.png" alt=""></div>
+                            <div>
+                                <h3>稿件置顶</h3>
+                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
+                            </div>
+                        </div>
+                        <div>
+                            剩余次数(<span th:text="${taskTopResidualTimes}">3</span>)次
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div><img src="/img/不可见@2x.png" alt=""></div>
+                            <div>
+                                <h3>稿件隐藏</h3>
+                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
+                            </div>
+                        </div>
+                        <div>
+                            剩余次数(<span th:text="${taskHideResidualTimes}">3</span>)次
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div><img src="/img/加价@2x.png" alt=""></div>
+                            <div>
+                                <h3>增加投标次数</h3>
+                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
+                            </div>
+                        </div>
+                        <div>
+                            剩余次数(<span>3</span>)次
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="r3">
+                <div class="title">
+                    <img src="/img/Rectangle@2x.png" alt="">
+                    <span>每期优秀小红鱼</span>
+                </div>
+                <div class="content">
+                    <div><a href="javascript:void(0);">查看更多</a></div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/屏幕快照%202019-04-19%20下午2.29.47@2x.png"
+                                     width="130px" height="130px" alt="">
+                            </div>
+                            <div>
+                                <p>猫与书</p>
+                                <p>千愁万绪时,他们在小红鱼上找到.</p>
+                                <p>我希望我们能像蚂蚁一样团队合作.无论何时何地都不抛开同伴,从不放弃,努力成长 我希望我们能像蚂蚁一样团队合作.无论何时何地都不抛开同伴,从不放弃,努力成长<a href="javascript:void(0);">详情</a></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="/img/屏幕快照%202019-04-19%20下午2.29.47@2x.png"
+                                     width="130px" height="130px" alt="">
+                            </div>
+                            <div>
+                                <p>猫与书</p>
+                                <p>千愁万绪时,他们在小红鱼上找到.</p>
+                                <p>我希望我们能像蚂蚁一样团队合作.无论何时何地都不抛开同伴,从不放弃,努力成长 <a href="javascript:void(0);">详情</a></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="/img/屏幕快照%202019-04-19%20下午2.29.47@2x.png"
+                                     width="130px" height="130px" alt="">
+                            </div>
+                            <div>
+                                <p>猫与书</p>
+                                <p>千愁万绪时,他们在小红鱼上找到.</p>
+                                <p>我希望我们能像蚂蚁一样团队合作.无论何时何地都不抛开同伴,从不放弃,努力成长 <a href="javascript:void(0);">详情</a></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="/img/屏幕快照%202019-04-19%20下午2.29.47@2x.png"
+                                     width="130px" height="130px" alt="">
+                            </div>
+                            <div>
+                                <p>猫与书</p>
+                                <p>千愁万绪时,他们在小红鱼上找到.</p>
+                                <p>我希望我们能像蚂蚁一样团队合作.无论何时何地都不抛开同伴,从不放弃,努力成长 <a href="javascript:void(0);">详情</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m2">
+            <div>
+                <div class="title">
+                    <img src="/img/Rectangle@2x.png" alt="">
+                    <span>发包放帮助</span>
+                </div>
+                <div class="content">
+                    <p>什么是全额悬赏?</p>
+                    <p>什么是直接雇佣?</p>
+                    <p>发包放如何发布任务?</p>
+                    <p>对小红鱼的作品不满意怎么办?</p>
+                    <p>任务已经进行到执行阶段,中标人没有准时完成要如何处理?</p>
+                    <p>发包放发起小红鱼的雇佣,小红鱼没有相应怎么办?</p>
+                    <p>如何对小红鱼进行直接雇佣?</p>
+                    <p>延期条件有什么,如何进行延期?</p>
+                </div>
+            </div>
+            <div>
+                <div class="title">
+                    <img src="/img/Rectangle@2x.png" alt="">
+                    <span>小红鱼设计师帮助</span>
+                </div>
+                <div class="content">
+                    <p>用户投标金额与限制的具体规则是什么?</p>
+                    <p>我参加了一个任务,为什么收到的赏金与任务金额不一致?</p>
+                    <p>为什么不能参加注册之前的悬赏任务?</p>
+                    <p>小红鱼如何提交作品?</p>
+                    <p>给小红鱼提意见和建议能够增加等级吗?</p>
+                    <p>多人中标,能力值是怎么计算的?</p>
+                    <p>计件任务中标金额算不算能力值?</p>
+                    <p>作弊与违约情况是如何处理的?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div >
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/*任务详情页 悬赏模式 发包方 选中稿件 多人悬赏弹框*/
+.multiplayer{
+    width:458px;
+    height:237px;
+    background:rgba(255,255,255,1);
+    border-radius:13px;
+    text-align: center;
+    position: fixed;
+    top: 320px;
+    left: 671px;
+}
+.multiplayer img{
+    margin: 15px 0 0 400px;
+}
+.multiplayer p{
+    margin: 28px 0 10px 0;
+    font-size:26px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.multiplayer span{
+    font-size:13px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.multiplayer button{
+    width: 123px;
+    height: 49px;
+    margin-top: 31px;
+    font-size:16px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+}
+/*任务详情页 悬赏模式 发包方 选中稿件 多人悬赏弹框*/
+.offerplayer{
+    width:458px;
+    height:237px;
+    background:rgba(255,255,255,1);
+    border-radius:13px;
+    text-align: center;
+    position: fixed;
+    top: 320px;
+    left: 671px;
+}
+.offerplayer img{
+    margin: 15px 0 0 400px;
+}
+.offerplayer p{
+    margin: 28px 0 10px 0;
+    font-size:26px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.offerplayer span{
+    font-size:13px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.offerplayer button{
+    width: 123px;
+    height: 49px;
+    margin-top: 31px;
+    font-size:16px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+}
+/*任务详情页 悬赏模式 发包方 延长投稿*/
+.contribute{
+    width:458px;
+    height:237px;
+    background:rgba(255,255,255,1);
+    border-radius:13px;
+    text-align: center;
+    position: fixed;
+    top: 320px;
+    left: 671px;
+}
+.contribute img{
+    margin: 15px 0 0 400px;
+}
+.contribute p{
+    margin: 28px 0 5px 0;
+    font-size:26px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.contribute span{
+    font-size:13px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.contribute span input{
+    width: 80px;
+    height: 32px;
+    text-align: center;
+    outline: none;
+}
+.contribute span input::placeholder{
+    color: #ff5251;
+}
+.contribute button{
+    width: 123px;
+    height: 49px;
+    margin-top: 23px;
+    font-size:16px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+}
+/*任务详情页 悬赏模式 发包方 选中稿件 计件悬赏弹框*/
+.by-piece{
+    width:458px;
+    height:237px;
+    background:rgba(255,255,255,1);
+    border-radius:13px;
+    text-align: center;
+    position: fixed;
+    top: 320px;
+    left: 671px;
+}
+.by-piece img{
+    margin: 15px 0 0 400px;
+}
+.by-piece p{
+    margin: 28px 0 10px 0;
+    font-size:26px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.by-piece span{
+    font-size:13px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.by-piece button{
+    width: 123px;
+    height: 49px;
+    margin-top: 31px;
+    font-size:16px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+}

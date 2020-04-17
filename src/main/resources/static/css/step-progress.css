@@ -1,0 +1,83 @@
+.step-progressContainer {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-progressContainer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.step-progressContainer > .s1 {
+    display: inline-block;
+    height: 2px;
+    background:rgba(188,188,188,1);
+}
+
+
+
+.step-progressContainer > .s1:nth-of-type(1) {
+    width: 64px;
+}
+
+.step-progressContainer > .s1:nth-of-type(2), .step-progressContainer > .s1:nth-of-type(3) {
+    width: 164px;
+}
+
+.step-progressContainer > .s1:nth-of-type(4), .step-progressContainer > .s1:nth-of-type(5), .step-progressContainer > .s1:nth-of-type(6) {
+    width: 100px;
+}
+
+.step-progressContainer > .s1:last-of-type {
+    width: 84px;
+}
+
+.step-progressContainer > .s2 {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background:url("../img/step.png") no-repeat center center;
+    background-color:rgba(188,188,188,1);
+    background-size: 8px 11px;
+    position: relative;
+}
+
+.step-progressContainer > .s2 > div {
+    width: 75px;
+    position: absolute;
+    right: -25px;
+    top: 34px;
+}
+
+.step-progressContainer > .s2 > div > p {
+    text-align: center;
+    color: #999999;
+}
+
+.step-progressContainer > .s2 > div > p:nth-of-type(1) {
+    font-size: 12px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+
+.step-progressContainer > .s2 > div > p:nth-of-type(2) {
+    font-size:13px;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+}
+
+.step-progressContainer > .s2 > div > .toggle {
+    color: rgba(51, 51, 51, 1);
+}
+
+.step-progressContainer>.toggle{
+    background-color: #FF5251;
+}

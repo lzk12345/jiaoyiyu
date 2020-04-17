@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>比目鱼</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/rollpage.css">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <!--<script src="/js/skillslable.js"></script>-->
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/skillslable.css">
+    <script src="/js/headpic.js"></script>
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">技能标签设置</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div style="float: left;background:#FFFFFF;width: 1000px;height: 1000px;margin-top: 10px;margin-left: 20px"  >
+            
+                <div class="center-one">
+                    <img src="./img/Rectangle@2.png" height="20" width="6" alt=""/>
+                </div>
+                <div class="center-two">技能标签设置</div>
+                <div style="clear: both;"></div>
+                <div class="center-three"></div>
+                <div class="center-four">提示：您添加的技能标签影响着搜索排名与任务参与，提交后24小时后才可再次修改，请谨慎操作。
+                </div>
+                <div class="center-five">
+                    <span style="font-size:26px;color:rgba(102,102,102,1);">1.入住行业设置</span>
+                    <span style="font-size:12px;color:rgba(255,82,81,1);margin-left:9px">您只能添加入住行业下的技能标签</span>
+                </div>
+                <div class="center-six">您已经添加了
+                    <span class="ones" id="tag11">0</span>个，还可以再添加
+                    <span class="ones" id="tag12">1</span>个
+                </div>
+                <div class="liao">
+                    <div class="label_addButton" id="tag111">
+                        <span>添加</span>
+                        <span>+</span>
+                        <div class="label_list">
+                            <ul class="u3">
+                                <li th:id="${catalog1.id}" th:each="catalog1:${catalog1List}"><input type="checkbox"><span th:text="${catalog1.name}">设计</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="label_tap" id="tag1">
+                    </div>
+                </div>
+
+                <div class="left-one">
+                    <span style="font-size:26px;color:rgba(102,102,102,1);">2.选择最擅长的业务技能</span>
+                    <span style="font-size:12px;color:rgba(255,82,81,1);margin-left:6px">让雇主在搜索相应人才时，优先看到您能标签</span>
+                </div>
+                <div class="left-two">您已经添加了
+                    <span class="ones" id="tag21">0</span>个，还可以再添加
+                    <span class="ones" id="tag22">1</span>个
+                </div>
+                <div class="liao">
+                    <div class="label_addButton" id="tag222">
+                        <span>添加</span>
+                        <span>+</span>
+                        <div class="label_list">
+                            <ul class="u1 firstcatalog">
+                                <li class="toggle" th:id="${catalog1.id}" th:each="catalog1:${catalog1List}"><span th:text="${catalog1.name}">设计</span></li>
+                            </ul>
+                            <ul class="u3 u3_s2" id="cata2">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="label_tap stap2" id="tag2">
+                    </div>
+                </div>
+
+
+                <div class="right-one">
+                    <span style="font-size:26px;color:rgba(102,102,102,1);">3.选择其他擅长的业务技能</span>
+                </div>
+                <div class="right-two">您已经添加了
+                    <span class="ones" id="cata31">0</span>个，还可以再添加
+                    <span class="ones" id="cata32">9</span>个
+                </div>
+                <div class="liao">
+                    <div class="label_addButton" id="tag3333">
+                        <span>添加</span>
+                        <span>+</span>
+                        <div class="label_list">
+                            <ul class="u1">
+                                <li class="toggle"  th:id="${catalog1.id}"  th:each="catalog1:${catalog1List}"><span th:text="${catalog1.name}">设计</span></li>
+                            </ul>
+                            <ul class="u3 u3_s2" id="cata3">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="label_tap" id="cata33"></div>
+                </div>
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+
+    window.onload=function() {
+        // 去后台请求三种标签。
+        $.post("/skillslable/getFirstAndSecondSkill",{},function (res) {
+            if (res.first != "" && res.first != undefined) {
+                var label='<span>'+res.first+'<i></i></span>';
+                $("#tag1").append(label);
+                $("#tag11").text(1);
+                $("#tag12").text(0);
+                $("#tag111").hide();
+            }
+            if (res.second != "" && res.second != undefined) {
+                var label2='<span><e>自营</e>'+res.second+'<i></i></span>';
+                $("#tag2").append(label2);
+                $("#tag21").text(1);
+                $("#tag22").text(0);
+                $("#tag222").hide();
+            }
+        });
+        
+        $.post("/skillslable/getOtherBusiness",{},function (res) {
+            for(var i = 0, len = res.length; i < len; i++){
+                var label='<span>'+res[i]+'<i></i></span>';
+                $("#cata33").append(label);
+                $("#cata31").text(parseInt($("#cata31").text()) + 1);
+                $("#cata32").text(parseInt($("#cata32").text()) - 1);
+                if ($("#cata31").text() == 9) {
+                    $("#tag3333").hide();
+                }
+            }
+        });
+
+    }
+    $('.u1 li,.u2 li').hover(function () {
+        $(this).addClass('toggle').siblings().removeClass('toggle')
+        let id = this.getAttribute("id");
+        // 增加逻辑
+        $("#cata2").empty();
+        $("#cata3").empty();
+        $.post("/skillslable/getcatalog2",{catalog1Id:id},function (res) {
+            res.forEach(function(item) {
+                // var st = " <li><input type=\"checkbox\"><span>"+item.name+"</span></li>";
+                var st = "<li class=\"haha\"><input type=\"checkbox\"><span id=\""+item.id+"\">"+item.name+"</span></li>";
+                var st1 = "<li class=\"haha1\"><input type=\"checkbox\"><span id=\""+item.id+"\">"+item.name+"</span></li>";
+                $("#cata2").append(st);
+                $("#cata3").append(st1);
+            })
+        });
+    });
+    $(".liao .label_addButton .u3").on('click','.haha1',function (e) {
+        e.defaultPrevented;
+        var node = $(this).find('input')[0];
+        node.checked = !node.checked;
+        var span=$(this).find('span');
+        var text=span.text();
+        $.post("/skillslable/saveotherBusinessToUserAndOther",{text:text},function (res) {
+
+        });
+        var label='<span>'+text+'<i></i></span>';
+        var label2='<span><e>自营</e>'+text+'<i></i></span>';
+        var count_node=$(this).parent().parent().parent().parent().prev().find('.ones');
+        var count=parseInt($($(count_node)[1]).text());
+        var label_tap=$(this).parent().parent().parent().siblings('.label_tap');
+        if(node.checked){
+            $(span).addClass('u3_s2_checked_color');
+            if ($(label_tap).attr('class').indexOf('stap2')!==-1){
+                $(label_tap).append(label2);
+            }else{
+                $(label_tap).append(label);
+            }
+            count-=1;
+            $($(count_node)[1]).text(count);
+        }else{
+            $(span).removeClass('u3_s2_checked_color');
+        }
+        if(count===0){
+            $(this).parent().parent().parent().css({'display':'none'})
+        }
+        $($(count_node)[0]).text($(label_tap).find('>*').length);
+    })
+    $(".liao .label_addButton .u3").on('click','.haha',function (e) {
+        e.defaultPrevented;
+        var node = $(this).find('input')[0];
+        node.checked = !node.checked;
+        var span=$(this).find('span');
+        var text=span.text();
+        $.post("/skillslable/savebestBusinessToUserAndTags",{text:text},function (res) {
+
+        });
+        var label='<span>'+text+'<i></i></span>';
+        var label2='<span><e>自营</e>'+text+'<i></i></span>';
+        var count_node=$(this).parent().parent().parent().parent().prev().find('.ones');
+        var count=parseInt($($(count_node)[1]).text());
+        var label_tap=$(this).parent().parent().parent().siblings('.label_tap');
+        if(node.checked){
+            $(span).addClass('u3_s2_checked_color');
+            if ($(label_tap).attr('class').indexOf('stap2')!==-1){
+                $(label_tap).append(label2);
+            }else{
+                $(label_tap).append(label);
+            }
+            count-=1;
+            $($(count_node)[1]).text(count);
+        }else{
+            $(span).removeClass('u3_s2_checked_color');
+        }
+        if(count===0){
+            $(this).parent().parent().parent().css({'display':'none'})
+        }
+        $($(count_node)[0]).text($(label_tap).find('>*').length);
+    })
+
+    $(".liao .label_addButton .u3 li").on('click',function (e) {
+        let id = this.id;
+        $.post("/skillslable/savecata1ToUserAndTags",{id:id},function (res) {
+            
+        });
+        e.defaultPrevented;
+        var node = $(this).find('input')[0];
+        node.checked = !node.checked;
+        var span=$(this).find('span');
+        var text=span.text();
+        var label='<span>'+text+'<i></i></span>';
+        var label2='<span><e>自营</e>'+text+'<i></i></span>';
+        var count_node=$(this).parent().parent().parent().parent().prev().find('.ones');
+        var count=parseInt($($(count_node)[1]).text());
+        var label_tap=$(this).parent().parent().parent().siblings('.label_tap');
+        if(node.checked){
+            $(span).addClass('u3_s2_checked_color');
+            if ($(label_tap).attr('class').indexOf('stap2')!==-1){
+                $(label_tap).append(label2);
+            }else{
+                $(label_tap).append(label);
+            }
+            count-=1;
+            $($(count_node)[1]).text(count);
+        }else{
+            $(span).removeClass('u3_s2_checked_color');
+        }
+        if(count===0){
+            $(this).parent().parent().parent().css({'display':'none'})
+        }
+        $($(count_node)[0]).text($(label_tap).find('>*').length);
+    })
+
+    $('.liao .label_addButton .u3 li input').on('click',function () {
+        $(this)[0].checked=!$(this)[0].checked;
+    });
+
+
+    $("#tag1").on('click',' span i',function () {
+        var node=$(this).parent().parent();
+        var count_node=$(node).parent().prev().find('.ones');
+        $(this).parent().remove();
+        $(node).prev().css({'display':'flex'}).find(' li input').map(function (e) {
+            $(this)[0].checked=false;
+            $(this).next().removeClass('u3_s2_checked_color');
+        });
+        $($(count_node)[0]).text(parseInt($($(count_node)[0]).text())-1);
+        $($(count_node)[1]).text(parseInt($($(count_node)[1]).text())+1);
+        $.post("/skillslable/delFirstCata", {cataName:$(this).parent().text()}, function (res) {
+        });
+    })
+    $("#tag2").on('click',' span i',function () {
+        var node=$(this).parent().parent();
+        var count_node=$(node).parent().prev().find('.ones');
+        $(this).parent().remove();
+        $(node).prev().css({'display':'flex'}).find(' li input').map(function (e) {
+            $(this)[0].checked=false;
+            $(this).next().removeClass('u3_s2_checked_color');
+        });
+        $($(count_node)[0]).text(parseInt($($(count_node)[0]).text())-1);
+        $($(count_node)[1]).text(parseInt($($(count_node)[1]).text())+1);
+        $.post("/skillslable/delSecondCata", {cataName:$(this).parent().text()}, function (res) {
+        });
+    })
+    $("#cata33").on('click',' span i',function () {
+        var node=$(this).parent().parent();
+        var count_node=$(node).parent().prev().find('.ones');
+        $(this).parent().remove();
+        $(node).prev().css({'display':'flex'}).find(' li input').map(function (e) {
+            $(this)[0].checked=false;
+            $(this).next().removeClass('u3_s2_checked_color');
+        });
+        $($(count_node)[0]).text(parseInt($($(count_node)[0]).text())-1);
+        $($(count_node)[1]).text(parseInt($($(count_node)[1]).text())+1);
+        $.post("/skillslable/delThirdCata", {cataName:$(this).parent().text()}, function (res) {
+        });
+    })
+</script>
+</body>
+</html>
+

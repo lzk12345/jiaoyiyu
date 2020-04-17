@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+
+</head>
+<body>
+<div th:fragment="information">
+    <!--右-->
+    <div class="panel panel-default" style="margin-left: 220px;margin-top: 10px">
+        <div class="panel-body" style="width: 1002px;height: 1100px;background-color: white;">
+            <div style="width: 970px;height: 46px;border-bottom:solid 1px #E7E7E7">
+                <div style="float: left;">
+                    <img src="/img/Rectangle@2.png" width="6px" height="20px"
+                         style="margin-top: 10px;margin-left: 22px">
+                </div>
+                <div style="margin-top: 5px;float: left">
+                    <b style="font-size: 20px;margin-left: 16px;">基本资料</b>
+                </div>
+            </div>
+
+
+            <div class="left-three">
+                <span style="font-size:16px;color:rgba(51,51,51,1);">头像:</span>
+                <div class="up-img-cover" id="up-img-touch">
+                    <img id="touxiangimg" class="am-circle" alt="点击图片上传" th:src="${headPic}"
+                         data-am-popover="{content: '点击上传', trigger: 'hover focus'}">
+                </div>
+            </div>
+
+            <div class="left-four">
+                <span>用户名:</span>
+                <input style="margin-left:20px;height: 45px;padding-left: 10px" type="text" id="nickNameinput"
+                       th:value="${user.nickName}"/>
+            </div>
+
+            <!--修改-->
+            <div class="left-five">
+                <span>性别:</span>
+                <input style="margin-left:35px;" type="radio" name="a" value="1"
+                       th:checked="${user.sex == 1 ? checked : ''}"/>男
+
+                <input style="margin-left:35px;" type="radio" name="a" value="2"
+                       th:checked="${user.sex == 2 ? checked : ''}"/>女
+            </div>
+            <div class="left-four">
+                <span>生日:</span>
+                <input style="margin-left:36px;height: 45px;padding-left: 10px" id="test1" type="text"
+                       th:value="${#strings.substring(user.birthday,0,10)}"/>
+            </div>
+            <div class="left-center">
+                <div id="distpicker3">
+                    <form class="form-inline">
+                        <span>联系地址:</span>
+                        <select id="select1" class="form-control" style="height: 40px"></select>
+                        <select id="select2" class="form-control" style="height: 40px"></select>
+                        <select id="select3" class="form-control" style="height: 40px"></select>
+                    </form>
+                </div>
+
+                <input type="text" style="height: 45px;padding-left: 10px" id="detailAddrs" placeholder="详细地址"
+                       th:value="${user.detailAddr}"/>
+            </div>
+            <div class="left-four">
+                <span>电话:</span>
+                <input id="phoneinput" style="margin-left:36px;height: 45px;padding-left: 10px" type="text" placeholder="请输入您的手机号"
+                       th:value="${user.phone}"/>
+            </div>
+            <div class="left-four">
+                <span>QQ:</span>
+                <input id="qqinput" style="margin-left:42px;height: 45px;padding-left: 10px" type="text" placeholder="请输入您的QQ号"
+                       th:value="${user.qq}"/>
+            </div>
+            <div class="left-four">
+                <span>微信:</span>
+                <input id="weixin" style="margin-left:36px;height: 45px;padding-left: 10px" type="text" placeholder="请输入您的微信号"
+                       th:value="${user.weixin}"/>
+            </div>
+            <div class="left-six">
+                <div>个人简介:</div>
+                <textarea id="selfdetail" style="padding-left: 10px" placeholder="快来介绍一下自己吧～～"
+                          th:text="${user.aboutTheAuthor}"></textarea>
+            </div>
+            <button id="saveBtn"
+                    style="background-color:#ff5251;border: none;width: 159px;height: 45px;margin-left: 422px;color: white;font-size: 20px;margin-top: 25px">
+                保存
+            </button>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助中心>用户举报</title>
+    <style>
+        .hc_user_reportContainer {
+
+        }
+
+        .hc_user_reportContainer * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .hc_user_reportContainer .m1 {
+            width: 1201px;
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(125, 125, 125, 1);
+            line-height: 20px;
+            margin: 20px auto 10px;
+        }
+
+        .hc_user_reportContainer .m2 {
+            width: 1201px;
+            height: 740px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 3px 6px 0px rgba(82, 82, 82, 0.21);
+            margin: 0 auto;
+            padding: 20px 58px 39px 40px;
+        }
+
+        .hc_user_reportContainer .m2 .r1 h3 {
+            height: 28px;
+            font-size: 20px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hc_user_reportContainer .m2 .r1 > div {
+            padding-bottom: 17px;
+            border-bottom: 1px solid #E7E7E7;
+        }
+
+        .hc_user_reportContainer .m2 .r1 > div span:nth-of-type(1) {
+            display: inline-block;
+            width: 81px;
+            height: 27px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 27px;
+        }
+
+        .hc_user_reportContainer .m2 .r1 > div span:nth-of-type(2) {
+            display: inline-block;
+            width: 9px;
+            height: 27px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 82, 81, 1);
+            line-height: 27px;
+            margin: 0 10px 0 5px;
+        }
+
+        .hc_user_reportContainer .m2 .r1 > div input {
+            width: 145px;
+            height: 27px;
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(188, 188, 188, 1);
+            font-size: 14px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(153, 153, 153, 1);
+            line-height: 20px;
+            padding-left: 15px;
+        }
+
+        .hc_user_reportContainer .m2 .r2 {
+            padding: 20px 0;
+            border-bottom: 1px solid #E7E7E7;
+        }
+
+        .hc_user_reportContainer .m2 .r2 > p {
+            height: 22px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 22px;
+        }
+
+        .hc_user_reportContainer .m2 .r2 > p span {
+            width: 10px;
+            height: 22px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 82, 81, 1);
+            line-height: 22px;
+            margin-left: 7px;
+        }
+
+        .hc_user_reportContainer .m2 .r2 > div {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .hc_user_reportContainer .m2 .r2 > div span {
+            display: inline-block;
+            width: 130px;
+            height: 30px;
+            background: rgba(232, 232, 232, 1);
+            font-size: 12px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+            line-height: 30px;
+            text-align: center;
+            margin: 10px 12px;
+            cursor: pointer;
+        }
+
+        .hc_user_reportContainer .m2 .r2 > div .toggle {
+            background: rgba(255, 82, 81, 1);
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .hc_user_reportContainer .m2 .r2 > div span:nth-of-type(7n+1) {
+            margin: 10px 15px 10px 0;
+        }
+
+        .hc_user_reportContainer .m2 .r3 {
+            padding: 20px 0;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > p {
+            height: 22px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > p span {
+            width: 10px;
+            height: 22px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 82, 81, 1);
+            line-height: 22px;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:first-of-type {
+            position: relative;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:first-of-type textarea {
+            width: 1103px;
+            height: 216px;
+            border: 1px solid rgba(231, 231, 231, 1);
+            padding: 15px;
+            resize: none;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:first-of-type p {
+            width: 127px;
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 82, 81, 1);
+            line-height: 20px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:nth-of-type(2) {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:nth-of-type(2) a {
+            color: black;
+            margin-left: 5px;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:nth-of-type(2) span {
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 82, 81, 1);
+            line-height: 20px;
+            margin: 0 10px 0 5px;
+        }
+
+        .hc_user_reportContainer .m2 .r3 > div:nth-of-type(3) {
+            width: 159px;
+            height: 45px;
+            background: rgba(255, 82, 81, 1);
+            font-size: 20px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 1);
+            line-height: 45px;
+            text-align: center;
+            margin: 30px auto 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="hc_user_reportContainer">
+    <div class="m1">
+        帮助中心>用户举报
+    </div>
+    <div class="m2">
+        <div class="r1">
+            <h3>用户举报</h3>
+            <div><span>举报用户ID</span><span>*</span><input type="text" placeholder="请输入举报用户ID"></div>
+        </div>
+        <div class="r2">
+            <p>请选择举报类型(单选) <span>*</span></p>
+            <div>
+                <span>包含线下交易</span>
+                <span>雇主审稿不合理</span>
+                <span>虚假交易</span>
+                <span>侵权</span>
+                <span>发布垃圾广告</span>
+                <span>发布敏感色情信息</span>
+                <span>非法获取他人财物</span>
+                <span>盗用他人账号</span>
+                <span>辱骂他人</span>
+                <span>恶意评价</span>
+                <span>恶意举报</span>
+                <span>雇主作弊选自己中标</span>
+                <span>稿件涉嫌抄袭</span>
+                <span>无效投标</span>
+                <span>含有联系方式</span>
+                <span>其他违法违规行为</span>
+            </div>
+        </div>
+        <div class="r3">
+            <p>请描述举报原因<span>*</span></p>
+            <div>
+                <textarea maxlength="1000"
+                          placeholder="请描述事情经过,并提供相关举证(如相关店铺ID/服务ID/服务链接等),如举证过大,请发邮件至110@zbj.com" ></textarea>
+                <p>还可以输入(<span>1000</span>)字</p>
+            </div>
+            <div>
+                <img src="../resources/statics/images/help/upload.png" width="14px" height="14px" alt="">
+                <a href="#">上传举证</a>
+                <input style="display: none;" type="file" name="" id="" onchange="filefujianChange(this)" multiple>
+                <span>*</span>
+                (上传要求:支持文档/图片/压缩文件(如doc/xisx/jpg/png/zip/rar等格式),单个文件<20M,文件数<10个)
+            </div>
+            <div>确定</div>
+        </div>
+    </div>
+</div>
+<script src="../resources/statics/js/jquery-3.3.1.js"></script>
+<script>
+    $(function () {
+        $(".hc_user_reportContainer .m2 .r2 > div span").on('click', function () {
+            $(this).addClass('toggle').siblings().removeClass('toggle');
+        });
+
+        $(".hc_user_reportContainer .m2 .r3 > div:nth-of-type(2) a").on('click', function () {
+            $(".hc_user_reportContainer .m2 .r3 > div:nth-of-type(2) input").trigger("click");
+        });
+
+
+    });
+
+    $(".hc_user_reportContainer .m2 .r3 > div:first-of-type textarea").on('input',function () {
+       $(".hc_user_reportContainer .m2 .r3 > div:first-of-type p span").text(1000-$(this).val().length);
+    });
+
+    function filefujianChange(target) {
+        console.log(target);
+        var fileSize = 0;
+        var fileCount = 0;
+        if (!target.files) {
+            return
+        } else {
+            fileCount = target.files.length;
+        }
+        if (fileCount <= 10) {
+            for (var i = 0; i < fileCount; i++) {
+                fileSize = target.files[i].size;
+                var size = fileSize / 1024;
+                if (size > 20000) {
+                    alert("附件不能大于20M，请重新选择!");
+                    target.value = '';
+                    return
+                }
+                var name = target.files[i].name;
+                var fileName = name.substring(name.lastIndexOf(".") + 1).toLowerCase();
+                if (fileName != "zip" && fileName != "rar" && fileName != "xisx" && fileName != "doc" && fileName != "jpg" && fileName != "jpeg" && fileName != "pdf" && fileName != "png" && fileName != "dwg" && fileName != "gif") {
+                    alert("请选择正确格式文件上传(doc,xisx,zip,rar,jpg,png,gif,dwg,pdf,gif等)！");
+                    target.value = '';
+                    return
+                }
+            }
+        } else {
+            alert("附件不能超过10个!");
+            target.value = '';
+            return
+        }
+    }
+</script>
+</body>
+</html>

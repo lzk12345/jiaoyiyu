@@ -1,0 +1,29 @@
+#leftdiv{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.wrap {
+    width: 210px;
+    height: 100%;
+    background-color: white;
+
+}
+
+.listli {
+
+}
+
+.listli .listdiva a {
+    color: #999999;
+    text-decoration:none;
+}
+.listli h2 {
+    position: relative;
+   margin-top: 15px;
+    background-color: white;
+
+    font-size: 16px;
+    color: black;
+}

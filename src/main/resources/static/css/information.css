@@ -1,0 +1,143 @@
+body{
+    font-family:PingFangSC-Regular;
+
+}
+
+.left-two{
+    width: 148px;
+    height: 28px;
+    float: left;
+    margin-left: 14px;
+    margin-top: 25px;
+    line-height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+}
+.left-three{
+    width: 265px;
+    height: 107px;
+    margin-top: 110px;
+    margin-left: 227px;
+    line-height: 107px;
+}
+.left-three span{
+    font-weight: 400;
+    float: left;
+}
+.left-three div{
+    border-radius: 50%;
+    width: 107px;
+    height: 107px;
+    margin-left: 20px;
+    background-color: #666666;
+    float: left;
+}
+.amend{
+    font-size: 14px;
+    color: rgba(255,82,81,1);
+    margin-left: 30px;
+    cursor: pointer;
+}
+.left-four{
+    width: 570px;
+    height: 30px;
+    margin-left: 227px;
+    line-height: 30px;
+    margin-top:30px;
+}
+.left-four span{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+}
+.left-four input{
+    width: 464px;
+    height: 24px;
+    background: rgba(255,255,255,1);
+    border:1px solid rgba(231,231,231,1);
+}
+.left-five{
+    width: 570px;
+    height: 30px;
+    margin-left: 227px;
+    margin-top: 34px;
+    line-height: 30px;
+}
+.left-five span{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+}
+.left-five input{
+    cursor: pointer;
+}
+.left-five div{
+    width: 6.5px;
+    height: 6.5px;
+    border-radius: 50%;
+    background-color: #ff5251;
+    float: right;
+    cursor: pointer;
+}
+.man{
+    position: relative;
+    right: 484.7px;
+    top: 10.5px;
+    display: none;
+}
+.woman{
+    position: relative;
+    right: 409px;
+    top: 10.5px;
+    display: none;
+}
+.left-center{
+    width: 570px;
+    height: 110px;
+    margin-left: 227px;
+    line-height: 30px;
+    margin-top:30px;
+}
+.left-center span{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+}
+.left-center input{
+    width: 464px;
+    height: 24px;
+    background: rgba(255,255,255,1);
+    border:1px solid rgba(231,231,231,1);
+    margin-left: 76px;
+    margin-top: 30px;
+}
+.left-center select{
+    width: 84px;
+    height: 26px;
+    background: rgba(255,255,255,1);
+    border:1px solid rgba(231,231,231,1);
+    cursor: pointer;
+}
+.left-six{
+    width: 570px;
+    height: 130px;
+    margin-left: 227px;
+    margin-top: 30px;
+
+}
+.left-six div{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(51,51,51,1);
+    float: left;
+}
+.left-six textarea{
+    width: 460px;
+    height: 124px;
+    margin-left: 10px;
+    float: left;
+    background: rgba(255,255,255,1);
+    border:1px solid rgba(231,231,231,1);
+    resize: none;
+}

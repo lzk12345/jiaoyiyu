@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户收藏</title>
+    <style>
+        .xhy_user_collect {
+            width: 1002px;
+            background: rgba(255, 255, 255, 1);
+            margin: 0;
+            padding: 25px 22px 75px;
+            box-sizing: border-box;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .xhy_user_collect * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            letter-spacing: normal;
+        }
+
+        .xhy_user_collect a {
+            color: black;
+        }
+
+        .xhy_user_collect .title {
+            display: flex;
+            align-items: center;
+            padding-bottom: 11px;
+            border-bottom: 1px solid #E7E7E7;
+        }
+
+        .xhy_user_collect .title img {
+            width: 6px;
+            height: 20px;
+            margin-right: 14px;
+        }
+
+        .xhy_user_collect .title span {
+            font-size: 20px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+        }
+
+        .xhy_user_collect .query_bar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-bottom: 10px;
+        }
+
+        .xhy_user_collect .query_bar .d1 > div:first-of-type {
+            margin-bottom: 20px;
+        }
+
+        .xhy_user_collect .query_bar .d1 > div:nth-of-type(2) i{
+            display: inline-block;
+            width: 15px;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .xhy_user_collect .query_bar .d1 span {
+            font-size: 16px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+            margin-right: 22px;
+        }
+
+        .xhy_user_collect .query_bar .d1 .toggle {
+            background: rgba(255, 82, 81, 1);
+            color: white;
+        }
+
+        .xhy_user_collect .query_bar .d1 a:nth-of-type(2){
+            margin-left: 20px;
+        }
+
+        .xhy_user_collect .query_bar .d1 a, .xhy_user_collect .query_bar .d1 input {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(188, 188, 188, 1);
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .xhy_user_collect .query_bar .d2 {
+            display: flex;
+
+        }
+
+        .xhy_user_collect .query_bar .d2 input {
+            width: 143px;
+            height: 32px;
+            padding-left: 11px;
+            border: 1px solid rgba(255, 82, 81, 1);
+        }
+
+        .xhy_user_collect .query_bar .d2 span {
+            display: inline-block;
+            width: 38px;
+            height: 32px;
+            background: rgba(255, 82, 81, 1) url("../static/img/search.png") no-repeat center center;
+            background-size: 18px 20px;
+            cursor: pointer;
+        }
+
+        .xhy_user_collect .data_list .list_title {
+            width: 962px;
+            height: 41px;
+            background: rgba(244, 244, 244, 1);
+            border: 1px solid rgba(229, 229, 229, 1);
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(153, 153, 153, 1);
+            line-height: 40px;
+            display: flex;
+        }
+
+        .xhy_user_collect .data_list .list_title span {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .xhy_user_collect .data_list .list_title span:nth-of-type(1), .xhy_user_collect .data_list .list_content > div > div:nth-of-type(1) {
+            width: 218px;
+        }
+
+        .xhy_user_collect .data_list .list_title span:nth-of-type(2), .xhy_user_collect .data_list .list_content > div > div:nth-of-type(2) {
+            width: 196px;
+            margin-left: 70px;
+        }
+
+        .xhy_user_collect .data_list .list_title span:nth-of-type(3), .xhy_user_collect .data_list .list_content > div > div:nth-of-type(3) {
+            width: 196px;
+            margin-left: 60px;
+        }
+
+        .xhy_user_collect .data_list .list_title span:nth-of-type(4), .xhy_user_collect .data_list .list_content > div > div:nth-of-type(4) {
+            width: 177px;
+            margin-left: 30px;
+        }
+
+        .xhy_user_collect .data_list .list_content > div {
+            width: 962px;
+            height: 80px;
+            border-bottom: 1px solid #ECECEC;
+            display: flex;
+            align-items: center;
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div {
+            text-align: center;
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(1) {
+            display: flex;
+            justify-content: center;
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(1) img {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(1) p:nth-of-type(1) {
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            text-align: left;
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(1) p:nth-of-type(2) {
+            font-size: 12px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(153, 153, 153, 1);
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(2) {
+            font-size: 16px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(3) {
+            font-size: 16px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .xhy_user_collect .data_list .list_content > div > div:nth-of-type(4) a {
+            font-size: 16px;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+        }
+
+    </style>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/laydate.js"></script>
+</head>
+<body>
+
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">用户收藏</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div class="xhy_user_collect" style="margin-left: 210px;margin-top: 10px">
+            <div class="title">
+                <img src="/img/title.png" alt="">
+                <span>用户收藏</span>
+            </div>
+            <div class="query_bar">
+                <div class="d1">
+                    <div>
+                        <span>用户身份</span>
+                        <a class="toggle" href="javascript:void(0);">设计师</a>
+                        <a href="javascript:void(0);">发包方</a>
+                    </div>
+                    <div>
+                        <span>收藏时间</span>
+                        <input type="text" id="date1">
+                        <i>-</i>
+                        <input type="text" id="date2">
+                    </div>
+                </div>
+                <div class="d2">
+                    <input type="text" placeholder="用户名称"><span></span>
+                </div>
+            </div>
+            <div class="data_list">
+                <div class="list_title">
+                    <span>头像/名称/地区</span>
+                    <span>用户类型</span>
+                    <span>收藏时间</span>
+                    <span>操作</span>
+                </div>
+                <div class="list_content">
+
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="/img/0ce8bfbc7be1116ff848d005fd9fc22e@2x.png" alt="">
+                            </div>
+                            <div>
+                                <p>王某某</p>
+                                <p>广东省-深圳市-直辖区</p>
+                            </div>
+                        </div>
+                        <div>设计师</div>
+                        <div>2019-01-10 09:22:11</div>
+                        <div>
+                            <a href="javascript:void(0);">删除</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="paging" style="margin-top: 30px" frm="xyt_pushForm" pageIndex="1" totalPageCount="10" totalCount="100"></div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+
+<script>
+    laydate.render({
+        elem: '#date1' //指定元素
+    });
+    laydate.render({
+        elem: '#date2' //指定元素
+    });
+
+    $('.xhy_user_collect .query_bar .d1 a').on('click', function () {
+        $(this).addClass('toggle').siblings().removeClass('toggle');
+    });
+    $.ajax({
+        url: "../rollpage.html",
+        cache: true,
+        async: false,
+        dataType: "html",
+        success: function (html) {
+            $("#paging").html('');
+            $("#paging").append(html);
+        }
+    });
+</script>
+</body>
+</html>

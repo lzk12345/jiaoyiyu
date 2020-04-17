@@ -1,0 +1,65 @@
+/*任务详情页 悬赏模式 中标自己查看和自己查看*/
+.offer-win{
+    width: 950px;
+    margin-top: 8px;
+    padding-top: 35px;
+    background-color: white;
+}
+.table-sheet{
+    margin: 0 0 0 60px;
+}
+.table-sheet tr td{
+    height: 50px;
+}
+.table-sheet tr:nth-child(1) td:nth-child(1){
+    width: 120px;
+}
+.table-sheet tr:nth-child(1) td:nth-child(2){
+    width: 440px;
+}
+.table-sheet tr:nth-child(1) td:nth-child(3){
+    width: 300px;
+    text-align: center;
+}
+.table-sheet tr:nth-child(2) td:nth-child(1) div{
+    float: left;
+    font-size:14px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.baozheng{
+    position: relative;
+    left: -75px;
+    font-size:16px;
+    font-family:PingFangSC-Semibold,PingFang SC;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+}
+.manu-stylist{
+    margin: 40px 0 0 60px;
+    font-size:22px;
+    font-family:PingFangSC-Semibold,PingFang SC;
+    font-weight:600;
+    color:rgba(51,51,51,1);
+}
+.table-grid{
+    margin-left: 59px;
+}
+.table-grid tr td{
+    height: 72px;
+    font-size:14px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+.table-grid tr td:nth-child(1){
+    width: 220px;
+}
+.table-grid tr td:nth-child(2){
+    width: 400px;
+}
+.table-grid tr td:nth-child(3){
+    width: 120px;
+    color: #0066cc;
+}

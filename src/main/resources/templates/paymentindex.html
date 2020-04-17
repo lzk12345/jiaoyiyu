@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/paymentindex.css"/>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="top-one">
+    <div class="inter-one">
+        <span>订单支付</span>
+    </div>
+    <div class="inter-two">
+        <div class="one">
+            <span>订单支付</span>
+        </div>
+        <div class="two">
+            <div class="left-one">
+                <span>选择支付方式:</span>
+                <input type="radio" name="money" value="alipay"/>
+            </div>
+            <img class="left-two" src="/img/tuceng84.png" alt=""/>
+            <div class="left-three">
+                <input type="radio" name="money" value="mx"/>
+            </div>
+            <img class="left-four" src="/img/tuceng85.png" alt=""/>
+            <div style="clear:both;"></div>
+        </div>
+        <hr/>
+        <div class="three">
+            <span>订单明细</span>
+        </div>
+        <div class="four">
+            <ul>
+                <li id="tuoguanservice">托管赏金：￥<span class="jine" id="tuoguanmoney">1</span></li>
+                <li id="jiajiservice">加急服务：￥<span class="jine" id="jiajimoney">2</span></li>
+                <li id="zhidingservice">置顶服务：￥<span class="jine" id="zhidingmoney">2</span></li>
+                <li id="allhideservice">全部隐藏服务：￥<span class="jine" id="allhidemoney">3</span></li>
+                <li>应付总额：￥<span class="zong" id="totalmoney1">0</span></li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="six">
+            <input class="select" type="checkbox" onclick="jinyong()"/>
+            <span style="color:rgba(153,153,153,1);">同意</span>
+            <span class="select" style="color:rgba(255,82,81,1);">《小红鱼任务发布协议》</span>
+            <div class="six-inter">
+                    <button disabled="disabled" id="paynow">立即支付</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form   method="post" id="paymentForm">
+    <input type="hidden" name="totalAmount" th:value="${totalAmount}" >
+    <input type="hidden" name="outTradeNo" th:value="${orderId}" >
+</form>
+<script type="text/javascript">
+    var select = document.getElementsByClassName("select");
+    var btn = document.getElementsByTagName("button");
+
+    function jinyong() {
+        if (select[0].checked == true) {
+            btn[0].disabled = false;
+            btn[0].style.backgroundColor = "#ff5251";
+        } else {
+            btn[0].disabled = "disabled";
+            btn[0].style.backgroundColor = "";
+        }
+    }
+
+    function getCookie(cookieName) {
+        var strCookie = document.cookie;
+        var arrCookie = strCookie.split("; ");
+        for (var i = 0; i < arrCookie.length; i++) {
+            var arr = arrCookie[i].split("=");
+            if (cookieName == arr[0]) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+
+    //获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+    }
+
+    //通过assignmentId来查询settlement表展示  cookie中获取
+    var assignmentId = getCookie("assignmentId");
+    var orderSn = getUrlParam("orderSn");
+    // 通过assignment调用settlement表的方法，获得各类价格并map的方式返回
+    $(function () {
+        //jQuery代码;
+        $.post("/publish/getSettlementByAssIdToMap", {assignmentId: assignmentId}, function (result) {
+            // result 是一个包含了各类金额的map集合
+            // 通过遍历该集合拿到数据并对前台页面进行处理。
+            // 首先判断result中的status字段的值是多少    如果是-2 则表示正常  如果是-3 则表明发生了错误  将页面跳转到错误页面。
+            // 拿到值如果是-1,则说明后台使用道具或者为会员登陆使用道具，无需扣费，则把那条显示改为隐藏模式 并且不改变其值
+            // 如果拿到的值不是-1 则说明花费金钱买该道具   进行扣费，则将那条显示并改变其值。
+            // 属性：totalAmount,值：22322
+            // 属性：urgentService,值：40
+            // 属性：topService,值：-1
+            // 属性：hostingReward,值：22222
+            // 属性：allhideService,值：60
+            // 属性：status,值：-2
+            for(var key in result){
+                if (key == 'status') {
+                    // 判断是否成功
+                    if (result[key] == -3) {
+                        // 发生错误
+                        window.location.href="/payment/error";
+                    }
+                }
+                if (key == 'totalAmount') {
+                    // 总金额
+                    $("#totalmoney1").text(result[key]);
+                }
+                if (key == 'urgentService') {
+                    // 加急服务金
+                    if (result[key] != -1 && result[key] != null) {
+                        $("#jiajiservice").show();
+                        $("#jiajimoney").text(result[key]);
+                    }else{
+                        $("#jiajiservice").hide();
+                    }
+                }
+                if (key == 'topService') {
+                    // 置顶服务金
+                    if (result[key] != -1 && result[key] != null) {
+                        $("#zhidingservice").show();
+                        $("#zhidingmoney").text(result[key]);
+                    }else{
+                        $("#zhidingservice").hide();
+                    }
+                }
+                if (key == 'hostingReward') {
+                    // 托管服务金
+                    if (result[key] != -1 && result[key] != null) {
+                        $("#tuoguanservice").show();
+                        $("#tuoguanmoney").text(result[key]);
+                    }else{
+                        $("#tuoguanservice").hide();
+                    }
+                }
+                if (key == 'allhideService') {
+                    // 全部隐藏金
+                    if (result[key] != -1 && result[key] != null) {
+                        $("#allhideservice").show();
+                        $("#allhidemoney").text(result[key]);
+                    }else{
+                        $("#allhideservice").hide();
+                    }
+                }
+            }
+        });
+
+    });
+
+
+    $("#paynow").click(function () {
+        var paytype = $('input:radio[name="money"]:checked').val();
+        if (paytype == null) {
+            alert("请选择支付方式");
+        }else {
+            $("#paymentForm").attr("action","/payment/"+paytype+"/submit")  ;
+            $("#paymentForm").submit();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+#address{
+    display: inline-block;
+}
+#address select{
+    width:80px;
+    height:30px;
+    background:white;
+    border:1px solid rgba(188,188,188,1);
+    color: #999999;
+}

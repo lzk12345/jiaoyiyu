@@ -1,0 +1,77 @@
+#paging{
+    text-align: center;
+}
+
+#paging *{
+    user-select: none;
+}
+
+#paging a{
+    text-decoration: none;
+}
+
+#paging >div{
+    display: inline-block;
+}
+
+
+#paging .button .b1{
+    width: 32px;
+    background: white;
+}
+
+#paging .button .b2{
+    width: 61px;
+    background: white;
+}
+
+#paging .button .b3{
+    height:20px;
+    font-size:14px;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(153,153,153,1);
+    line-height:20px;
+    border: none;
+    background: none;
+}
+
+#paging .button input{
+    position: relative;
+    bottom: 1px;
+    padding-left: 3px;
+}
+
+
+#paging .button a,#paging .button input{
+    display: inline-block;
+    height: 32px;
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid #FF5251;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(153,153,153,1);
+    line-height:32px;
+    position: relative;
+    background: white;
+}
+
+
+#paging .button .toggle{
+    background:rgba(255,82,81,1);
+    color:rgba(255,255,255,1);
+}
+
+#paging .button a:hover{
+    cursor: pointer;
+}
+
+#paging .display{
+    display: none;
+}
+
+.jijiji{
+    background-image: url("../img/redbanner110.png");height: 110px;
+}

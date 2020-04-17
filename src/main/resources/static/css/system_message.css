@@ -1,0 +1,156 @@
+.system_messageContainer {
+    width: 1200px;
+    height: 1651px;
+    background: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    padding: 20px 25px 0 40px;
+}
+
+.system_messageContainer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: normal;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.system_messageContainer > .m1 > .r1 {
+    font-size: 16px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    margin-bottom: 20px;
+}
+
+.system_messageContainer > .m1 > .r1 > span {
+    color: #FF5251;
+    margin: 0 5px;
+}
+
+.system_messageContainer > .m1 > .r2 {
+    margin-bottom: 20px;
+}
+
+.system_messageContainer > .m1 > .r2 a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background: rgba(255, 82, 81, 1);
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+}
+
+.system_messageContainer > .m2 {
+    width: 1136px;
+}
+
+.system_messageContainer > .m2 > .title {
+    display: flex;
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+    justify-content: space-between;
+    height: 41px;
+    background: rgba(244, 244, 244, 1);
+    border: 1px solid rgba(229, 229, 229, 1);
+    padding: 0 72px 0 17px;
+}
+
+.system_messageContainer > .m2 > .title > div {
+    display: flex;
+    align-items: center;
+}
+
+.system_messageContainer > .m2 > .title > div:nth-of-type(1) > div:first-of-type {
+    margin-right: 96px;
+    display: flex;
+    align-items: center;
+}
+
+.system_messageContainer > .m2 > .title > div:nth-of-type(1) > div:first-of-type input{
+    margin-right: 3px;
+}
+
+
+.system_messageContainer > .m2 > .title > div:nth-of-type(2) > div:first-of-type {
+    margin-right: 127px;
+}
+
+.system_messageContainer > .m2 input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+}
+
+.system_messageContainer > .m2 > .content {
+
+}
+
+.system_messageContainer > .m2 > .content > div {
+    padding: 25px 72px 25px 17px;
+    border-bottom: 1px solid #E7E7E7;
+    display: flex;
+    align-items: center;
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(1) {
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(2) {
+    width: 30px;
+    margin-left: 47px;
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(3) {
+    width: 670px;
+    margin-left: 44px;
+    position: relative;
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(3) p:nth-of-type(1) {
+
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+    line-height: 20px;
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(3) p:nth-of-type(2) {
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    position: absolute;
+    top: 22px;
+    display: none;
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(3) p:nth-of-type(2) a {
+    color: #FF5251;
+}
+
+.system_messageContainer > .m2 > .content > div > div:nth-of-type(4) {
+    width: 100px;
+    text-align: center;
+    margin-left: 17px;
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(153, 153, 153, 1);
+}
+
+.system_messageContainer > .m2 > .content > div > div:last-of-type {
+    margin-left: 95px;
+    cursor: pointer;
+}

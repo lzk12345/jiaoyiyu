@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开通会员>支付页面</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <style>
+
+        .openVIP_pay {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .openVIP_pay * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .openVIP_pay > .m1 {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(125, 125, 125, 1);
+            line-height: 20px;
+            margin: 20px 0 8px 0;
+        }
+
+        .openVIP_pay > .m2 {
+            width: 1200px;
+            height: 617px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 3px 6px 0px rgba(82, 82, 82, 0.21);
+            padding: 27px 50px 70px 50px;
+        }
+
+        .openVIP_pay > .m2 > .r1 {
+            width: 208px;
+            height: 37px;
+            font-size: 26px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 37px;
+        }
+
+        .openVIP_pay > .m2 > .r2 {
+            padding: 33px 0 63px;
+            margin: 0 65px;
+            border-bottom: 1px solid rgba(231, 231, 231, 1);
+            display: flex;
+            align-items: center;
+        }
+
+        .openVIP_pay > .m2 > .r2 > div {
+            display: flex;
+            align-items: center;
+        }
+
+        .openVIP_pay > .m2 > .r2 > .c1 {
+            width: 102px;
+            height: 22px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(102, 102, 102, 1);
+            line-height: 22px;
+        }
+
+        .openVIP_pay > .m2 > .r2 > .c2 {
+            margin-left: 87px;
+        }
+
+        .openVIP_pay > .m2 > .r2 > .c2 img {
+            width: 217px;
+            height: 80px;
+            margin-left: 20px;
+        }
+
+        .openVIP_pay > .m2 > .r2 > .c3 {
+            margin-left: 135px;
+        }
+
+        .openVIP_pay > .m2 > .r2 > .c3 img {
+            width: 230px;
+            height: 62px;
+            margin-left: 35px;
+        }
+
+        .openVIP_pay > .m2 > .r3, .openVIP_pay > .m2 > .r4 {
+            padding: 43px 63px 0;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:first-of-type {
+            display: flex;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:first-of-type > div:first-of-type {
+            height: 22px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(102, 102, 102, 1);
+            line-height: 22px;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:first-of-type > div:last-of-type {
+            margin-left: 106px;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:first-of-type > div:last-of-type>div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:first-of-type > div:last-of-type>div>span:nth-of-type(1) {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(102, 102, 102, 1);
+            line-height: 20px;
+            display: inline-block;
+            width: 115px;
+            margin-left: 5px;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:first-of-type > div:last-of-type>div>span:nth-of-type(2) {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 82, 81, 1);
+            line-height: 20px;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:last-of-type {
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(102, 102, 102, 1);
+            line-height: 20px;
+            text-align: right;
+        }
+
+        .openVIP_pay > .m2 > .r3 > div:last-of-type span {
+            height: 37px;
+            font-size: 26px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(255, 82, 81, 1);
+            line-height: 37px;
+        }
+
+        .openVIP_pay > .m2 > .r4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .openVIP_pay > .m2 > .r4 div:nth-of-type(1) {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(153, 153, 153, 1);
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .openVIP_pay > .m2 > .r4 div:nth-of-type(2) a {
+            display: inline-block;
+            width: 159px;
+            height: 45px;
+            background: rgba(255, 82, 81, 1);
+            font-size: 20px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 1);
+            line-height: 45px;
+            text-align: center;
+        }
+
+        .openVIP_pay > .m2 > .r4 span {
+            height: 20px;
+            font-size: 14px;
+            font-family: PingFangSC-Semibold;
+            font-weight: 600;
+            color: rgba(255, 82, 81, 1);
+            line-height: 20px;
+        }
+
+
+        .radio_1 input{
+            display: none;
+        }
+        .radio_1 label{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            user-select: none;
+            width:16px;
+            height:16px;
+            border:1px solid rgba(151,151,151,1);
+        }
+
+        .radio_1 label span{
+            display: inline-block;
+            border-radius: 50%;
+            user-select: none;
+            width:8px;
+            height:8px;
+        }
+
+        .radio_1 input[type="radio"]:checked + label span{
+            background:rgba(102,102,102,1);
+        }
+        .banner-opvip-tb{
+            background-image: url("../img/redbanner110.png");
+            height: 110px;
+        }
+        .banner-tb-opvip div div{
+            margin-left: 1150px;
+        }
+        .Headportrait-opvip{
+            float: left
+        }
+        .Headportrait-opvip img{
+            margin-left: 65px;padding-top: 5px;width: 72px;
+
+        }
+        .welcome-opvip{
+            float: left;padding-top: 12px;color: white
+        }
+        .welcome-opvip>p:nth-child(1){
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="headerpage"></div></div>
+
+<div class="banner-opvip-tb">
+
+
+    <div style="margin-left: 1150px;padding-top: 20px">
+        <div class="welcome-opvip">
+            <p >尊敬的欧文，欢迎您回来！</p>
+            <p>当前为普通会员,lv12</p>
+        </div>
+        <div class="Headportrait-opvip">
+            <img src="../img/stouxiang.png">
+        </div>
+    </div>
+
+</div>
+<div class="openVIP_pay">
+    <div class="m1">开通会员</div>
+    <div class="m2">
+        <div class="r1"><span>超级</span>会员权益购买</div>
+        <div class="r2">
+            <div class="c1">选择充值方式:</div>
+            <div class="c2">
+                <div class="radio_1">
+                    <input id="pay_mode1" name="pay_mode" type="radio">
+                    <label for="pay_mode1"><span></span></label>
+                </div>
+                <img src="../resources/statics/images/zfb.png" alt="">
+            </div>
+            <div class="c3">
+                <div class="radio_1">
+                    <input id="pay_mode2" name="pay_mode" type="radio">
+                    <label for="pay_mode2"><span></span></label>
+                </div>
+                <img src="../resources/statics/images/vx.png" alt="">
+            </div>
+        </div>
+        <div class="r3">
+            <div>
+                <div>购买期限:</div>
+                <div>
+                    <div>
+                        <div class="radio_1">
+                            <input id="dataLong_check1" name="dateLong_check" type="radio">
+                            <label for="dataLong_check1"><span></span></label>
+                        </div>
+                        <span>1个月使用权</span>
+                        <span>¥268</span>
+                    </div>
+                    <div>
+                        <div class="radio_1">
+                            <input id="dataLong_check2" name="dateLong_check" type="radio">
+                            <label for="dataLong_check2"><span></span></label>
+                        </div>
+                        <span>1个季度使用权</span>
+                        <span>¥698</span>
+                    </div>
+                    <div>
+                        <div class="radio_1">
+                            <input id="dataLong_check3" name="dateLong_check" type="radio">
+                            <label for="dataLong_check3"><span></span></label>
+                        </div>
+                        <span>1年使用权</span>
+                        <span>¥2580</span>
+                    </div>
+                </div>
+            </div>
+            <div>应付金额:￥ <span class="money">0</span>元</div>
+        </div>
+        <div class="r4">
+            <div><input type="checkbox">我已阅读 <span>《小红鱼VIP积分充值协议》</span></div>
+            <div><a href="#">立即充值</a></div>
+        </div>
+    </div>
+
+    <script src="../resources/statics/js/jquery-3.3.1.js"></script>
+    <script>
+        var vip_name=GetQueryString('vip_name');
+        var money=parseInt(GetQueryString('money'));
+        if(!money)money=268;
+        if(!vip_name)vip_name='超级';
+
+        function ele(num) {
+            return $('.openVIP_pay > .m2 > .r3 > div:first-of-type > div:last-of-type>div:nth-of-type('+num+')>span:nth-of-type(2)');
+        }
+
+
+        $('.openVIP_pay > .m2 > .r1>span').text(vip_name);
+        $(ele(1)).text('￥'+money);
+        $(ele(2)).text('￥'+ parseInt(money*0.9*3));
+        $(ele(3)).text('￥'+ parseInt(money*0.8*12));
+
+
+        $(".openVIP_pay [name='dateLong_check']").on('change', function () {
+            var str = $(this).parent().siblings('span:last-of-type').text();
+            $(".openVIP_pay > .m2 > .r3 > div:last-of-type span").text(str.substr(1, str.length));
+        });
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null)
+                return  decodeURI(r[2]);
+            return null;
+        }
+        $(function () {
+            $(".headerpage").load("../header/header.html");
+        })
+    </script>
+</div>
+</body>
+</html>

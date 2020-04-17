@@ -1,0 +1,379 @@
+.xhyAbilityEvaluationContainer {
+    width: 1002px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 1);
+    padding: 22px;
+    box-sizing: border-box;
+}
+
+.xhyAbilityEvaluationContainer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: navajowhite;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 11px;
+    border-bottom: 1px rgba(231, 231, 231, 1) solid;
+    margin-bottom: 12px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r1 h3 {
+
+    height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    line-height: 28px;
+    margin-left: 20px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r1 img {
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 20px;
+    background: RGBA(255, 82, 81, 1);
+}
+
+.xhyAbilityEvaluationContainer .m1 .r1 a {
+    height: 17px;
+    font-size: 12px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 82, 81, 1);
+    line-height: 17px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r1 span {
+    width: 13px;
+    height: 13px;
+    background: rgba(255, 82, 81, 1);
+}
+
+.xhyAbilityEvaluationContainer .m1 .r2 {
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+    line-height: 22px;
+    box-sizing: border-box;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r2 span {
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 82, 81, 1);
+    line-height: 22px;
+    margin: 0 14px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 35px auto 60px auto;
+    width: 918px;
+    height: 206px;
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(234, 234, 234, 1);
+    box-sizing: border-box;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:first-of-type {
+    width: 918px;
+    height: 41px;
+    background: rgba(243, 246, 249, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+    padding: 0 124px 0 188px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type img {
+    margin-right: 6px;
+    box-sizing: border-box;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type {
+    padding: 11px 0;
+    width: 100%;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type > div {
+    display: flex;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type > div span:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type > div span {
+    display: inline-block;
+    width: 144px;
+    text-align: center;
+    font-size: 14px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type > div:not(.first) {
+    margin-top: 21px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type > div span:nth-of-type(5) {
+    width: 155px;
+}
+
+.xhyAbilityEvaluationContainer .m1 .r3 > div:last-of-type > div span:last-of-type {
+    width: 98px;
+}
+
+.xhyAbilityEvaluationContainer .m2 {
+    margin-bottom: 30px;
+}
+
+.xhyAbilityEvaluationContainer .m2 .r1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 11px;
+    margin-bottom: 20px;
+}
+
+.xhyAbilityEvaluationContainer .m2 .r1 h3 {
+    height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    line-height: 28px;
+    margin-left: 20px;
+}
+
+.xhyAbilityEvaluationContainer .m2 .r1 img {
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 20px;
+    background: RGBA(255, 82, 81, 1);
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 {
+    display: flex;
+    justify-content: center;
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 table th {
+    width: 306px;
+    height: 39px;
+    background: rgba(243, 246, 249, 1);
+
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 table td {
+    width: 298px;
+    height: 39px;
+    text-align: center;
+    border: 1px rgba(236, 236, 236, 1) solid;
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 .s1 {
+    font-size: 26px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 82, 81, 1);
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 .s2 {
+    font-size: 12px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 .s2 img {
+    width: 17px;
+    height: 16px;
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 .s3 {
+    font-size: 11px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+}
+
+.xhyAbilityEvaluationContainer .m2 .r2 .s3 span {
+    font-size: 11px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 82, 81, 1);
+}
+
+.xhyAbilityEvaluationContainer .m3 {
+    padding: 0 20px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r1 {
+    border-bottom: 1px RGBA(236, 236, 236, 1) solid;
+    margin-bottom: 20px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r1 > span {
+    display: inline-block;
+    width: 156px;
+    height: 39px;
+    background: rgba(243, 246, 249, 1);
+    margin-right: 9px;
+    line-height: 39px;
+    text-align: center;
+    font-size: 16px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+    cursor: pointer;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r1 .toggle {
+    box-sizing: content-box;
+    border-top: rgba(255, 82, 81, 1) solid 4px;
+    background: white;
+    border-right: 1px RGBA(236, 236, 236, 1) solid;
+    border-left: 1px RGBA(236, 236, 236, 1) solid;
+    position: relative;
+    top: 1px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r2 p {
+    display: inline-block;
+    width: 83px;
+    height: 29px;
+    margin-right: 16px;
+    font-size: 12px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+    line-height: 29px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r2 p span {
+    color: rgba(255, 82, 81, 1);
+}
+
+.xhyAbilityEvaluationContainer .m3 .r2 .toggle {
+    background: rgba(255, 82, 81, 1);
+    color: white;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r2 .toggle span {
+    color: white;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s1 {
+    width: 918px;
+    height: 40px;
+    background: rgba(243, 246, 249, 1);
+    padding: 0 133px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s1 span {
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(51, 51, 51, 1);
+    line-height: 40px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 {
+    padding: 0 15px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div {
+    padding: 0 38px;
+    height: 76px;
+    border-bottom: 1px solid #ECECEC;
+    display: flex;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div {
+    width: 206px;
+    height: 100%;
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div:first-of-type {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div:first-of-type .p1 {
+    width: 210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div:first-of-type .p2 {
+    height: 17px;
+    font-size: 12px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(153, 153, 153, 1);
+    line-height: 17px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div:nth-of-type(3) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div:nth-of-type(3) span {
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(255, 82, 81, 1);
+    line-height: 22px;
+}
+
+.xhyAbilityEvaluationContainer .m3 .r3 .s2 > div div:last-of-type a{
+    color: rgba(153, 153, 153, 1);
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../resources/statics/js/vue.min.js"></script>
+    <script src="../resources/statics/js/jquery-3.3.1.js"></script>
+
+    <style>
+        .message_interfaceContainer{
+            width:1200px;
+            background:rgba(255,255,255,1);
+            box-sizing: border-box;
+        }
+
+        .message_interfaceContainer *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            letter-spacing: normal;
+            list-style: none;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+
+        .message_interfaceContainer>.m1 {
+            font-size: 14px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(125, 125, 125, 1);
+            margin-top: 20px;
+        }
+
+        .message_interfaceContainer>.m2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            height: 70px;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 3px 6px 0 rgba(82, 82, 82, 0.21);
+            margin: 27px 0 20px 0;
+        }
+
+        .message_interfaceContainer>.m2 .s1 {
+            display: flex;
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(74, 74, 74, 1);
+            line-height: 22px;
+        }
+
+        .message_interfaceContainer>.m2 .s1 > div {
+            width: 120px;
+            margin-right: 54px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .message_interfaceContainer>.m2 .toggle{
+            font-size: 16px;
+            font-family: PingFangSC-Medium;
+            font-weight: 500;
+            color: rgba(255, 82, 81, 1);
+            line-height: 22px;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/system_message.css">
+    <link rel="stylesheet" href="../resources/statics/css/rollpage.css">
+</head>
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<body>
+<div class="message_interfaceContainer">
+    <div class="m1">
+        <span>收件箱</span>
+        <span></span>
+    </div>
+    <div class="m2">
+        <div class="s1">
+            <div router="../resources/statics/html/message/system_message.html">系统消息（<span>23</span>）</div>
+            <div>交易消息（<span>10</span>）</div>
+            <div>个人消息（<span>12</span>）</div>
+        </div>
+    </div>
+    <div class="m3">
+
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        $(".message_interfaceContainer>.m2 .s1 div").on('click', function () {
+            $(".message_interfaceContainer>.m2 .s1 div").removeClass('toggle');
+            $(this).addClass('toggle');
+            $('.message_interfaceContainer>.m1 span:nth-of-type(2)').text(">"+$(this).text());
+            var url = $(this).attr('router');
+            if (url) {
+                getHtmlToEle(url, $('.message_interfaceContainer .m3'));
+            }
+        });
+        $(".message_interfaceContainer>.m2 .s1 div:nth-of-type(1)").trigger('click');
+    });
+
+    function getHtmlToEle(url,e) {
+        $.ajax({
+            url: url,
+            cache: true,
+            async: false,
+            dataType: "html",
+            success: function (html) {
+                $(e).html('');
+                $(e).append(html);
+            }
+        });
+    }
+</script>
+</html>

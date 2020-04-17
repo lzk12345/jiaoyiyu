@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body >
+<div class="body-bgc" align="center">
+    <img src="/img/bg@2x.png" style="width: 100%;height: 100%">
+    <img src="/img/ziyuan@2x.png"style="position:absolute; z-index:0;left: 28%;top: 25%;width: 7%">
+    <img src="/img/jiebao@2x.png"style="position:absolute; z-index:1;left: 23%;top: 42%;width: 11%">
+    <img src="/img/leftman@2x.png" style="position:absolute; z-index:2;left: 37%;top: 10%;width:3.9%">
+    <img src="/img/rightman@2x.png" style="position:absolute; z-index:2;left: 60%;top: 10.7%;width: 4.3%">
+    <img src="/img/waibao@2x.png"style="position:absolute; z-index:1;left: 65%;top:15%;width: 6.5%">
+    <img src="/img/duijie@2x.png"style="position:absolute; z-index:1;left: 67.5%;top:37%;width: 6.5%">
+    <div class="panel-login">
+        <img src="/img/logo@2x.png" style="position:absolute; z-index:1;left: 25%;top:7%;width: 50%">
+      <div>
+          <h2 style="color: #333333;margin-top: 300px">您已成功注册交易鱼账号</h2>
+          <p style="color: #999999;font-size: 12px">系统将在<font id="fivemin">5</font>秒内自动跳转到登录页面，如果没有请<a style="color: #2e6da4">点击手动跳转</a></p>
+      </div>
+
+    </div>
+
+</div>
+<script>
+    //5秒跳转页面
+    var b=document.getElementById("fivemin");
+    b.innerHTML="5秒跳转页面";
+    var time=5;
+    //每隔一秒执行定时器
+    var timer=setInterval(function(){
+        if(time>0){
+            time--;
+            b.innerHTML=time+"秒钟跳转页面";
+        }else{//终止定时器
+            //alert("跳转页面");
+            //open("http://www.baidu.com");
+            window.location.href="http://localhost:80/passport/index";
+            timer.clearInterval();
+        }
+    },1000);
+</script>
+
+
+
+
+</body>
+</html>

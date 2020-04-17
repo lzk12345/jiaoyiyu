@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/attestation-g.css" />
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery-3.3.1.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/headpic.js"></script>
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">我的主页店铺</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div style="float: left"  >
+            <div class="panel panel-default" style="margin-left: 17px;margin-top: 10px" >
+                <div class="panel-body" style="width: 1002px;margin-bottom: 100px" >
+                    <div style="width: 975px;height: 46px;border-bottom: solid 1px #ddd">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2x.png" width="6px" height="20px" style="margin-top: 10px;margin-left: 22px" ></div>
+                        <div style="margin-top: 5px;float: left">
+                            <font style="font-size: 20px;margin-left: 16px;"><b>我的主页店铺</b></font></div>
+
+                    </div>
+
+
+
+
+                    <div class="left-five" style="margin-left: 289px;color:#ff5251">以个人身份认证
+                        <div></div>
+                    </div>
+                    <div class="left-five" style="height: 33px;margin-left: 80px;">以企业身份认证</div>
+                    <div style="clear: both;"></div>
+
+                    <div class="left-six" style="margin-top: 49px;">
+                        <span>姓名:</span>
+                        <input style="margin-left: 51px" type="text" />
+                    </div>
+                    <div class="left-six" style="margin-top: 20px;">
+                        <span>行业职业:</span>
+                        <input style="margin-left:19px" type="text" />
+                    </div>
+                    <div class="left-six" style="margin-top: 20px;">
+                        <span>经营地址:</span>
+                        <select id="prov" onchange="showCity(this)" style="margin-left:20px">
+                            <option>选择省份</option>
+                        </select>
+                        <select id="city" onchange="showCountry(this)" style="margin-left:30px">
+                            <option>选择城市</option>
+                        </select>
+                        <select id="country" style="margin-left:30px">
+                            <option>选择县区</option>
+                        </select>
+                    </div>
+                    <div class="left-six" style="margin-top: 20px;">
+                        <span>身份证号码及证件上传:</span>
+                        <input style="width: 385px;margin-left:2px" type="text" />
+                    </div>
+                    <div class="left-eight">盖公章的复印件:</div>
+                    <div class="left-nine" style="float:left;margin-left:181px;margin-top: 15px;">
+                        <div class="left-nine-one">
+                            <div style="width: 4px;height: 23px;top:10px;left:20px"></div>
+                            <div style="width: 23px;height: 4px;top:-3px;left:10px"></div>
+                        </div>
+                        <div class="left-nine-two">
+                            <span>上传申请人身份证正面</span>
+                        </div>
+                    </div>
+                    <div class="left-nine" style="float:left;margin-left: 30px;margin-top: 15px;">
+                        <div class="left-nine-one">
+                            <div style="width: 4px;height: 23px;top:10px;left:20px"></div>
+                            <div style="width: 23px;height: 4px;top:-3px;left:10px"></div>
+                        </div>
+                        <div class="left-nine-two">
+                            <span>上传申请人身份证反面</span>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div class="left-nine" style="margin-left: 181px;margin-top: 80px;">
+                        <div class="left-nine-one">
+                            <div style="width: 4px;height: 23px;top:10px;left:20px"></div>
+                            <div style="width: 23px;height: 4px;top:-3px;left:10px"></div>
+                        </div>
+                        <div class="left-nine-two">
+                            <span>上传申请人手持身份证正面</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 50px;margin-left: 180px;">
+                        <input type="checkbox">我已阅读并同意 <a>《小红鱼主页店铺电子协议》</a>
+                    </div>
+                    <div class="end-one">
+
+                        <span>确认开通</span>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>比目鱼</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/schedule.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="js/schedule.js"></script>
+    <style>
+        .reputation button{
+            width:83px;
+            height:29px;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">信誉评价</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+
+        <div style="float: left"  >
+            <div class="panel panel-default" style="margin-left: 17px;margin-top: 10px" >
+                <div class="panel-body" style="width: 1002px;height: 375px;background-color: white;" >
+                    <div style="width: 975px;height: 46px;border-bottom:solid 1px #E7E7E7">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2x.png" width="6px" height="20px" style="margin-top: 10px;margin-left: 22px" ></div>
+                        <div style="margin-top: 5px;float: left">
+                            <font style="font-size: 20px;margin-left: 16px;"><b>信誉评价</b></font></div>
+                        <div style="float: left;margin-top: 10px">
+                            <a><img src="/img/wenhao.png" style="width: 13px;margin-left: 690px">
+                                我的信誉值如何计算？</a>
+                        </div>
+                    </div>
+                    <div style="margin-left: 328px;margin-top: 54px">
+                        <p>
+                            <font style="font-size: 20px">当前<b style="font-size: 26px;color: #FF5251;margin-left: 15px">3</b> &nbsp;&nbsp;级，升到4级还需要<b style="font-size: 26px;color: #FF5251;margin-left: 15px">700</b></font>
+
+
+                        </p>
+                    </div>
+
+                    <table style="text-align: center;margin-left: 190px;margin-top: 30px;" width="600px">
+                        <tr>
+                            <td> <img  src="/img/CombinedShape@2x.png" width="55px"></td>
+                            <td style="width: 400px">  <div  id="scheduleX"></div></td>
+                            <td><img  src="/img/CombinedShapen.png" width="55px"></td>
+
+                        </tr>
+                        <tr>
+                            <td>lv.1</td>
+                            <td></td>
+                            <td>lv.2</td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+
+            <div class="panel panel-default" style="margin-left: 17px;margin-top: 10px" >
+                <div class="panel-body" style="width: 1002px;background-color: white;" >
+
+                    <div style="width: 975px;height: 46px;">
+                        <div style="float: left;">
+                            <img src="img/Rectangle@2x.png" width="4px" style="margin-top: 10px;margin-left: 22px" ></div>
+                        <div style="margin-top: 5px;float: left">
+                            <font style="font-size: 20px;margin-left: 16px;"><b>综合评价</b></font></div>
+
+                    </div>
+                    <div style="text-align: center"  >
+
+                        <table class="table-bordered" style="width: 918px;height:115px;margin-left: 25px;">
+                            <tr style="background-color: #F3F6F9;font-weight: 600;" >
+                                <td>平均好评率</td>
+                                <td>付款及时性</td>
+                                <td>合作愉快度</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="font-size: 26px;color: #ff5251;font-weight: 600;">4.5</td>
+                                <td>
+
+                                    <div >
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/banxing.png">
+                                    </div>
+                                    <font> 4.5</font>
+                                </td>
+                                <td>
+
+                                    <div >
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/xingxing.png">
+                                        <img src="/img/banxing.png">
+                                    </div>
+                                    <font> 4.5</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0人评价</td>
+                                <td>0人评价</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div style="width: 975px;height: 90px">
+                        <div style="float: left;">
+                            <img src="img/Rectangle@2x.png" width="4px" style="margin-top: 54px;margin-left: 22px" ></div>
+                        <div style="margin-top: 48px;float: left">
+                            <font style="font-size: 20px;margin-left: 16px;"><b>评价详情</b></font></div>
+
+                    </div>
+                    <div style="text-align: center">
+                        <table class="bordernone" style="width: 918px;height: 206px;margin-left: 25px;border: solid 1px #c4e3f3">
+
+                            <tr style="background-color: #F3F6F9;font-weight: 600;">
+                                <td></td>
+                                <td>最近1周</td>
+                                <td>最近1个月</td>
+                                <td>最近6个月</td>
+                                <td>6个月前</td>
+                                <td>总计</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/good.png">好评</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/middle.png">中评</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/bad.png">差评</td>
+                                <td>4</td>
+                                <td>4</td>
+                                <td>4</td>
+                                <td>4</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/img/sum.png">总计</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                                <td>5</td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" style="width: 918px">
+                            <li role="presentation" class="active" style="margin-left: 30px;"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">来自小红鱼的评价</a></li>
+
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">我对小红鱼的评价</a></li>
+
+                        </ul>
+
+                        <!-- Tab panes -->
+
+
+                    </div>
+
+                    <div style="margin-top: 15px;margin-left: 80px" class="reputation">
+                        <button>全部评价</button>
+                        <button>好评</button>
+                        <button>中评</button>
+                        <button>差评</button>
+                        <button>有图</button>
+                    </div>
+                    <div style="margin-top: 30px;margin-left: 25px;text-align: center"  >
+                        <table style="height: 900px;width: 918px;"  >
+
+                            <tr style="height: 50px;background-color: #F4F4F4;font-weight: 600;">
+                                <td>评价</td>
+                                <td>用户名</td>
+                                <td>订单详情</td>
+                                <td>操作</td>
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr style="height: 76px;border-bottom: solid 1px #ECECEC;color: #999999">
+                                <td width="200px" >
+                                    <font>做的不错很喜欢～</font><br>
+                                    <font>2012-11-28 18:00:18</font>
+                                </td>
+                                <td>
+                                    <font >王某某</font>
+                                </td>
+                                <td>
+                                    <font >吉祥物设计</font>
+                                    <p style="color: #FF5251">￥50,000</p>
+                                </td>
+                                <td>
+                                    <font >删除</font>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <div style="margin: 35px 0" id="paging"  frm="xyt_pushForm" pageIndex="1" totalPageCount="10" totalCount="100">
+                                        <script>
+                                            $.ajax({
+                                                url : "../rollpage.html",
+                                                cache : true,
+                                                async : false,
+                                                dataType:"html",
+                                                success : function(html) {
+                                                    $("#paging").html('');
+                                                    $("#paging").append(html);
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<script>
+    $(function () {
+
+        /*纵向进度条*/
+        scheduleY({
+            fulfill: 55,   //选择数
+            listAll: 100,  //总数
+            speed: 25,     //动画速度，可选，默认25,越小越快
+            again: false,  //选择数改变动画是否从零开始，默认true
+            bgColor: "#828282",    //底部颜色
+            listColor: "#5bcde7",  //伸缩条颜色，默认原谅绿
+            scWidth: "25",        //进度条宽度
+            scHeight: "300"         //进度条高度
+        });
+
+        /*横向进度条*/
+        scheduleX({
+            fulfill: 60,   //选择数
+            listAll: 100,  //总数
+            speed: 25,     //动画速度，可选，默认25,越小越快
+            again: false,  //选择数改变动画是否从零开始，默认true从零开始
+            bgColor: "#7a7a7a",    //底部颜色
+            listColor: "#fe4e42",  //伸缩条颜色，默认原谅绿
+            scWidth: "400",        //进度条宽度
+            scHeight: "10"         //进度条高度
+        });
+
+    });
+
+</script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+

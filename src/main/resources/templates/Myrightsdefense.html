@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+
+        }
+        .panel-body-reoprt{
+            width: 1002px;background-color: white;height: 606px;
+
+        }
+        .panel-header-reoprt{
+            width: 970px;height: 46px;border-bottom:solid 1px #E7E7E7
+        }
+        .panel-header-reoprt div:nth-child(1) img    {
+            margin-top: 10px;margin-left: 22px;width: 6px;height: 20px;
+        }
+        .panel-header-reoprt div:nth-child(2)  {
+            margin-top: 5px;float: left
+        }
+        .panel-header-reoprt div:nth-child(2) b  {
+            font-size: 20px;margin-left: 16px;
+        }
+        .panel-body-btn button{
+            width:143px;
+            height:33px;
+            background:rgba(244,244,244,1);
+            font-size:16px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(153,153,153,1);
+            border: none;
+            margin-top: 31px;
+        }
+        .panel-body-btn button:nth-child(1){
+            margin-left: 39px;
+        }
+        .panel-body-btn button:nth-child(2){
+            margin-left: 17px;
+        }
+        .table-report{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            width: 962px;
+            border-spacing: 0;
+            font-size:12px;
+            font-family:PingFangSC-Medium;
+            font-weight:500;
+            color:rgba(153,153,153,1);
+            line-height:17px;
+            margin-left: 5px;
+            margin-top: 20px;
+
+
+        }
+        .table-report tr:nth-child(1){
+            background:rgba(244,244,244,1);
+            font-size:12px;
+            font-family:PingFangSC-Semibold;
+            font-weight:600;
+            color:rgba(51,51,51,1);
+            line-height:17px;
+            height: 41px;
+            border-bottom: none;
+
+        }
+        .table-report tr{
+            height: 80px;
+            border-bottom: solid 1px #ECECEC;
+
+        }
+
+
+    </style>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/rollpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header">
+</div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>个人中心><font id="path3">我的维权</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left :: left"></div>
+        </div>
+        <!--右-->
+        <div>
+            <div class="panel panel-default"  style="margin-left: 210px;margin-top: 10px;" >
+                <div class="panel-body panel-body-reoprt"  >
+                    <div class="panel-header-reoprt">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2x.png" >
+                        </div>
+                        <div >
+                            <b >我的维权</b>
+                        </div>
+                    </div>
+                    <div class="panel-body-btn">
+                        <button>我发起的维权</button>
+                        <button>我收到的维权</button>
+                    </div>
+                    <div>
+                        <table class="table-report">
+                            <tr>
+                                <td width="50px">编号</td>
+                                <td width="200px">举报对象</td>
+                                <td>举报类型</td>
+                                <td>被举报人</td>
+                                <td>处理状态</td>
+                                <td>发起时间</td>
+                                <td>操作</td>
+
+                            </tr>
+                            <tr>
+                                <td>0845</td>
+                                <td>商户:北京比目鱼有限公司<br>
+                                    账户id:77687655</td>
+                                <td>盗用版权</td>
+                                <td>刘某某</td>
+                                <td>已结案</td>
+                                <td>2019-08-09</td>
+                                <td>更多</td>
+                            </tr>
+                            <tr>
+                                <td>0845</td>
+                                <td>商户:北京比目鱼有限公司<br>
+                                    账户id:77687655</td>
+                                <td>盗用版权</td>
+                                <td>刘某某</td>
+                                <td>已结案</td>
+                                <td>2019-08-09</td>
+                                <td>更多</td>
+                            </tr>
+                            <tr>
+                                <td>0845</td>
+                                <td>商户:北京比目鱼有限公司<br>
+                                    账户id:77687655</td>
+                                <td>盗用版权</td>
+                                <td>刘某某</td>
+                                <td>已结案</td>
+                                <td>2019-08-09</td>
+                                <td>更多</td>
+                            </tr>
+                            <tr>
+                                <td>0845</td>
+                                <td>商户:北京比目鱼有限公司<br>
+                                    账户id:77687655</td>
+                                <td>盗用版权</td>
+                                <td>刘某某</td>
+                                <td>已结案</td>
+                                <td>2019-08-09</td>
+                                <td>更多</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+            <div style="margin: 35px 0" id="paging"  frm="xyt_pushForm" pageIndex="1" totalPageCount="10" totalCount="100">
+                <script>
+                    $.ajax({
+                        url : "../rollpage.html",
+                        cache : true,
+                        async : false,
+                        dataType:"html",
+                        success : function(html) {
+                            $("#paging").html('');
+                            $("#paging").append(html);
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/index.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

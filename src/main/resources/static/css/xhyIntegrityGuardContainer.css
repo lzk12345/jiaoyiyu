@@ -1,0 +1,158 @@
+.xhyIntegrityGuardContainer {
+    width: 1002px;
+    height: 1000px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 1);
+    padding: 25px 123px 0 22px;
+    box-sizing: border-box;
+}
+
+.xhyIntegrityGuardContainer > .title {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-bottom: 11px;
+}
+
+.xhyIntegrityGuardContainer > .title > h1 {
+    width: 148px;
+    height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    margin: 0 0 0 12px;
+}
+
+.xhyIntegrityGuardContainer > .r1 {
+    width: 857px;
+    height: 60px;
+    background: rgba(255, 82, 81, 0.1974);
+    padding: 10px 0 10px 20px;
+    box-sizing: border-box;
+}
+
+.xhyIntegrityGuardContainer > .r1 p {
+    width: 837px;
+    height: 40px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    line-height: 20px;
+    margin: 0;
+    box-sizing: border-box;
+    opacity: 1;
+}
+
+.xhyIntegrityGuardContainer > .r2 {
+    box-sizing: border-box;
+    margin: 20px 0 50px 0;
+    padding-left: 20px;
+}
+
+.xhyIntegrityGuardContainer > .r2 > h1 {
+    width: 187px;
+    height: 22px;
+    font-size: 16px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 22px;
+    box-sizing: border-box;
+    margin-bottom: 45px;
+}
+
+.xhyIntegrityGuardContainer > .r2 > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 74px;
+    box-sizing: border-box;
+}
+
+.xhyIntegrityGuardContainer > .r2 > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.xhyIntegrityGuardContainer > .r3 {
+    padding-left: 20px;
+}
+
+.xhyIntegrityGuardContainer > .r3 > h1 {
+    font-size: 16px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 22px;
+    box-sizing: border-box;
+    margin-bottom: 31px;
+}
+
+.xhyIntegrityGuardContainer > .r3 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.xhyIntegrityGuardContainer > .r3 > div p{
+    height:20px;
+    font-size:14px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    line-height:20px;
+    padding-left: 90px;
+}
+.xhyIntegrityGuardContainer > .r3 > div p:first-of-type{
+    padding-left: 0;
+}
+
+.xhyIntegrityGuardContainer > .r3 > div a{
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    text-decoration: none;
+    color: rgba(255, 82, 81, 1);
+    line-height: 20px;
+}
+
+
+.xhyIntegrityGuardContainer > .r3 > div label{
+    width:86px;
+    height:17px;
+    font-size:12px;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    line-height:17px;
+}
+
+.xhyIntegrityGuardContainer > .r3 > div>div>div{
+    padding-left: 30px;
+    box-sizing: border-box;
+    margin-top: 28px;
+}
+
+.xhyIntegrityGuardContainer > .r3 > div>div>div>div{
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.xhyIntegrityGuardContainer >.r3 >div input[type="button"]{
+    width:159px;
+    height:45px;
+    background:rgba(255,82,81,1);
+    font-size:20px;
+    font-family:PingFangSC-Semibold;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+    line-height:28px;
+    box-sizing: border-box;
+    border: 0px;
+}

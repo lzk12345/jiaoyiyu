@@ -1,0 +1,147 @@
+.xytshaixuan {
+    height: 52px;
+    font-size: 16px;
+
+}
+
+.xytshaixuan select {
+    float: left;
+    border: none;
+    outline: none;
+    background: #f4f4f4;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+xytserach{
+
+    float: left;
+
+}
+.xytserach input {
+    margin-left: 42.3%;
+    margin-top: 25px;
+    float: left;
+    width:181px;
+    height:32px;
+    border-radius:1px;
+    border:1px solid rgba(151,151,151,1);
+    border-right: none;
+    outline: none;
+}
+.xytserach button{
+    margin-top: 25px;
+    float: left;
+    width:38px;
+    height:32px;
+    background:rgba(255,82,81,1);
+    border-radius:1px;
+    border: none;
+}
+
+.xytcard{
+    width: 224px;height: 300px;background:#FFF;float: left;margin-left: 20px;margin-top: 20px;
+}
+.xytcard:nth-child(1){
+  margin-left: 0px;
+}
+.xytcard:nth-child(6){
+    margin-left: 0px;
+}
+.xytcard:nth-child(11){
+    margin-left: 0px;
+}
+.xytcard:nth-child(16){
+    margin-left: 0px;
+}
+.xytcard:nth-child(21){
+    margin-left: 0px;
+}
+.xytcard:nth-child(26){
+    margin-left: 0px;
+}
+.xytcard:nth-child(31){
+    margin-left: 0px;
+}
+.xytcardfont{
+    padding: 8px 12px 10px 12px
+}
+.xytcardfont div:nth-child(1){
+    color: #7D7D7D
+}
+.xytcardfont div:nth-child(2){
+    color: #525252;font-size: 10px;height: 25px;
+}
+.xytcardfont div:nth-child(2) div{
+    margin-left: 26px;
+    margin-top: 15px;
+}
+
+.xytcardfont div:nth-child(2) div:nth-child(1){
+    margin-left: 0px;
+
+}
+
+.xytcardfont div:nth-child(2) div img{
+    width: 16px;
+    height: 15px;
+
+}
+.xytcardfont div:nth-child(3){
+    margin-top: 24px;
+
+}
+.xytcardfont div:nth-child(3) span{
+    color:#525252;
+}
+.xytcardfont div:nth-child(3) span:nth-child(3){
+  margin-left: 45%;
+    color: #B2B2B2;
+}
+.xyttjsjs{
+    width:274px;
+    height:126px;
+    background:rgba(255,255,255,1);
+    border-radius:0px 0px 1px 1px;
+    margin-top: 20px;
+    margin-left: 33px;
+    float: left;
+}
+.xyttjsjs:nth-child(1){
+    margin-left: 0px;
+
+}
+.xyttjsjs img {
+    width: 84px;height: 84px;border-radius: 50%;margin-left: 34px;margin-top: 18px;float: left
+
+}
+.xyttjsjsfont{
+    float: left;margin-left: 20px
+}
+.xyttjsjsfont p{
+    margin-top: 19px;font-size:16px
+}
+.xyttjsjsfont div:nth-child(2){
+    color: #9B9B9B;font-size: 11px
+}
+.xyttjsjsfont font{
+    font-size: 12px
+}
+.xyttjsjsfont div:nth-child(4) button{
+     width:45px;
+     height:18px;
+     border:1px solid rgba(155,155,155,1);
+     font-size: 8px;
+     margin-top: 5px;
+     outline: none;
+ }
+.xyttjsjsfont div:nth-child(4) button:hover{
+    background: #F05958;
+    color: #FFFFFF;
+    border: none;
+
+}
+
+
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>比目鱼</title>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="/js/headpic.js"></script>
+    <link href="/css/sellworkservice.css" rel="stylesheet"/>
+    <script src="/js/easyUploader.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+
+
+</head>
+<body>
+<div class="all-sds">
+    <div class="headerpage" th:replace="header :: header">
+    </div>
+    <div class="bgc-sds">
+        <!--2.-->
+        <div class="banner-sds">
+
+            <br>
+            <div>
+                <div class="welcome-sds">
+                    <p>尊敬的欧文，欢迎您回来！</p>
+                    <p>当前为普通会员,lv12</p>
+                </div>
+                <div class="Headportrait-sds">
+                    <img src="/img/stouxiang.png">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="btn-upwd">
+
+            <div>
+                <a href="/uploadworks/index">上传作品</a>
+            </div>
+            <div>
+                <a href="#">出售设计服务</a>
+            </div>
+
+
+        </div>
+
+        <div class="right-sds">
+            <div class="panel panel-default right-sds-1">
+                <p>出售设计服务</p>
+            </div>
+            <div class="panel panel-default right-sds-3">
+                <div class="panel-heading">
+                    <p>上传图片</p>
+                    <p>注：每个大小不超过2MB，最多可上传5张</p>
+                </div>
+                <div class="panel-body">
+                    <div class="upload-pic">
+
+
+                        <font>·</font>
+                        <div>
+                            <div id="uploader"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="panel panel-default right-sds-2">
+                <div class="panel-heading">
+                    <p>名称信息</p>
+                </div>
+                <div class="panel-body">
+                    <div class="worksname" id="wordCount">
+                        <font>·</font>
+                        <textarea placeholder="服务名称" id="serviceTitle"></textarea>
+                        <span class="wordwrap"><var class="word">40</var>/40</span>
+
+                    </div>
+                    <div class="select-type" style="float: left">
+                        <font>·</font>
+                        <select id="serviceType">
+                            <option value="0">请选择服务类型</option>
+                            <option th:value="${catalog.id}" th:each="catalog:${catalog1List}" th:text="${catalog.name}">Saab</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default right-sds-4">
+                <div class="panel-heading">
+                    <p>价格设置</p>
+
+                </div>
+                <div class="panel-body select-type">
+                    <font style="float: left">·</font>
+                    <div class="sellworkprice">
+                        价格：<input type="number" id="price">元
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel panel-default right-sds-5">
+                <div class="panel-heading">
+                    <p>服务详情</p>
+
+                </div>
+                <div class="panel-body">
+
+                    <div class="upload-cover">
+                        <font>·</font>
+                        <div class="servicecomment" id="wordCount1">
+
+                            <textarea placeholder="服务详情" id="serviceDetail"></textarea>
+                            <span class="wordwrap"><var class="word">2000</var>/2000</span>
+
+                        </div>
+                        <div>
+                            <div id="uploader1"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="sds-ConsentAgreement">
+                <input type="checkbox" id="xiaohongyu"> <font>我已阅读并同意 </font><a>《小红鱼诚信保证金协议》</a>
+
+                <br>
+                <button id="sellServiceSub">确认发布</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<script src="/js/sellworkservice.js"></script>
+</body>
+</html>

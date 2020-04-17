@@ -1,0 +1,99 @@
+.xhyAbilityEvaluation {
+    width: 1002px;
+
+    background: rgba(255, 255, 255, 1);
+    padding: 22px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-top: 10px;
+    border: solid 1px #DDDDDD;
+}
+
+.xhyAbilityEvaluation * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.xhyAbilityEvaluation .m1 {
+    border-bottom: solid 1px #DDDDDD;
+    height: 38px;
+}
+
+.xhyAbilityEvaluation .m1 .r1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 11px;
+    margin-bottom: 12px;
+    margin-left: 15px;
+}
+
+.xhyAbilityEvaluation .m1 .r1 h3 {
+    height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    line-height: 28px;
+    margin-left: 20px;
+}
+
+.xhyAbilityEvaluation .m1 .r1 img {
+    position: absolute;
+    left: 0;
+    width: 6px;
+    height: 20px;
+    background: RGBA(255, 82, 81, 1);
+}
+
+
+
+.xhyAbilityEvaluation .m2 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+
+}
+
+.xhyAbilityEvaluation .m2 .r1{
+    margin:0 74px 0 26px;
+    padding-top: 30px;
+
+}
+
+
+.xhyAbilityEvaluation .m2 .r1>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 17px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+
+.xhyAbilityEvaluation .m2 .r1 img{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+.xhyAbilityEvaluation .m2 .r1 a{
+    height:22px;
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:#333333;
+}
+
+.xhyAbilityEvaluation .m2 .r1 span{
+    height:22px;
+    font-size:16px;
+    font-family:PingFangSC-Medium;
+    font-weight:500;
+    color:rgba(153,153,153,1);
+}
+

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/autonym.css" />
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/css/iF.step.css" rel="stylesheet" type="text/css">
+    <link href="/css/rollpage.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/left2.css">
+    <link rel="stylesheet" href="/css/upload-img.css">
+    <script src="/js/headpic.js"></script>
+</head>
+<body>
+
+<script type="text/javascript" src="/js/city.js"></script>
+<!--<script type="text/javascript" src="/js/method.js"></script>-->
+<div class="headerpage" th:replace="header :: header"></div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>账号管理><font id="path3">实名认证</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left2 :: left2"></div>
+        </div>
+        <!--右-->
+        <div style="float: left;"  >
+            <div class="panel panel-default" style="margin-left: 20px;margin-top: 10px" >
+                <div class="panel-body" style="width: 1002px;" >
+                    <div style="width: 975px;height: 46px;border-bottom:solid 1px #E7E7E7">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2.png" width="6px" height="20px" style="margin-top: 10px;margin-left: 22px" ></div>
+                        <div style="margin-top: 5px;float: left">
+                            <font style="font-size: 20px;margin-left: 16px;"><b>实名认证</b></font></div>
+
+                    </div>
+
+
+                    <div class="left-three"></div>
+                    <div class="left-four">
+                        <span>实名认证成功后: <br>能够提升账户安全性:提现时银行卡开户名必须与真实姓名相同,方可提现,防止提现至他人银行卡 <br>能够提升客户责任感:客户更加信任与认可通过实名认证的用户</span>
+                    </div>
+                    <div class="left-five" style="height: 38px;margin-left: 293px;color:#ff5251">以个人身份认证
+                        <div></div>
+                    </div>
+                    <div class="left-five" style="height: 33px;margin-left: 80px;">以企业身份认证</div>
+                    <div style="clear: both;"></div>
+                    <hr />
+                    <div class="left-six" style="margin-top: 67px;">
+                        <span>姓名:</span>
+                        <input style="width: 353px;height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;margin-left: 82px;" placeholder="根据下方传入身份证照片自动生成" id="username1" type="text" disabled/>
+                    </div>
+                    <div class="left-six" style="margin-top: 30px;">
+                        <span>身份证号:</span>
+                        <input style="width: 353px;height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;margin-left: 50px;"placeholder="根据下方传入身份证照片自动生成" id="idcardnum1" type="text" disabled/>
+                    </div>
+
+                    <div class="left-six" style="margin-top: 30px;">
+                        <span>身份证到期时间:</span>
+                        <input id="shixiaodate" disabled style="width: 353px;height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;margin-left: 2px"placeholder="根据下方传入身份证照片自动生成" type="text" />
+                    </div>
+                    <div class="left-eight">上传身份证照片</div>
+                    <div style="width:664px;height:72px;background:rgba(255,229,186,1);margin-left: 180px;margin-top: 10px">
+
+                        <div style="width:601px;height:52px;font-size:12px;margin-left: 32px;padding-top:  10px;color: #333333">
+                            1.请保证所传证件照文字清晰可见！上传单个附件大小限制为1M，格式限定为jpeg/jpg/png<br>
+
+
+                            2.上传的手持身份证照必须满足：a.持件人与证件必须是同一人；b.照片中证件人像面部信息清晰可见；c.单手或双手持证，持件人面部不能有任何遮挡且必须保持清晰</div>
+                    </div>
+
+                    <div id="app" class="container1" v-cloak>
+                        <div class="uploading-data" v-if="isUploading"></div>
+
+                        <div class="upload-img-column">
+                            <div class="words">上传身份证含照⽚的⼀⾯ ({{imgTempList.length}}/1)</div>
+                            <div class="upload-wrap">
+                                <div class="box">
+                                    <label class="p dotted">
+                                        <input type="file" accept="image/jpg,image/jpeg,image/png" name="file"
+                                               @change="onChooseImage($event)"/>
+                                        <img src="/img/jiahao.png" alt="">
+                                    </label>
+                                </div>
+                                <template v-for="(imgItem, imgIndex) in imgTempList">
+                                    <div class="box">
+                                        <div class="p">
+                                            <img :src="imgItem">
+                                            <div class="delete" @click.stop="deleteImg(imgIndex)">
+                                                <img src="/img/guanbi.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                                <div style="float: left;margin-left: 50px;margin-top: 100px;font-size: 20px">
+                                    <span id="appspan1"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="l-btn" @click="onUploadImg">提交</button>
+
+                        <!-- 图片上传成功后返回的路径(没必要的) -->
+<!--                        <div class="success-path">-->
+<!--                            <template v-for="(item, index) in successPath">-->
+<!--                                <a :href="item" target="_blank">{{item}}</a>-->
+<!--                            </template>-->
+<!--                        </div>-->
+
+                    </div>
+                    <div id="app1" class="container1" v-cloak>
+                        <div class="uploading-data" v-if="isUploading"></div>
+
+                        <div class="upload-img-column">
+                            <div class="words">上传身份证带国徽的⼀⾯ ({{imgTempList.length}}/1)</div>
+                            <div class="upload-wrap">
+                                <div class="box">
+                                    <label class="p dotted">
+                                        <input type="file" accept="image/jpg,image/jpeg,image/png" name="file"
+                                               @change="onChooseImage($event)"/>
+                                        <img src="/img/jiahao.png" alt="">
+                                    </label>
+                                </div>
+                                <template v-for="(imgItem, imgIndex) in imgTempList">
+                                    <div class="box">
+                                        <div class="p">
+                                            <img :src="imgItem">
+                                            <div class="delete" @click.stop="deleteImg(imgIndex)">
+                                                <img src="/img/guanbi.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                                <div style="float: left;margin-left: 50px;margin-top: 100px;font-size: 20px">
+                                    <span id="appspan2"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="l-btn" @click="onUploadImg">提交</button>
+
+                        <!-- 图片上传成功后返回的路径(没必要的) -->
+<!--                        <div class="success-path">-->
+<!--                            <template v-for="(item, index) in successPath">-->
+<!--                                <a :href="item" target="_blank">{{item}}</a>-->
+<!--                            </template>-->
+<!--                        </div>-->
+
+                    </div>
+
+                    <div id="app2" class="container1" v-cloak>
+                        <div class="uploading-data" v-if="isUploading"></div>
+
+                        <div class="upload-img-column">
+                            <div class="words">上传单手或双手持证照片 ({{imgTempList.length}}/1)</div>
+                            <div class="upload-wrap">
+                                <div class="box">
+                                    <label class="p dotted">
+                                        <input type="file" accept="image/jpg,image/jpeg,image/png" name="file"
+                                               @change="onChooseImage($event)"/>
+                                        <img src="/img/jiahao.png" alt="">
+                                    </label>
+                                </div>
+                                <template v-for="(imgItem, imgIndex) in imgTempList">
+                                    <div class="box">
+                                        <div class="p">
+                                            <img :src="imgItem">
+                                            <div class="delete" @click.stop="deleteImg(imgIndex)">
+                                                <img src="/img/guanbi.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                                <div style="float: left;margin-left: 50px;margin-top: 100px;font-size: 20px">
+                                    <span id="appspan3"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="l-btn" @click="onUploadImg">提交</button>
+
+<!--                        &lt;!&ndash; 图片上传成功后返回的路径(没必要的) &ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="success-path">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <template v-for="(item, index) in successPath">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a :href="item" target="_blank">{{item}}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </template>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--                    </div>-->
+<!--                    <div class="end-one">-->
+<!--                        <span>提交</span>-->
+<!--                    </div>-->
+                    <div style= "width: 882px;height: 50px;border-bottom:1px dashed #E7E7E7;margin-left: 50px"></div>
+                    <div style="width: 882px;height: 100px;background-color:#F3F4F8;margin-left: 50px;margin-top: 40px">
+                        <div style="color: #333333;width: 701px;height: 90px;margin-left: 92px;padding-top: 20px">
+                            <FONT style="font-size: 16px">友情提示：</FONT><br>1.实名认证成功，能够提升账户安全性:提现时银行卡开户名必须与真实姓名相同,方可提现,防止提现至他人
+                            银行卡 2.能够提升客户责任感:客户更加信任与认可通过实名认证的用户
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/accountSetting.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="https://www.jq22.com/jquery/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+<script src="/js/autonym.js"></script>
+</html>

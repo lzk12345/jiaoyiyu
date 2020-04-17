@@ -1,0 +1,106 @@
+/***
+	iForms v2.0 —— Step
+	by WingMeng(.com) 2014-?
+	
+	UI menu:
+		1. The default style (默认风格) 
+		2. Yellow (黄色风格)
+		3. Blue (蓝色风格)
+		4. Red  (红色风格)
+			
+***/
+
+/* Reset */
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #333;
+
+}
+ol {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui-step {
+	color: #b7b7b7;
+	padding: 0 60px;
+	margin-bottom: 35px;
+	position: relative;
+}
+.ui-step:after {
+	display: block;
+	content: "";
+	height: 0;
+	font-size: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+.ui-step li {
+	float: left;
+	position: relative;
+}
+.ui-step .step-end {
+	width: 120px;
+	position: absolute;
+	top: 0;
+	right: -60px;
+}
+.ui-step-line {
+
+	height: 2px;
+	background-color: #e0e0e0;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.2);
+	margin-top: 15px;
+}
+.step-end .ui-step-line { display: none; }
+.ui-step-cont {
+	width: 120px;
+	position: absolute;
+	top: 0;
+	left: -15px;
+	text-align: center;
+}
+.ui-step-cont-number {
+	display: inline-block;
+*zoom:1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+
+	border-radius: 50%;
+
+
+	font-family: tahoma;
+	font-weight: bold;
+	font-size: 16px;
+	background-color: #b9b9b9;
+
+}
+.ui-step-cont-text {
+	position: relative;
+	top: 34px;
+	left: -42px;
+	font-size: 12px;
+}
+/** 步骤数定义 **/
+.ui-step-3 li { width: 25%; }
+
+/** The default style (默认风格) **/
+/* Done */
+.step-done .ui-step-cont-number { background-color: #ff5251; }
+.step-done .ui-step-cont-text { color: #333; font-weight: bold; }
+.step-done .ui-step-line { background-color: #ff5251; }
+/* Active */
+.step-active .ui-step-cont-number { background-color: #BCBCBC; }
+.step-active .ui-step-cont-text {
+	color: #BCBCBC;
+	font-weight: bold;
+}

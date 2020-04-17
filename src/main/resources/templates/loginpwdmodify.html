@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/css/iF.step.css" rel="stylesheet" type="text/css">
+    <link href="/css/rollpage.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+<!--    <script src="/js/rollpage.js"></script>-->
+    <link rel="stylesheet" href="/css/personalhome.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/left2.css">
+    <script src="/js/headpic.js"></script>
+</head>
+<body>
+<div class="headerpage" th:replace="header :: header"></div>
+<div style="background-color: #F4F4F4 ;width: 100% ">
+    <div class="jijiji"></div>
+    <!--两个div-->
+    <div style="margin-left: 360px;margin-top: 20px">
+        <font style="font-size: 14px" color="#7D7D7D">
+            我的小红鱼>账号管理><font id="path3">登录密码修改</font></font>
+    </div>
+    <div style="width:1240px;" class="container">
+        <div style="float: left">
+            <!--左-->
+            <div class="leftpage" th:replace="left2 :: left2"></div>
+        </div>
+        <!--右-->
+        <div style="float: left"  id="collectionContent" >
+            <div class="panel panel-default" style="margin-left: 20px;margin-top: 10px" >
+                <div class="panel-body" style="width: 1002px;height: 614px;background-color: white;" >
+                    <div style="width: 970px;height: 46px;border-bottom:solid 1px #E7E7E7">
+                        <div style="float: left;">
+                            <img src="/img/Rectangle@2x.png" width="6px" height="20px" style="margin-top: 8px;margin-left: 22px" ></div>
+                        <div style="margin-top: 5px;float: left">
+                            <b style="font-size: 20px;margin-left: 16px;">登录密码设置修改</b>
+                        </div>
+
+                    </div>
+
+
+                    <div style="font-size: 16px;margin-left: 157px;margin-top: 76px;">
+
+                        <table>
+                            <tr >
+                                <td width="140px">
+                                    <p style="margin-top: 10px">当前密码：</p>
+                                </td>
+                                <td>
+                                    <input id="currentPwd" type="text" style="width: 353px;height: 45px;border: solid 1px #E7E7E7;padding-left: 10px;font-size: 14px" placeholder="请输入6～16位密码">
+                                    <a style="color: #0091FF;margin-left: 10px;font-size: 12px;">忘记密码？</a>
+                                </td>
+                            </tr>
+                            <tr style="height: 80px">
+                                <td><p style="margin-top: 10px">新密码：</p></td>
+                                <td>
+                                    <input id="newPwd1" type="text" style="width: 353px;height: 45px;border: solid 1px #E7E7E7;padding-left: 10px;font-size: 14px" placeholder="请输入6位～16位字母、数字或字符">
+                                    <a style="color: #0091FF;margin-left: 10px;font-size: 12px">如何设置高强度密码？</a>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td><p style="margin-top: 10px">确认新密码：</p></td>
+                                <td>
+                                    <input id="newPwd2" type="text" style="width: 353px;height: 45px;border: solid 1px #E7E7E7;padding-left: 10px;font-size: 14px" placeholder="请再次输入您的新密码">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button type="button" style="background-color: #FF5251;color: white;width: 122px;height: 41px;border: none;margin-left: 260px;margin-top: 30px" id="updateBtn">确认修改</button>
+                                </td>
+
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div style= "width: 882px;height: 50px;border-bottom:1px dashed #E7E7E7;margin-left: 50px"></div>
+                    <div style="width: 882px;height: 55px;background-color:#F3F4F8;margin-left: 50px;margin-top: 40px">
+
+                        <div style="color: #333333;width: 701px;height: 50px;margin-left: 92px;padding-top: 15px">
+                            <FONT style="font-size: 16px">友情提示：</FONT>登录密码用于账号登录，请妥善保管好密码，小红鱼工作人员不会以任何理由向您索取密码。
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<script src="/js/accountSetting.js"></script>
+<input type="hidden" id="tokenVal" th:value="${token}">
+<div class="modal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-Releasedemand">
+
+            <div class="modal-header ">
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" style="color: red">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <div class="needinput">
+                        <p>我需要:</p>
+
+                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
+                    </div>
+                    <div class="modal-phonenum">
+                        <p>手机号码:</p>
+                        <input type="text" placeholder="手机号" th:value="${phonenum}"
+                               id="phonenum">
+                        <button onclick="abledBtn();">修改</button>
+                    </div>
+                    <div class="messageprotect">
+                        <p>信息保护中,仅小红鱼项目方可见</p>
+                        <button id="release" onclick="publishTask()"
+                                style="color: #FFFFFF">免费发布一个需求
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $("#updateBtn").click(function () {
+        let currentPwd = $("#currentPwd").val();
+        let newPwd1 = $("#newPwd1").val();
+        let newPwd2 = $("#newPwd2").val();
+        if (currentPwd == null || currentPwd == "") {
+            alert("当前密码不能为空！");
+        }else {
+            if (newPwd1 == null || newPwd1 == "") {
+                alert("请填写新密码");
+            }else{
+                if (newPwd2 == null || newPwd2 == "") {
+                    alert("请再次填写新密码");
+                }else {
+                    if (newPwd1 != newPwd2){
+                        alert("两次密码不一致");
+                    }else {
+                        $.post("/loginpwdmodify/updateUserPwd",{currentPwd:currentPwd,newPwd:newPwd2},function (res) {
+                            if (res == 1) {
+                                alert("修改密码成功！");
+                            }else{
+                                alert("修改密码失败");
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
