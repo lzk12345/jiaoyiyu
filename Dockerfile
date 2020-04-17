@@ -1,5 +1,4 @@
 FROM maven:3 AS bd
-WORKDIR /
 
 RUN mvn package -Dmaven.test.skip=true
 
