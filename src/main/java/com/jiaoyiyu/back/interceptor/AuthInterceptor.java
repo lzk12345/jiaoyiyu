@@ -46,12 +46,12 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         String verifyResult = "";
         //验证token
         if (StringUtils.isNotBlank(token)) {
-            verifyResult = HttpclientUtil.doGet("http://localhost:80/passport/verify?token=" + token);
+            verifyResult = HttpclientUtil.doGet("http://121.36.85.218:80/passport/verify?token=" + token);
             Cookie[] cookies = request.getCookies();
             if (cookies != null) {
                 for (Cookie cookie : cookies) {
                     cookie.setPath("/");
-                    cookie.setDomain("localhost");
+                    cookie.setDomain("121.36.85.218");
                     response.addCookie(cookie);
 
                 }
@@ -88,7 +88,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
                 // 重定向回原来的界面
                 StringBuffer requestURL = request.getRequestURL();
                 String url = requestURL.toString();
-                response.sendRedirect("http://localhost:80/passport/index?returnUrl=" + url);
+                response.sendRedirect("http://121.36.85.218:80/passport/index?returnUrl=" + url);
                 return false;
             }
         }else {

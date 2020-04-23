@@ -53,7 +53,7 @@ public class RegisterController {
             User user1 = userService.savePhoneNumToDB(phonenum);
             // 清除redis缓存的验证码
             registerService.delCodeCache(phonenum, messageCode);
-            return "redirect:http://localhost:80/index?token=" + token + "&phonenum=" + phonenum;
+            return "redirect:http://121.36.85.218:80/index?token=" + token + "&phonenum=" + phonenum;
         }else if (result.equals("验证码已过期")){
             modelMap.put("result", "验证码已过期");
             return "loginindex";

@@ -139,7 +139,7 @@ public class PaymentController {
         String form = null;
         AlipayTradePagePayRequest alipayTradePagePayRequest = new AlipayTradePagePayRequest();
         Map<String, Object> map = new HashMap<>();
-        alipayTradePagePayRequest.setReturnUrl("http://localhost:80/payment/alipay/callback/return/zhongbiao");
+        alipayTradePagePayRequest.setReturnUrl("http://121.36.85.218:80/payment/alipay/callback/return/zhongbiao");
         alipayTradePagePayRequest.setNotifyUrl(AlipayConfig.notify_payment_url);
         map.put("out_trade_no", outTradeNo);
         map.put("product_code", "FAST_INSTANT_TRADE_PAY");
