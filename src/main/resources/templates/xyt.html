@@ -10,13 +10,76 @@
     <script src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/xyt.css">
     <script src="/js/headpic.js"></script>
+    <style>
+        .paddtop{
+            padding: 15px 0 0 0;
+        }
+        .cardpadd{
+            padding: 20px 0 0 0;
+        }
+        .logopadd{
+            padding-right: 3%;
+        }
+        .btn-default{
+
+            height: 50px;
+
+        }
+        .btn-default:hover{
+            background: none;
+        }
+        .seachpadd{
+            padding-right: 4%;
+            padding-top: 10px;
+        }
+        .xytsearchbtn{
+            height: 34px;
+        }
+        .xytselect select{
+            border: none;
+            outline: none;
+        }
+        .xytbodypadd{
+            padding-bottom: 200px;
+        }
+        .xytallcard{
+            padding-bottom: 50px;
+        }
+    </style>
 </head>
 <body >
 <div class="headerpage" th:replace="header :: header"></div>
-<div class="container">
+
+
+<div class="container xytbodypadd">
+
     <img src="/img/banner.png" class="img-responsive">
 
-    <div class="row container">
+    <div class="row seachpadd container">
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group" >
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default xytsearchbtn hidden-xs">搜索</button>
+        </form>
+    </div>
+    <div class="xytselect">
+        <select>
+            <option value ="volvo">全部推荐</option>
+            <option value ="saab">Saab</option>
+        </select>
+        <select >
+            <option value ="volvo">所有时间</option>
+            <option value ="saab">Saab</option>
+        </select>
+        <select>
+            <option value ="volvo">所有领域</option>
+            <option value ="saab">Saab</option>
+        </select>
+    </div>
+    <div style="clear: both"></div>
+
+    <div class="row container xytallcard">
         <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
             <div class="img-thumbnail">
 
@@ -295,25 +358,7 @@
 
 <!--            &lt;!&ndash;<%&#45;&#45;小鱼塘推送模块&#45;&#45;%>&ndash;&gt;-->
 <!--            <div>-->
-<!--                <div class="xytshaixuan">-->
-<!--                    <select>-->
-<!--                        <option value ="volvo">全部推荐</option>-->
-<!--                        <option value ="saab">Saab</option>-->
-<!--                    </select>-->
-<!--                    <select >-->
-<!--                        <option value ="volvo">所有时间</option>-->
-<!--                        <option value ="saab">Saab</option>-->
-<!--                    </select>-->
-<!--                    <select>-->
-<!--                        <option value ="volvo">所有领域</option>-->
-<!--                        <option value ="saab">Saab</option>-->
-<!--                    </select>-->
-<!--                    <div class="xytserach">-->
-<!--                        <input>-->
-<!--                        <button>-->
-<!--                            <img src="/img/fangdajing.png">-->
-<!--                        </button>-->
-<!--                    </div>-->
+
 <!--                </div>-->
 
 
