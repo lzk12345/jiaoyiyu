@@ -37,70 +37,71 @@
                             </div>
                         </div>
                     </div>
-                    <div class="c2">
-                        <div class="d1"><span>当前积分:</span><span th:text="${points}">0</span></div>
-                        <div class="d2"><span>当前余额:</span><span th:text="${'￥' + accountBalance}">0</span></div>
-                        <div class="d3"><span>已经赚取:</span><span th:text="${'￥' + earnTheAmount}">0</span></div>
-                        <div class="d4"><a href="javascript:void(0);">查看财务明细</a></div>
-                    </div>
+<!--                    <div class="c2">-->
+<!--                        <div class="d1"><span>当前积分:</span><span th:text="${points}">0</span></div>-->
+<!--                        <div class="d2"><span>当前余额:</span><span th:text="${'￥' + accountBalance}">0</span></div>-->
+<!--                        <div class="d3"><span>已经赚取:</span><span th:text="${'￥' + earnTheAmount}">0</span></div>-->
+<!--                        <div class="d4"><a href="javascript:void(0);">查看财务明细</a></div>-->
+<!--                    </div>-->
                 </div>
             </div>
-            <div class="r2">
-                <div class="title">
-                    <img src="/img/Rectangle@2x.png" alt="">
-                    <span>道具总览</span>
-                </div>
-                <div class="content">
-                    <div>
-                        <div>
-                            <div><img src="/img/加急%20copy@2x.png" alt=""></div>
-                            <div>
-                                <h3>任务加急</h3>
-                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
-                            </div>
-                        </div>
-                        <div>
-                            剩余次数(<span th:text="${taskUrgentResidualTimes}">3</span>)次
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div><img src="/img/置顶@2x.png" alt=""></div>
-                            <div>
-                                <h3>稿件置顶</h3>
-                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
-                            </div>
-                        </div>
-                        <div>
-                            剩余次数(<span th:text="${taskTopResidualTimes}">3</span>)次
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div><img src="/img/不可见@2x.png" alt=""></div>
-                            <div>
-                                <h3>稿件隐藏</h3>
-                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
-                            </div>
-                        </div>
-                        <div>
-                            剩余次数(<span th:text="${taskHideResidualTimes}">3</span>)次
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div><img src="/img/加价@2x.png" alt=""></div>
-                            <div>
-                                <h3>增加投标次数</h3>
-                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>
-                            </div>
-                        </div>
-                        <div>
-                            剩余次数(<span>3</span>)次
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            道具总览-->
+<!--            <div class="r2">-->
+<!--                <div class="title">-->
+<!--                    <img src="/img/Rectangle@2x.png" alt="">-->
+<!--                    <span>道具总览</span>-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <div>-->
+<!--                        <div>-->
+<!--                            <div><img src="/img/加急%20copy@2x.png" alt=""></div>-->
+<!--                            <div>-->
+<!--                                <h3>任务加急</h3>-->
+<!--                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            剩余次数(<span th:text="${taskUrgentResidualTimes}">3</span>)次-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div>-->
+<!--                            <div><img src="/img/置顶@2x.png" alt=""></div>-->
+<!--                            <div>-->
+<!--                                <h3>稿件置顶</h3>-->
+<!--                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            剩余次数(<span th:text="${taskTopResidualTimes}">3</span>)次-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div>-->
+<!--                            <div><img src="/img/不可见@2x.png" alt=""></div>-->
+<!--                            <div>-->
+<!--                                <h3>稿件隐藏</h3>-->
+<!--                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            剩余次数(<span th:text="${taskHideResidualTimes}">3</span>)次-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <div>-->
+<!--                            <div><img src="/img/加价@2x.png" alt=""></div>-->
+<!--                            <div>-->
+<!--                                <h3>增加投标次数</h3>-->
+<!--                                <p>发布任务使用,适用紧急任务,提供多方推广,提高参与度</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            剩余次数(<span>3</span>)次-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="r3">
                 <div class="title">
                     <img src="/img/Rectangle@2x.png" alt="">
@@ -157,7 +158,7 @@
                 </div>
             </div>
         </div>
-        <div class="m2">
+        <div class="m2" style="margin-left: 160px">
             <div>
                 <div class="title">
                     <img src="/img/Rectangle@2x.png" alt="">

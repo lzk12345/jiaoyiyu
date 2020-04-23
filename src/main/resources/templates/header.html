@@ -8,83 +8,84 @@
     <title>Document</title>
 </head>
 <body>
-<div class="container bgc-header"  th:fragment="header">
-    <div class="body-header">
-        <div  style="">
-            <img src="/img/BIMUYU.png" >
+<header class="container-fluid" th:fragment="header">
+    <div class="row paddtop">
+        <div class="col-md-4 col-sm-6 col-sm-3 hidden-xs logopadd">
+            <img src="/img/BIMUYU.png" class="img-responsive" style="float: right">
         </div>
 
-        <div class="body-header-li"  >
+        <div class="col-md-5 col-xs-10 col-sm-7" >
+            <nav class="navbar navbar-default" style="background:#ffffff;border: none;font-size: 18px">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">首页</a>
+                    </div>
 
-
-            <nav >
-                <div >
-                    <div class="" id="clickToChangeColor1"  style="font-size: 18px;" >
-                        <ul class="nav navbar-nav" >
-                            <li><a href="/index"  style="color: #333333" >首页</a></li>
-                            <li class="active"><a href="/taskhall/index" style="color: #333333">交易大厅 <span class="sr-only">(current)</span></a></li>
-                            <li><a href="/xyt/index"  style="color: #333333">小鱼塘</a></li>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li> <a href="/xyt/index">小鱼塘</a></li>
 
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="float: left;color: #333333" >我的小红鱼<span class="caret"></span> </a>
-                                <ul class="dropdown-menu" >
-                                    <li><a href="/publishperson"  >我发布购买计划</a></li>
-                                    <li><a href="/partTask"  >参与出售的设计</a></li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的小红鱼 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
                                     <li><a href="/taskCollection"  >我的收藏</a></li>
+<!--                                    <li><a href="/publishperson"  >我发布购买计划</a></li>-->
+<!--                                    <li><a href="/partTask"  >参与出售的设计</a></li>-->
                                     <li><a href="/collectionofPosts"  >我的足迹</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="/personal/index">我的小红鱼</a></li>
+                                    <li><a href="/personal/index" style="text-decoration: none;color: #333333;display: block">我的小红鱼</a></li>
                                 </ul>
                             </li>
-<!--                            <li><a href="#" style="color: #333333">设计学院</a></li>-->
                             <li class="dropdown">
-                                <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #333333">更多<span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/access/index" >考核</a></li>
-                                    <li><a href="/openvip/index" >会员订购</a></li>
+                                    <!--                                    <li><a href="/openvip/index" >会员订购</a></li>-->
                                     <li><a href="/helpcenter/index" >帮助中心</a></li>
                                     <li><a href="/rule/index" >规则中心</a></li>
                                     <li><a href="/uploadworks/index" >上传作品</a></li>
-                                    <li><a href="/sellworkservice/index" >出售设计服务</a></li>
+                                    <!--                                    <li><a href="/sellworkservice/index" >出售设计服务</a></li>-->
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
                                 </ul>
                             </li>
-
-
-
                         </ul>
 
-
-                    </div><!-- /.navbar-collapse -->
-
-                </div><!-- /.container-fluid -->
+                    </div>
+                </div>
             </nav>
-
         </div>
+        <div class="col-md-3 col-xs-2 col-sm-2" >
+            <p class="registerlogin" style="margin-top: 15px;display: block;font-size: 18px;">
+                <a href="/passport/index?returnUrl=http://121.36.85.218:9999/index" style="color: #333333;text-decoration: none" >登录</a>
+            </p>
+            <div style="float: left;font-size: 18px">
 
+                <p style="float: left;">
+                <li class="dropdown" style="list-style: none;position: relative;display: none;" id="headp">
+                    <img class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 52px;height: 52px;border-radius: 50%;" src="/img/y.jpg" id="headPic" alt="">
+                    <ul class="dropdown-menu">
+                        <li><a href="/personal/index" >个人中心</a></li>
+                        <li><a href="/accountManagemet" >账号管理</a></li>
+                        <li><a href="/message/index" ><span style="float: left;">消息</span><div style="width: 32px;height: 20px;color: white;float: left;border-radius: 10px;background-color: #ff5251;text-align: center;margin-left: 10px;">125</div></a></li>
+                        <li><a href="/growup/index" >店铺管理</a></li>
+                    </ul>
+                    <span id="nickname1">小交易鱼</span>
+                </li>
+                </p>
+            </div>
+        </div>
+        <div style="clear: both"></div>
     </div>
-    <button type="button" style="margin-left: 80px;border-radius: 0;background-color: #FF5251;width: 84px;height: 34px;float: left;margin-top: 31px;"  class="btn btn-default" data-toggle="modal" data-target="#myModal">
-        <font color="white">
-            发任务
-        </font>
-    </button>
-    <div style="margin-top: 31px;width: 240px;float: left;margin-left: 20px;font-size: 18px">
-        <p class="registerlogin" style="float: left;margin-top: 5px;display: block">
-            <a href="http://localhost:80/passport/index?returnUrl=http://localhost:80/index" style="margin-left: 30px;color: #333333" >登录</a>
-        </p>
-        <p style="float: left;">
-        <li class="dropdown" style="list-style: none;position: relative;display: none;" id="headp">
-            <img class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 52px;height: 52px;border-radius: 50%;" src="/img/y.jpg" id="headPic" alt="">
-            <ul class="dropdown-menu">
-                <li><a href="/personal/index" >个人中心</a></li>
-                <li><a href="/accountManagemet" >账号管理</a></li>
-                <li><a href="/message/index" ><span style="float: left;">消息</span><div style="width: 32px;height: 20px;color: white;float: left;border-radius: 10px;background-color: #ff5251;text-align: center;margin-left: 10px;">125</div></a></li>
-                <li><a href="/growup/index" >店铺管理</a></li>
-            </ul>
-            <span id="nickname1">小交易鱼</span>
-        </li>
-        </p>
-    </div>
-</div>
-</div>
+</header>
+
 </body>
 </html>
