@@ -46,7 +46,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         String verifyResult = "";
         //验证token
         if (StringUtils.isNotBlank(token)) {
-            verifyResult = HttpclientUtil.doGet("http://121.36.85.218:80/passport/verify?token=" + token);
+            verifyResult = HttpclientUtil.doGet("http://121.36.85.218:9999/passport/verify?token=" + token);
             Cookie[] cookies = request.getCookies();
             if (cookies != null) {
                 for (Cookie cookie : cookies) {
