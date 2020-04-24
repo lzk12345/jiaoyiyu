@@ -709,7 +709,7 @@ $("#baomingcanjia").click(function () {
     } else {
         // 未登录
         // T回到登录页面
-        window.location.href = "http://121.36.85.218:9999/passport/index?returnUrl=http://121.36.85.218:9999/shejishi/index";
+        window.location.href = "http://localhost:80/passport/index?returnUrl=http://localhost:80/shejishi/index";
     }
 
 });

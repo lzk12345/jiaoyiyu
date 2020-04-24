@@ -46,7 +46,7 @@ public class PassPortController {
         String returnUrl = request.getParameter("returnUrl");
         // 如果url地址中没有带returnUrl说明不是从系统哪个页面跳转来，登陆后进入首页，即"/index";
         if (StringUtils.isBlank(returnUrl)) {
-            returnUrl = "http://121.36.85.218:80/index";
+            returnUrl = "http://localhost:80/index";
         }
         modelMap.put("returnUrl", returnUrl);
         return "loginindex";
@@ -91,7 +91,7 @@ public class PassPortController {
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 cookie.setPath("/");
-                cookie.setDomain("121.36.85.218");
+                cookie.setDomain("localhost");
                 response.addCookie(cookie);
             }
         }

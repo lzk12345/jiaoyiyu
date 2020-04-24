@@ -60,7 +60,7 @@ $("#sellServiceSub").click(function () {
                             }, function (res) {
                                 if (res == 1) {
                                     alert("上传成功")
-                                    window.location.href = "http://121.36.85.218:9999/worksdetails/index";
+                                    window.location.href = "http://localhost:80/worksdetails/index";
                                 }
                             });
                         }
