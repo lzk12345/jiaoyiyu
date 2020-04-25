@@ -1,23 +1,23 @@
-/* 
-* @Author: anchen
-* @Date:   2019-11-11 15:24:36
-* @Last Modified by:   anchen
-* @Last Modified time: 2019-11-11 16:14:18
-*/
 .left-one{
-    width:1002px;
-    height:1495px;
-    background:rgba(255,255,255,1);
-    border: 1px solid #f4f4f4;
+    background: #FFFFFF;
+    border: 1px solid #E7E7E7;
+    float: left;
+    margin: 10px 0 0 10px;
+    padding: 10px 0 20px 0;
+
 }
+@media (min-width: 1200px) {
+    .left-one {
+        width: 950px;
+    }
+}
+
+
 .left-two{
     margin-left: 20px;
     margin-top: 25px;
 }
-.left-two img{
-    position: relative;
-    top: 3px;
-}
+
 .left-two span{
     margin-left: 14px;
     font-size:20px;
@@ -25,19 +25,8 @@
     font-weight:600;
     color:rgba(0,0,0,1);
 }
-.left-three{
-    width:957px;
-    height:1px;
-    border: 0;
-    margin-left: 22px;
-    margin-top: 11px;
-    background-color: #e7e7e7;
-}
-.left-four{
-    width: 976px;
-    margin-left: 3px;
-    margin-top: 6px;
-}
+
+
 .left-five{
     margin-top: 8px;
     margin-left: 12px;

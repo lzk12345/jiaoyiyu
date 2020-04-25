@@ -10,11 +10,11 @@
 <body>
 <header class="container-fluid" th:fragment="header">
     <div class="row paddtop">
-        <div class="col-md-4 col-sm-6 col-sm-3 hidden-xs logopadd">
+        <div class="col-md-4 col-sm-6  hidden-xs hidden-sm logopadd">
             <img src="/img/BIMUYU.png" class="img-responsive" style="float: right">
         </div>
 
-        <div class="col-md-5 col-xs-10 col-sm-7" >
+        <div class="col-md-5 col-xs-10 col-sm-10" >
             <nav class="navbar navbar-default" style="background:#ffffff;border: none;font-size: 18px">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,6 +40,7 @@
 <!--                                    <li><a href="/publishperson"  >我发布购买计划</a></li>-->
 <!--                                    <li><a href="/partTask"  >参与出售的设计</a></li>-->
 <!--                                    <li><a href="/collectionofPosts"  >我的足迹</a></li>-->
+
                                     <li role="separator" class="divider"></li>
                                     <li><a href="/personal/index" style="text-decoration: none;color: #333333;display: block">我的小红鱼</a></li>
                                 </ul>
@@ -55,6 +56,29 @@
                                     <!--                                    <li><a href="/sellworkservice/index" >出售设计服务</a></li>-->
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown visible-xs visible-sm">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li ><a href="/myWork" >我的作品</a></li>
+                                    <li><a href="/homeStore" >我的主页店铺</a></li>
+                                    <li><a href="/skillslable" >技能标签设置</a></li>
+                                    <li><a href="/collectionofPosts" >作品收藏</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown visible-xs visible-sm">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">账号管理 <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li ><a href="/accountManagemet" >基本资料</a></li>
+                                    <li><a href="/autonym" >实名认证</a></li>
+                                    <li><a href="/skillslable" >银行卡认证</a></li>
+                                    <li><a href="/loginpwdmodify" >登录密码修改</a></li>
+                                    <li><a href="/pwdmodify" >支付密码修改</a></li>
+                                    <li><a href="/emailAuthentication" >邮箱认证</a></li>
+                                    <li><a href="/phonecertification" >手机认证</a></li>
+                                    <li><a href="/xhyAccountBinding" >第三方账号绑定</a></li>
                                 </ul>
                             </li>
                         </ul>
