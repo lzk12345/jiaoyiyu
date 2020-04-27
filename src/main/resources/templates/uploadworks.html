@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>比目鱼</title>
-    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/dropzone/5.5.1/min/basic.min.css" rel="stylesheet">
+    <link href="/css/dropzone.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/dropzone/5.5.1/min/dropzone.min.js"></script>
 
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/uploadworks.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/headpic.js"></script>
     <script src="/js/easyUploader.js"></script>
     <script src="/layui/layui.js"></script>
-
     <script>
         $(function () {
             //jQuery代码;
@@ -26,6 +28,100 @@
                     elem: '#test1' //指定元素
                 });
             });
+            var maxFileCount1 = 4;
+            var typeArrays1 = ".png, .jpg, .jpeg, .ico, .bmp, .gif";
+            Dropzone.options.dropz = {
+                url: '/uploadworks/uploadImg',
+                paramName: "file",
+                maxFiles: maxFileCount1,
+                maxFilesize: 50, // 上传图片大小，单位：MB
+                acceptedFiles: typeArrays1,
+                addRemoveLinks: true,
+                parallelUploads: maxFileCount1,
+                dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
+                dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+                dictInvalidFileType: "文件类型只能是" + typeArrays1,
+                dictRemoveFile: "移除附件",
+                dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount1 + "个附件！",
+                dictResponseError: "上传附件失败！",
+                init: function () {
+                    this.on("success", function (file, data) {
+                    });
+                    this.on('error', function (files, data) {
+                    });
+                },
+                removedfile: function (a) {
+                    // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
+                    //
+                    // });
+                    // var b;
+                    // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
+
+                }
+            };
+
+            var maxFileCount2 = 1;
+            var typeArrays2 = ".avi, .mp4";
+            Dropzone.options.dropz1 = {
+                url: '/uploadworks/uploaderAvi',
+                paramName: "file",
+                maxFiles: maxFileCount2,
+                maxFilesize: 50, // 上传图片大小，单位：MB
+                acceptedFiles: typeArrays2,
+                addRemoveLinks: true,
+                parallelUploads: maxFileCount2,
+                dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
+                dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+                dictInvalidFileType: "文件类型只能是" + typeArrays2,
+                dictRemoveFile: "移除附件",
+                dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount2 + "个附件！",
+                dictResponseError: "上传附件失败！",
+                init: function () {
+                    this.on("success", function (file, data) {
+                    });
+                    this.on('error', function (files, data) {
+                    });
+                },
+                removedfile: function (a) {
+                    // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
+                    //
+                    // });
+                    // var b;
+                    // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
+
+                }
+            };
+            var maxFileCount3 = 1;
+            var typeArrays3 = ".png, .jpg, .jpeg";
+            Dropzone.options.dropz2 = {
+                url: '/uploadworks/uploaderCover',
+                paramName: "file",
+                maxFiles: maxFileCount3,
+                maxFilesize: 50, // 上传图片大小，单位：MB
+                acceptedFiles: typeArrays3,
+                addRemoveLinks: true,
+                parallelUploads: maxFileCount3,
+                dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
+                dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+                dictInvalidFileType: "文件类型只能是" + typeArrays3,
+                dictRemoveFile: "移除附件",
+                dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount3 + "个附件！",
+                dictResponseError: "上传附件失败！",
+                init: function () {
+                    this.on("success", function (file, data) {
+                    });
+                    this.on('error', function (files, data) {
+                    });
+                },
+                removedfile: function (a) {
+                    // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
+                    //
+                    // });
+                    // var b;
+                    // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
+
+                }
+            };
         });
     </script>
 
@@ -54,9 +150,9 @@
             <div>
                 <a href="#">上传作品</a>
             </div>
-            <div >
-                <a href="/sellworkservice/index">出售设计服务</a>
-            </div>
+<!--            <div >-->
+<!--                <a href="/sellworkservice/index">出售设计服务</a>-->
+<!--            </div>-->
 
 
     </div>
@@ -99,7 +195,8 @@
                 <p>注：每个大小不超过2MB，最多可上传5张</p>
             </div>
             <div class="panel-body"  >
-                <div id="uploader"></div>
+<!--                // 插入插件-->
+                <div id="dropz" class="dropzone col-lg-2"></div>
             </div>
         </div>
         <div class="panel panel-default right-uw-4" >
@@ -108,16 +205,16 @@
                 <p>最多上传/导入3个视频，单个视频不超过500M，视频作品将会展示在作品队列首位</p>
             </div>
             <div class="panel-body"  >
-                <div id="uploaderAv"></div>
+                <div id="dropz1" class="dropzone col-lg-2" ></div>
             </div>
         </div>
         <div class="panel panel-default right-uw-5" >
             <div class="panel-heading">
                 <p>上传封面</p>
-
             </div>
             <div class="panel-body"  >
-                <div id="uploaderCover"></div>
+<!--                //插入-->
+                <div id="dropz2" class="dropzone col-lg-2"></div>
             </div>
         </div>
         <div class="panel panel-default right-uw-6" >
@@ -179,7 +276,8 @@
         });
     })
 </script>
-<script src="/js/uploadworks.js"></script>
+<script src="/js/uploadworks.js">
+</script>
 
 </body>
 </html>

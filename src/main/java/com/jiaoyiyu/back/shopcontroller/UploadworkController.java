@@ -47,85 +47,46 @@ public class UploadworkController {
 
     @RequestMapping("/uploadImg")
     @ResponseBody
-    public Map<String, Object> uploadImg(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
+    public int uploadImg(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
         // 从cookie中获取assignmentId
-        String assignmentId = CookieUtils.getCookieValue(request, "assignmentId", true);
         String url = ImageUploadUtil.imgUpload(multipartFile);
         System.out.println(url);
-        long size = multipartFile.getSize();
-        DecimalFormat df = new DecimalFormat("0.00");
-        String num = df.format((float) size / 1024);//返回的是String类型
-        System.out.println("文件大小为" + num + "KB");
-        BigDecimal sizeBig = new BigDecimal(num);
-        // 把url存入数据库  status设置为0  以后用户删除附件后将status设置为1 方便查询
-        // 拿到文件名并存入数据库
-        String originalFilename = multipartFile.getOriginalFilename();
-        int i1 = originalFilename.lastIndexOf(".");
-        String extName = originalFilename.substring(i1 + 1);
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("code", 200);
-        map.put("data", null);
-        return map;
+        String workId = CookieUtils.getCookieValue(request, "workId", true);
+        return uploadWorkService.uploadImg(workId,url);
     }
 
     @RequestMapping("/uploaderAvi")
     @ResponseBody
-    public Map<String, Object> uploaderAvi(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
+    public int uploaderAvi(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
         // 从cookie中获取assignmentId
-        String assignmentId = CookieUtils.getCookieValue(request, "assignmentId", true);
         String url = ImageUploadUtil.imgUpload(multipartFile);
         System.out.println(url);
-        long size = multipartFile.getSize();
-        DecimalFormat df = new DecimalFormat("0.00");
-        String num = df.format((float) size / 1024);//返回的是String类型
-        System.out.println("文件大小为" + num + "KB");
-        BigDecimal sizeBig = new BigDecimal(num);
-        // 把url存入数据库  status设置为0  以后用户删除附件后将status设置为1 方便查询
-        // 拿到文件名并存入数据库
-        String originalFilename = multipartFile.getOriginalFilename();
-        int i1 = originalFilename.lastIndexOf(".");
-        String extName = originalFilename.substring(i1 + 1);
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("code", 200);
-        map.put("data", null);
-        return map;
+        String workId = CookieUtils.getCookieValue(request, "workId", true);
+        return uploadWorkService.uploaderAvi(workId, url);
     }
 
     @RequestMapping("/uploaderCover")
     @ResponseBody
-    public Map<String, Object> uploaderCover(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
+    public int uploaderCover(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
+        // 从cookie中获取assignmentId
         String url = ImageUploadUtil.imgUpload(multipartFile);
+        System.out.println(url);
         String workId = CookieUtils.getCookieValue(request, "workId", true);
-        uploadWorkService.uploaderCover(workId, url);
-        Map<String, Object> map = new HashMap<>();
-        map.put("code", 200);
-        map.put("data", null);
-        return map;
+        return uploadWorkService.uploaderCover(workId, url);
     }
 
     @RequestMapping("/uploaderZip")
     @ResponseBody
-    public Map<String, Object> uploaderZip(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
+    public Map<String,Integer> uploaderZip(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request) {
         // 从cookie中获取assignmentId
-        String assignmentId = CookieUtils.getCookieValue(request, "assignmentId", true);
         String url = ImageUploadUtil.imgUpload(multipartFile);
         System.out.println(url);
-        long size = multipartFile.getSize();
-        DecimalFormat df = new DecimalFormat("0.00");
-        String num = df.format((float) size / 1024);//返回的是String类型
-        System.out.println("文件大小为" + num + "KB");
-        BigDecimal sizeBig = new BigDecimal(num);
-        // 把url存入数据库  status设置为0  以后用户删除附件后将status设置为1 方便查询
-        // 拿到文件名并存入数据库
-        String originalFilename = multipartFile.getOriginalFilename();
-        int i1 = originalFilename.lastIndexOf(".");
-        String extName = originalFilename.substring(i1 + 1);
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("code", 200);
-        map.put("data", null);
+        String workId = CookieUtils.getCookieValue(request, "workId", true);
+        Map<String,Integer> map = new HashMap<>();
+        int i = uploadWorkService.uploaderZip(url, workId);
+        if (i == 1) {
+            map.put("code",200);
+        }
         return map;
     }
 
