@@ -16,114 +16,7 @@
     <script src="/js/headpic.js"></script>
     <script src="/js/easyUploader.js"></script>
     <script src="/layui/layui.js"></script>
-    <script>
-        $(function () {
-            //jQuery代码;
-            layui.use(['element', 'laydate', 'layer'], function () {
-                var element = layui.element;
-                var laydate = layui.laydate;
-                var layer = layui.layer;
-                //执行一个laydate实例
-                laydate.render({
-                    elem: '#test1' //指定元素
-                });
-            });
-            var maxFileCount1 = 4;
-            var typeArrays1 = ".png, .jpg, .jpeg, .ico, .bmp, .gif";
-            Dropzone.options.dropz = {
-                url: '/uploadworks/uploadImg',
-                paramName: "file",
-                maxFiles: maxFileCount1,
-                maxFilesize: 50, // 上传图片大小，单位：MB
-                acceptedFiles: typeArrays1,
-                addRemoveLinks: true,
-                parallelUploads: maxFileCount1,
-                dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
-                dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
-                dictInvalidFileType: "文件类型只能是" + typeArrays1,
-                dictRemoveFile: "移除附件",
-                dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount1 + "个附件！",
-                dictResponseError: "上传附件失败！",
-                init: function () {
-                    this.on("success", function (file, data) {
-                    });
-                    this.on('error', function (files, data) {
-                    });
-                },
-                removedfile: function (a) {
-                    // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
-                    //
-                    // });
-                    // var b;
-                    // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
 
-                }
-            };
-
-            var maxFileCount2 = 1;
-            var typeArrays2 = ".avi, .mp4";
-            Dropzone.options.dropz1 = {
-                url: '/uploadworks/uploaderAvi',
-                paramName: "file",
-                maxFiles: maxFileCount2,
-                maxFilesize: 50, // 上传图片大小，单位：MB
-                acceptedFiles: typeArrays2,
-                addRemoveLinks: true,
-                parallelUploads: maxFileCount2,
-                dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
-                dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
-                dictInvalidFileType: "文件类型只能是" + typeArrays2,
-                dictRemoveFile: "移除附件",
-                dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount2 + "个附件！",
-                dictResponseError: "上传附件失败！",
-                init: function () {
-                    this.on("success", function (file, data) {
-                    });
-                    this.on('error', function (files, data) {
-                    });
-                },
-                removedfile: function (a) {
-                    // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
-                    //
-                    // });
-                    // var b;
-                    // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
-
-                }
-            };
-            var maxFileCount3 = 1;
-            var typeArrays3 = ".png, .jpg, .jpeg";
-            Dropzone.options.dropz2 = {
-                url: '/uploadworks/uploaderCover',
-                paramName: "file",
-                maxFiles: maxFileCount3,
-                maxFilesize: 50, // 上传图片大小，单位：MB
-                acceptedFiles: typeArrays3,
-                addRemoveLinks: true,
-                parallelUploads: maxFileCount3,
-                dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
-                dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
-                dictInvalidFileType: "文件类型只能是" + typeArrays3,
-                dictRemoveFile: "移除附件",
-                dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount3 + "个附件！",
-                dictResponseError: "上传附件失败！",
-                init: function () {
-                    this.on("success", function (file, data) {
-                    });
-                    this.on('error', function (files, data) {
-                    });
-                },
-                removedfile: function (a) {
-                    // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
-                    //
-                    // });
-                    // var b;
-                    // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
-
-                }
-            };
-        });
-    </script>
 
 </head>
 <body >
@@ -196,7 +89,7 @@
             </div>
             <div class="panel-body"  >
 <!--                // 插入插件-->
-                <div id="dropz" class="dropzone col-lg-2"></div>
+                <div id="dropz" class="dropzone"></div>
             </div>
         </div>
         <div class="panel panel-default right-uw-4" >
@@ -205,7 +98,7 @@
                 <p>最多上传/导入3个视频，单个视频不超过500M，视频作品将会展示在作品队列首位</p>
             </div>
             <div class="panel-body"  >
-                <div id="dropz1" class="dropzone col-lg-2" ></div>
+                <div id="dropz1" class="dropzone" ></div>
             </div>
         </div>
         <div class="panel panel-default right-uw-5" >
@@ -214,7 +107,7 @@
             </div>
             <div class="panel-body"  >
 <!--                //插入-->
-                <div id="dropz2" class="dropzone col-lg-2"></div>
+                <div id="dropz2" class="dropzone"></div>
             </div>
         </div>
         <div class="panel panel-default right-uw-6" >
@@ -277,6 +170,114 @@
     })
 </script>
 <script src="/js/uploadworks.js">
+</script>
+<script>
+    $(function () {
+        //jQuery代码;
+        layui.use(['element', 'laydate', 'layer'], function () {
+            var element = layui.element;
+            var laydate = layui.laydate;
+            var layer = layui.layer;
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#test1' //指定元素
+            });
+        });
+        var maxFileCount1 = 4;
+        var typeArrays1 = ".png, .jpg, .jpeg, .ico, .bmp, .gif";
+        Dropzone.options.dropz = {
+            url: '/uploadworks/uploadImg',
+            paramName: "file",
+            maxFiles: maxFileCount1,
+            maxFilesize: 50, // 上传图片大小，单位：MB
+            acceptedFiles: typeArrays1,
+            addRemoveLinks: true,
+            parallelUploads: maxFileCount1,
+            dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
+            dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+            dictInvalidFileType: "文件类型只能是" + typeArrays1,
+            dictRemoveFile: "移除附件",
+            dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount1 + "个附件！",
+            dictResponseError: "上传附件失败！",
+            init: function () {
+                this.on("success", function (file, data) {
+                });
+                this.on('error', function (files, data) {
+                });
+            },
+            removedfile: function (a) {
+                // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
+                //
+                // });
+                // var b;
+                // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
+
+            }
+        };
+
+        var maxFileCount2 = 1;
+        var typeArrays2 = ".avi, .mp4";
+        Dropzone.options.dropz1 = {
+            url: '/uploadworks/uploaderAvi',
+            paramName: "file",
+            maxFiles: maxFileCount2,
+            maxFilesize: 50, // 上传图片大小，单位：MB
+            acceptedFiles: typeArrays2,
+            addRemoveLinks: true,
+            parallelUploads: maxFileCount2,
+            dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
+            dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+            dictInvalidFileType: "文件类型只能是" + typeArrays2,
+            dictRemoveFile: "移除附件",
+            dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount2 + "个附件！",
+            dictResponseError: "上传附件失败！",
+            init: function () {
+                this.on("success", function (file, data) {
+                });
+                this.on('error', function (files, data) {
+                });
+            },
+            removedfile: function (a) {
+                // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
+                //
+                // });
+                // var b;
+                // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
+
+            }
+        };
+        var maxFileCount3 = 1;
+        var typeArrays3 = ".png, .jpg, .jpeg";
+        Dropzone.options.dropz2 = {
+            url: '/uploadworks/uploaderCover',
+            paramName: "file",
+            maxFiles: maxFileCount3,
+            maxFilesize: 50, // 上传图片大小，单位：MB
+            acceptedFiles: typeArrays3,
+            addRemoveLinks: true,
+            parallelUploads: maxFileCount3,
+            dictDefaultMessage: '点击或将单个/多个附件拖放到此处,最多可添加五个附件 每个大小不超过50M',
+            dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
+            dictInvalidFileType: "文件类型只能是" + typeArrays3,
+            dictRemoveFile: "移除附件",
+            dictMaxFilesExceeded: "您一次最多只能上传" + maxFileCount3 + "个附件！",
+            dictResponseError: "上传附件失败！",
+            init: function () {
+                this.on("success", function (file, data) {
+                });
+                this.on('error', function (files, data) {
+                });
+            },
+            removedfile: function (a) {
+                // $.post("/publish/removeFile1",{filename:a.name,assignmentId:assignmentId},function (res) {
+                //
+                // });
+                // var b;
+                // return a.previewElement && null != (b = a.previewElement) && b.parentNode.removeChild(a.previewElement), this._updateMaxFilesReachedClass()
+
+            }
+        };
+    });
 </script>
 
 </body>
