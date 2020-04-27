@@ -36,6 +36,37 @@ public class AllWorks implements Serializable {
 
     private String creatDate;
 
+
+    private Integer comments;
+
+    private Integer likeNum;
+
+    private Integer pageView;
+
+    public Integer getComments() {
+        return comments;
+    }
+
+    public void setComments(Integer comments) {
+        this.comments = comments;
+    }
+
+    public Integer getLikeNum() {
+        return likeNum;
+    }
+
+    public void setLikeNum(Integer likeNum) {
+        this.likeNum = likeNum;
+    }
+
+    public Integer getPageView() {
+        return pageView;
+    }
+
+    public void setPageView(Integer pageView) {
+        this.pageView = pageView;
+    }
+
     public Integer getuId() {
         return uId;
     }
