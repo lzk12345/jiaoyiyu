@@ -57,6 +57,7 @@ public class WorksDetailsController {
             modelMap.put("uploaderImgList",uploaderImgList);
             List<UploaderVideo> uploaderVideoList = workDetailService.getVideosByWorkId(workId);
             modelMap.put("uploaderVideoList",uploaderVideoList);
+
         }
 
 
