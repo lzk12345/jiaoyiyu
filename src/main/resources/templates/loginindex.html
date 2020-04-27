@@ -2,8 +2,14 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-COMPATIBLE" CONTENT="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="/css/account_password.css" />
+    <title>Title</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <style>
         #sixtyget {
             float: left;
@@ -22,13 +28,12 @@
 </head>
 <body>
     <div class="left-one">
-        <img class="img-one" src="/img/duijie.png" height="33" width="118" alt="" />
-        <img class="img-two" src="/img/jiebao.png" height="32" width="219" alt="" />
-        <img class="img-three" src="/img/waibao.png" height="30" width="105" alt="" />
-        <img class="img-four" src="/img/ziyuan.png" height="32" width="119" alt="" />
-        <img class="img-five" src="/img/tuceng512.png" height="140" width="75" alt="" />
-        <img class="img-six" src="/img/zu45.png" height="106" width="83" alt="" />
+
+
+
         <div class="left-two">
+            <img class="img-five" src="/img/tuceng512.png" style="margin: -80px 0 0 -20px" height="140" width="75" alt="" />
+            <img class="img-six" src="/img/zu45.png" height="106" width="83" style="margin: -67px -20px 0 0px;float: right" alt="" />
             <div class="zhong">
                 <div class="left-three">
                     <img src="/img/fenzu2(1).png" height="64" width="210" alt="" />
@@ -39,6 +44,7 @@
                 </div>
                 <input class="text-one text" id="username" type="text" placeholder="请输您的账号" /><hr />
                 <input class="text-two text" id="password" type="password" placeholder="请输入密码" /><hr />
+
                 <div class="left-five" onclick="loginSubmit();">
                     登录
                 </div>
@@ -58,7 +64,7 @@
                 </div>
                 <form action="/register/msgRegister" method="post">
                     <div class="center-one">
-                        <span>中国(CN)86</span>
+
                         <input type="text" placeholder="请输入手机号" id="phonenum" name="phonenum" style="outline: none"/>
                     </div><hr />
                     <div class="form-inline" style="border-bottom: solid 1px rgba(153,153,153,1);width: 374px;height: 80px;margin-left: 50px;">
@@ -107,8 +113,8 @@
                     <span class="verify" onclick="pwd(0)">马上登录<<</span>
                 </div>
                 <div class="center-one">
-                    <span>中国(CN)86</span>
-                    <input type="text" placeholder="请输入手机" />
+
+                    <input type="text" placeholder="请输入手机号" />
                 </div><hr />
                 <!--<input class="text-three text" type="text" placeholder="请输入图形验证码" />-->
                 <!--<canvas id="auth-codeb" class="yan"></canvas><hr />-->
@@ -121,14 +127,10 @@
                 </div>
             </div>
         </div>
-        <div class="img-seven">
-            <img src="/img/zu23.png" height="122" width="1469" alt="" />
-        </div>
+
     </div>
     <input type="hidden" id="returnUrl" th:value="${returnUrl}">
-    <!--<script type="text/javascript" src="/js/canvas.js"></script>-->
-    <!--<script type="text/javascript" src="/js/canvas_one.js"></script>-->
-    <!--<script type="text/javascript" src="/js/canvas_two.js"></script>-->
+
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         var zhong=document.getElementsByClassName("zhong");

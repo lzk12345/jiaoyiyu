@@ -2,478 +2,796 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" CONTENT="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>比目鱼</title>
-    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/xyt.css">
     <script src="/js/headpic.js"></script>
+    <style>
+        .paddtop{
+            padding: 15px 0 0 0;
+        }
+        .cardpadd{
+            padding: 20px 0 0 0;
+        }
+        .logopadd{
+            padding-right: 3%;
+        }
+        .btn-default{
+
+            height: 50px;
+
+        }
+        .btn-default:hover{
+            background: none;
+        }
+        .seachpadd{
+            padding-right: 4%;
+            padding-top: 10px;
+        }
+        .xytsearchbtn{
+            height: 34px;
+        }
+        .xytselect select{
+            border: none;
+            outline: none;
+        }
+        .xytbodypadd{
+            padding-bottom: 200px;
+        }
+        .xytallcard{
+            padding-bottom: 50px;
+        }
+    </style>
 </head>
 <body >
 <div class="headerpage" th:replace="header :: header"></div>
-<div style="background: #f4f4f4;padding-bottom: 200px">
 
-    <div style="margin-left: 19%">
 
-            <div>
-                <img src="/img/banner.png">
+<div class="container xytbodypadd">
+
+    <img src="/img/banner.png" class="img-responsive">
+
+    <div class="row seachpadd container">
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group" >
+                <input type="text" class="form-control" placeholder="Search">
             </div>
+            <button type="submit" class="btn btn-default xytsearchbtn hidden-xs">搜索</button>
+        </form>
+    </div>
+    <div class="xytselect">
+        <select>
+            <option value ="volvo">全部推荐</option>
+            <option value ="saab">Saab</option>
+        </select>
+        <select >
+            <option value ="volvo">所有时间</option>
+            <option value ="saab">Saab</option>
+        </select>
+        <select>
+            <option value ="volvo">所有领域</option>
+            <option value ="saab">Saab</option>
+        </select>
+    </div>
+    <div style="clear: both"></div>
 
-            <!--<%&#45;&#45;小鱼塘推送模块&#45;&#45;%>-->
-            <div>
-                <div class="xytshaixuan">
-                    <select>
-                        <option value ="volvo">全部推荐</option>
-                        <option value ="saab">Saab</option>
-                    </select>
-                    <select >
-                        <option value ="volvo">所有时间</option>
-                        <option value ="saab">Saab</option>
-                    </select>
-                    <select>
-                        <option value ="volvo">所有领域</option>
-                        <option value ="saab">Saab</option>
-                    </select>
-                    <div class="xytserach">
-                        <input>
-                        <button>
-                            <img src="/img/fangdajing.png">
-                        </button>
-                    </div>
-                </div>
+    <div class="row container xytallcard">
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
 
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
 
-                <!--<%&#45;&#45;小鱼塘推送菜单&#45;&#45;%>-->
-                <div style="width: 1200px">
+                <div style="height: 100px">
                     <div>
-                        <div class="xytcard">
-
-                            <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                            <div class="xytcardfont">
-                                <div>
-                                    <span>产品宣传画册-3</span>
-                                    <br>
-                                    <span style="font-size: 10px">插画-商业插画</span>
-                                </div>
-                                <div>
-                                    <div style="float: left">
-                                        <img src="/img/评论.png">
-                                        <span>12345</span>
-                                    </div>
-                                    <div style="float: left">
-                                        <img src="/img/赞.png" >
-                                        <span>1234</span>
-                                    </div>
-                                    <div style="float: left">
-                                        <img src="/img/icon_预览.png">
-                                        <span>3123</span>
-                                    </div>
-                                </div>
-
-                                <div >
-                                    <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                    <span>小路ge</span>
-                                    <span>1天前</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                        <div class="xytcard">
-
-                        <img src="/img/img1.png" alt="" width="224px" height="170px">
-
-                        <div class="xytcardfont">
-                            <div>
-                                <span>产品宣传画册-3</span>
-                                <br>
-                                <span style="font-size: 10px">插画-商业插画</span>
-                            </div>
-                            <div>
-                                <div style="float: left">
-                                    <img src="/img/评论.png">
-                                    <span>12345</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/赞.png" >
-                                    <span>1234</span>
-                                </div>
-                                <div style="float: left">
-                                    <img src="/img/icon_预览.png">
-                                    <span>3123</span>
-                                </div>
-                            </div>
-
-                            <div >
-                                <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                                <span>小路ge</span>
-                                <span>1天前</span>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <!--分页-->
-                    <div align="center">
-                        <nav aria-label="Page navigation" >
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
                     </div>
 
-
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
 
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
 
-                <!--<%&#45;&#45;广告-->
-                <!--&#45;&#45;%>-->
-                <div >
-                    <img src="/img/advertisement.png" width="1200px" height="100px" >
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
                 </div>
-                <!--<%&#45;&#45;推送设计师&#45;&#45;%>-->
-                <div>
-                    <img src="/img/tuijian.png" style="margin-top: 30px">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
 
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
                 </div>
-                <!--推荐的设计师-->
-                <div>
-                    <div class="xyttjsjs">
-                        <img src="/img/icon1.png" >
-                        <div class="xyttjsjsfont">
-                            <p>小路哥</p>
-                            <div >
-                                <span>北京</span>
-                                <span>UI设计师</span>
-                            </div>
-                            <font >创作:186</font>
-                            <div>
-                                <button>关注</button>
-                                <button>私信</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="xyttjsjs">
-                        <img src="/img/icon1.png" >
-                        <div class="xyttjsjsfont">
-                            <p>小路哥</p>
-                            <div >
-                                <span>北京</span>
-                                <span>UI设计师</span>
-                            </div>
-                            <font >创作:186</font>
-                            <div>
-                                <button>关注</button>
-                                <button>私信</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="xyttjsjs">
-                        <img src="/img/icon1.png" >
-                        <div class="xyttjsjsfont">
-                            <p>小路哥</p>
-                            <div >
-                                <span>北京</span>
-                                <span>UI设计师</span>
-                            </div>
-                            <font >创作:186</font>
-                            <div>
-                                <button>关注</button>
-                                <button>私信</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="xyttjsjs">
-                        <img src="/img/icon1.png" >
-                        <div class="xyttjsjsfont">
-                            <p>小路哥</p>
-                            <div >
-                                <span>北京</span>
-                                <span>UI设计师</span>
-                            </div>
-                            <font >创作:186</font>
-                            <div>
-                                <button>关注</button>
-                                <button>私信</button>
-                            </div>
-                        </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
                     </div>
 
-
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
 
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center">
+            <div class="img-thumbnail">
+
+                <img src="/img/img1.png" alt="" width="224px" height="170px">
+
+                <div style="height: 100px">
+                    <div>
+                        <span>产品宣传画册-3</span>
+                        <br>
+                        <span style="font-size: 10px">插画-商业插画</span>
+                    </div>
+
+                    <div >
+                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                        <span>小路ge</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
             </div>
         </div>
 
+
+    </div>
+
+    <!--分页-->
+    <div class="container" align="center">
+        <nav aria-label="Page navigation" >
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
+
+<!--<div style="background: #f4f4f4;padding-bottom: 200px">-->
+
+<!--    <div style="margin-left: 19%">-->
+
+<!--            <div>-->
+
+<!--            </div>-->
+
+<!--            &lt;!&ndash;<%&#45;&#45;小鱼塘推送模块&#45;&#45;%>&ndash;&gt;-->
+<!--            <div>-->
+
+<!--                </div>-->
+
+
+<!--                &lt;!&ndash;<%&#45;&#45;小鱼塘推送菜单&#45;&#45;%>&ndash;&gt;-->
+<!--                <div style="width: 1200px">-->
+<!--                    <div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                            <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                            <div class="xytcardfont">-->
+<!--                                <div>-->
+<!--                                    <span>产品宣传画册-3</span>-->
+<!--                                    <br>-->
+<!--                                    <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                                </div>-->
+<!--                                <div>-->
+<!--                                    <div style="float: left">-->
+<!--                                        <img src="/img/评论.png">-->
+<!--                                        <span>12345</span>-->
+<!--                                    </div>-->
+<!--                                    <div style="float: left">-->
+<!--                                        <img src="/img/赞.png" >-->
+<!--                                        <span>1234</span>-->
+<!--                                    </div>-->
+<!--                                    <div style="float: left">-->
+<!--                                        <img src="/img/icon_预览.png">-->
+<!--                                        <span>3123</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--                                <div >-->
+<!--                                    <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                    <span>小路ge</span>-->
+<!--                                    <span>1天前</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                        <div class="xytcard">-->
+
+<!--                        <img src="/img/img1.png" alt="" width="224px" height="170px">-->
+
+<!--                        <div class="xytcardfont">-->
+<!--                            <div>-->
+<!--                                <span>产品宣传画册-3</span>-->
+<!--                                <br>-->
+<!--                                <span style="font-size: 10px">插画-商业插画</span>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/评论.png">-->
+<!--                                    <span>12345</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/赞.png" >-->
+<!--                                    <span>1234</span>-->
+<!--                                </div>-->
+<!--                                <div style="float: left">-->
+<!--                                    <img src="/img/icon_预览.png">-->
+<!--                                    <span>3123</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div >-->
+<!--                                <img src="/img/icon1.png" alt="" width="21px" height="21px">-->
+<!--                                <span>小路ge</span>-->
+<!--                                <span>1天前</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;分页&ndash;&gt;-->
+<!--                    <div align="center">-->
+<!--                        <nav aria-label="Page navigation" >-->
+<!--                            <ul class="pagination">-->
+<!--                                <li>-->
+<!--                                    <a href="#" aria-label="Previous">-->
+<!--                                        <span aria-hidden="true">&laquo;</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li><a href="#">1</a></li>-->
+<!--                                <li><a href="#">2</a></li>-->
+<!--                                <li><a href="#">3</a></li>-->
+<!--                                <li><a href="#">4</a></li>-->
+<!--                                <li><a href="#">5</a></li>-->
+<!--                                <li>-->
+<!--                                    <a href="#" aria-label="Next">-->
+<!--                                        <span aria-hidden="true">&raquo;</span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </nav>-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
+
+
+<!--                &lt;!&ndash;<%&#45;&#45;广告&ndash;&gt;-->
+<!--                &lt;!&ndash;&#45;&#45;%>&ndash;&gt;-->
+<!--                <div >-->
+<!--                    <img src="/img/advertisement.png" width="1200px" height="100px" >-->
+<!--                </div>-->
+<!--                &lt;!&ndash;<%&#45;&#45;推送设计师&#45;&#45;%>&ndash;&gt;-->
+<!--                <div>-->
+<!--                    <img src="/img/tuijian.png" style="margin-top: 30px">-->
+
+<!--                </div>-->
+<!--                &lt;!&ndash;推荐的设计师&ndash;&gt;-->
+<!--                <div>-->
+<!--                    <div class="xyttjsjs">-->
+<!--                        <img src="/img/icon1.png" >-->
+<!--                        <div class="xyttjsjsfont">-->
+<!--                            <p>小路哥</p>-->
+<!--                            <div >-->
+<!--                                <span>北京</span>-->
+<!--                                <span>UI设计师</span>-->
+<!--                            </div>-->
+<!--                            <font >创作:186</font>-->
+<!--                            <div>-->
+<!--                                <button>关注</button>-->
+<!--                                <button>私信</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="xyttjsjs">-->
+<!--                        <img src="/img/icon1.png" >-->
+<!--                        <div class="xyttjsjsfont">-->
+<!--                            <p>小路哥</p>-->
+<!--                            <div >-->
+<!--                                <span>北京</span>-->
+<!--                                <span>UI设计师</span>-->
+<!--                            </div>-->
+<!--                            <font >创作:186</font>-->
+<!--                            <div>-->
+<!--                                <button>关注</button>-->
+<!--                                <button>私信</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="xyttjsjs">-->
+<!--                        <img src="/img/icon1.png" >-->
+<!--                        <div class="xyttjsjsfont">-->
+<!--                            <p>小路哥</p>-->
+<!--                            <div >-->
+<!--                                <span>北京</span>-->
+<!--                                <span>UI设计师</span>-->
+<!--                            </div>-->
+<!--                            <font >创作:186</font>-->
+<!--                            <div>-->
+<!--                                <button>关注</button>-->
+<!--                                <button>私信</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="xyttjsjs">-->
+<!--                        <img src="/img/icon1.png" >-->
+<!--                        <div class="xyttjsjsfont">-->
+<!--                            <p>小路哥</p>-->
+<!--                            <div >-->
+<!--                                <span>北京</span>-->
+<!--                                <span>UI设计师</span>-->
+<!--                            </div>-->
+<!--                            <font >创作:186</font>-->
+<!--                            <div>-->
+<!--                                <button>关注</button>-->
+<!--                                <button>私信</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+
+<!--</div>-->
 </body>
 </html>

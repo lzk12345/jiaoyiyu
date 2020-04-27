@@ -10,99 +10,288 @@
     <link rel="stylesheet" href="/css/header.css">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <style>
+        .cardpadd{
+           padding-top: 10px;
+        }
+        .workbread{
+            padding-top: 10px;
+        }
+        .paddtop{
+            padding: 15px 0 0 0;
+        }
+        .logopadd{
+            padding-right: 3%;
+        }
+
+
+    </style>
 </head>
 <body>
 <div class="headerpage" th:replace="header :: header">
 </div>
-<div class="modal" id="myModal" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content modal-Releasedemand">
 
-            <div class="modal-header ">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close" style="color: red">
-                    <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">发布需求</h4>
-            </div>
-            <div class="modal-body ">
-                <div>
-                    <div class="needinput">
-                        <p>我需要:</p>
-
-                        <textarea type="text" id="ineed" style="height: 80px;" maxlength="25"></textarea>
-                    </div>
-                    <div class="modal-phonenum">
-                        <p>手机号码:</p>
-                        <input type="text" placeholder="手机号" th:value="${phonenum}"
-                               id="phonenum">
-                        <button onclick="abledBtn();">修改</button>
-                    </div>
-                    <div class="messageprotect">
-                        <p>信息保护中,仅小红鱼项目方可见</p>
-                        <button id="release" onclick="publishTask()"
-                                style="color: #FFFFFF">免费发布一个需求
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-<div style="background-color: #F4F4F4 ;width: 100% ">
-    <div class="jijiji"></div>
+<div style="background-color: #F4F4F4 ;width: 100%;padding-bottom: 200px ">
+    <img src="/img/redbanner110.png" class="img-responsive">
     <!--两个div-->
-    <div style="margin-left: 360px;margin-top: 20px">
-        <font style="font-size: 14px" color="#7D7D7D">
-            我的小红鱼>个人中心><font id="path3">我的作品</font></font>
-    </div>
-    <div style="width:1240px;" class="container">
-        <div style="float: left">
+
+    <div  class="container">
+        <div align="left" class="workbread">
+            <font style="font-size: 14px" color="#7D7D7D">
+                我的小红鱼>个人中心><font id="path3">我的作品</font></font>
+        </div>
+        <div style="float: left" class="hidden-xs hidden-sm">
             <!--左-->
             <div class="leftpage" th:replace="left :: left"></div>
         </div>
         <!--右-->
-        <div class="left-one" style="margin-left: 210px;margin-top: 10px;">
-            <div class="left-two">
-                <img src="/img/Rectangle.png" height="20" width="6" alt="" />
-                <span>我的作品</span>
-            </div>
-            <div class="left-three"></div>
-            <div class="left-four">
-                <div class="left-eight">
-                    <img src="/img/Bitmap8.png" height="170" width="224" alt="" />
-                    <div class="left-five">产品宣传画册-3</div>
-                    <div class="left-six">插画-商业插画</div>
-                    <div class="left-seven">
-                        <img src="/img/liuyan.png" height="16" width="15" alt="" />
-                        <span>123</span>
-                        <img src="/img/dianzan.png" height="14" width="15" alt="" />
-                        <span>123</span>
-                        <img src="/img/tempsnip.png" height="13" width="20" alt="" />
-                        <span>123</span>
-                    </div>
-                    <div class="left-nine"></div>
-                    <div class="left-ten">
-                        <span>金钱</span>
-                        <span>时间</span>
+        <div class="left-one" >
+<!--            <div class="left-two" style="border-bottom: solid 1px red">-->
+<!--                <img src="/img/Rectangle.png" height="20" width="6" alt="" />-->
+<!--                <span>我的作品</span>-->
+<!--            </div>-->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive" height="170px">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
                     </div>
                 </div>
-
-
-
-
-
-                <div class="left-eight" style="cursor:pointer;">
-                    <img src="/img/tianjia.png" height="309" width="224" alt="" />
-                </div>
-
-
-
-
-
-
             </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive" >
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive" height="170px">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive" >
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive" height="170px">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive">
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+                <div class="img-thumbnail">
+
+                    <img src="/img/img1.png" alt="" class="img-responsive" >
+
+                    <div style="height: 100px">
+                        <div>
+                            <span>产品宣传画册-3</span>
+                            <br>
+                            <span style="font-size: 10px">插画-商业插画</span>
+                        </div>
+
+                        <div >
+                            <img src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span>小路ge</span>
+                            <span>1天前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
