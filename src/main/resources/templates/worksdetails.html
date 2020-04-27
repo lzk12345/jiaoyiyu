@@ -32,6 +32,7 @@
                         <span th:text="${allworks.likeNum}">2345</span>
                         <img style="margin-left: 26px;" src="/img/liulan.png" height="13" width="20" alt="" />
                         <span th:text="${allworks.pageView}">6754</span>
+
                     </li>
                 </ul>
             </div>
@@ -74,8 +75,10 @@
         <div class="center-four">
             <span class="change" th:text="${allworks.detail}">根据公司微信公众号的一篇文章改编成mg动画视频，分享美，颠覆医美行业的APP。主要内容是介绍APP，暂无配音。</span>
         </div>
-        <div class="shipin">
+        <div class="shipin row" align="center">
+            <video th:each="uploadVideo:${uploaderVideoList}" th:src="${uploadVideo.url}" controls="controls" width="100%">
 
+            </video>
         </div>
         <div class="tupian">
             <img th:each="uploadImg:${uploaderImgList}" th:src="${uploadImg.url}" src="/img/zi.jpg" width="1200px" height="675px" alt="" />
