@@ -35,6 +35,7 @@ public class XytServiceImpl implements XytService {
     CatalogService catalogService;
     @Override
     public List<XytVO> getXytVO(Integer pageNum) throws ParseException {
+
         List<AllWorks> allWorksList = allWorksMapper.getXytVO((pageNum - 1) * 12);
         List<XytVO> list = new ArrayList<>();
         if (allWorksList != null) {
@@ -101,5 +102,12 @@ public class XytServiceImpl implements XytService {
             }
         }
         return list;
+    }
+
+    @Override
+    public int getTotalCount() {
+        AllWorks allWorks3 = new AllWorks();
+        int i = allWorksMapper.selectCount(allWorks3);
+        return i;
     }
 }

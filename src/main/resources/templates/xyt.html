@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>比目鱼</title>
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/page.css">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/xyt.css">
@@ -135,27 +136,11 @@
     </div>
 
     <!--分页-->
-    <div class="container" align="center">
-        <nav aria-label="Page navigation" >
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div style="text-align: center;margin:250px auto;">
+        <div id="pager" class="pager clearfix">
+        </div>
     </div>
+
 </div>
 
 <!--<div style="background: #f4f4f4;padding-bottom: 200px">-->
@@ -603,5 +588,33 @@
 <!--        </div>-->
 
 <!--</div>-->
+<input type="hidden" th:value="${totalCount}" id="totalCount">
+<script src="/js/jquery.z-pager.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+    let totalVal = $("#totalCount").val();
+    $("#pager").zPager({
+        totalData: totalVal,
+        active: 'current',
+        pageData: 12,
+        current: getQueryVariable("pageNum")
+    });
+    function currentPage(currentPage){
+        let loc = window.location.href;
+        if (loc != "http://localhost/xyt/index?pageNum=" + currentPage){
+            window.location.href="http://localhost/xyt/index?pageNum=" + currentPage;
+        }
+
+    }
+</script>
 </body>
 </html>

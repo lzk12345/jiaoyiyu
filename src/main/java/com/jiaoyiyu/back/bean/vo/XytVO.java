@@ -31,6 +31,7 @@ public class XytVO {
 
     private String headPic;
 
+
     public Integer getId() {
         return id;
     }

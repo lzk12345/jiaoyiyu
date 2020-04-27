@@ -30,6 +30,8 @@ public class XytController {
     @RequestMapping("/index")
     public String index (@RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum, ModelMap modelMap) throws ParseException {
         List<XytVO> xytVOList = xytService.getXytVO(pageNum);
+        int count = xytService.getTotalCount();
+        modelMap.put("totalCount", count);
         modelMap.put("xytVOList", xytVOList);
         return "xyt";
     }
