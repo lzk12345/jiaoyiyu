@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface XytService {
     List<XytVO> getXytVO(Integer pageNum) throws ParseException;
+
+    List<XytVO> getXytVO1() throws ParseException;
 }

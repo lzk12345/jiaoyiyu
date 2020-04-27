@@ -11,6 +11,8 @@ public class XytVO {
     private Integer id;
     private String title;
 
+    private Integer uid;
+
     private String cata1Name;
 
     private String cata2Name;
@@ -63,6 +65,14 @@ public class XytVO {
 
     public String getCoverUrl() {
         return coverUrl;
+    }
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public void setCoverUrl(String coverUrl) {

@@ -1,5 +1,6 @@
 package com.jiaoyiyu.back.shopcontroller;
 
+import com.jiaoyiyu.back.annotation.LoginRequired;
 import com.jiaoyiyu.back.bean.Catalog1;
 import com.jiaoyiyu.back.bean.User;
 import com.jiaoyiyu.back.coreservice.CatalogService;
@@ -34,7 +35,7 @@ public class UploadworkController {
     UploadWorkService uploadWorkService;
     @Autowired
     CatalogService catalogService;
-
+    @LoginRequired(loginSuccess = true)
     @RequestMapping("/index")
     public String index(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap) {
         // 生成一个上传作品的id

@@ -45,6 +45,28 @@
         .xytallcard{
             padding-bottom: 50px;
         }
+        .workmessage{
+            height: 110px;
+            padding-top: 5px;
+            color: #7D7D7D;
+        }
+        .workmessage div:nth-child(2){
+            border-bottom: solid 1px #E4E4E4;
+            padding:5px 0 5px 0;
+        }
+        .workmessage div:nth-child(3){
+            padding: 7px;
+        }
+        .workmessage div:nth-child(3) a{
+            float: left;
+            text-decoration: none;
+            color:#525252 ;
+        }
+
+        .workmessage div:nth-child(3) font{
+            float: right;
+            color: #B2B2B2;
+        }
     </style>
 </head>
 <body >
@@ -85,13 +107,14 @@
                 <div>
                     <a th:href="'http://localhost:80/worksdetails/index?workId=' + ${xyt.id}"><img th:src="${xyt.coverUrl}" src="/img/img1.png" alt="" width="224px" height="170px"></a>
                 </div>
-                <div style="height: 100px">
+                <div class="workmessage">
                     <div>
                         <span th:text="${xyt.title}">产品宣传画册-3</span>
                         <br>
                         <span style="font-size: 10px"><span th:text="${xyt.cata1Name}">插画</span>-<span th:text="${xyt.cata2Name}">商业插画</span></span>
                     </div>
-                    <div><img src="/img/liuyan.png" height="15" width="16" alt="" />
+                    <div>
+                        <img src="/img/liuyan.png" height="15" width="16" alt="" />
                         <span th:text="${xyt.comments}">12435</span>
                         <img style="margin-left: 26px;" src="/img/dianzan.png" height="14" width="15" alt="" />
                         <span th:text="${xyt.likeNum}">2345</span>
@@ -100,9 +123,11 @@
                     </div>
 
                     <div >
-                        <img th:src="${xyt.headPic}" src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span th:text="${xyt.nickName}">小路ge</span>
-                        <span><span th:text="${xyt.days}"></span>天前</span>
+                        <a>
+                            <img th:src="${xyt.headPic}" src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span th:text="${xyt.nickName}">小路ge</span>
+                        </a>
+                        <font><span th:text="${xyt.days}"></span>天前</font>
                     </div>
                 </div>
             </div>

@@ -61,6 +61,42 @@ public class XytServiceImpl implements XytService {
                 xytVO.setDays(nDay);
                 xytVO.setNickName(userInfoByMemberId.getNickName());
                 xytVO.setHeadPic(userInfoByMemberId.getHeadPic());
+                xytVO.setUid(userInfoByMemberId.getId());
+                list.add(xytVO);
+            }
+        }
+        return list;
+    }
+
+    @Override
+    public List<XytVO> getXytVO1() throws ParseException {
+        List<AllWorks> allWorksList = allWorksMapper.getXytVO(0);
+        List<XytVO> list = new ArrayList<>();
+        if (allWorksList != null) {
+            for (AllWorks allWorks : allWorksList) {
+                XytVO xytVO = new XytVO();
+                Integer integer = allWorks.getuId();
+                User userInfoByMemberId = userService.getUserInfoByMemberId(integer);
+                Integer cataId = allWorks.getCataId();
+                Integer classOfIndustryId = allWorks.getClassOfIndustryId();
+                Catalog1 catalog1ById = catalogService.getCatalog1ById(classOfIndustryId);
+                Catalog2 catalog2ById = catalogService.getCatalog2ById(cataId);
+                xytVO.setTitle(allWorks.getTitle());
+                xytVO.setCata1Name(catalog2ById.getName());
+                xytVO.setCata2Name(catalog1ById.getName());
+                xytVO.setCoverUrl(allWorks.getCoverUrl());
+                xytVO.setUid(userInfoByMemberId.getId());
+                xytVO.setComments(allWorks.getComments());
+                xytVO.setLikeNum(allWorks.getLikeNum());
+                xytVO.setPageView(allWorks.getPageView());
+                xytVO.setId(allWorks.getId());
+                String creatDate = allWorks.getCreatDate();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date parse = simpleDateFormat.parse(creatDate);
+                int nDay = (int) ((new Date().getTime() - parse.getTime()) / (24 * 60 * 60 * 1000));
+                xytVO.setDays(nDay);
+                xytVO.setNickName(userInfoByMemberId.getNickName());
+                xytVO.setHeadPic(userInfoByMemberId.getHeadPic());
                 list.add(xytVO);
             }
         }

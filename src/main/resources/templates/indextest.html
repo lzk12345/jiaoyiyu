@@ -28,6 +28,34 @@
         .btn-default:hover{
             background: none;
         }
+        .indexseemore{
+            padding: 50px 0 200px 0;
+        }
+        .indexseemore a button{
+            width: 200px;height: 50px;background:#FF5251;border: none;color: #FFFFFF
+        }
+        .workmessage{
+            height: 110px;
+            padding-top: 5px;
+            color: #7D7D7D;
+        }
+        .workmessage div:nth-child(2){
+          border-bottom: solid 1px #E4E4E4;
+            padding:5px 0 5px 0;
+        }
+        .workmessage div:nth-child(3){
+            padding: 7px;
+        }
+        .workmessage div:nth-child(3) a{
+           float: left;
+            text-decoration: none;
+            color:#525252 ;
+        }
+
+        .workmessage div:nth-child(3) font{
+            float: right;
+            color: #B2B2B2;
+        }
     </style>
 </head>
 <body>
@@ -42,9 +70,6 @@
      <img src="/img/redbanner110.png" class="img-responsive hidden-xs">
 
      <!--已登录状态-->
-     <div style="margin-top: 20px;" class="exit">
-         <input type="button" style="width: 40px;height: 30px;background:none;border: solid 1px white;outline: none;" class="loginout" value="退出"/></div>
-        </div>
  </div>
 
 
@@ -52,280 +77,55 @@
 <!--主体部分-->
 <div class="container ">
     <div class="row container">
-        <img src="img/panduola.jpg" class="img-responsive" height="400px">
+        <img src="img/panduola.jpg" class="img-responsive" >
 
     </div>
     <div class="row container">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd"align="center" >
-            <div class="img-thumbnail"align="center">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
+        <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center" th:each="xyt:${xytVOList}">
             <div class="img-thumbnail">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
+                <div>
+                    <a th:href="'http://localhost:80/worksdetails/index?workId=' + ${xyt.id}"><img th:src="${xyt.coverUrl}" src="/img/img1.png" alt="" width="224px" height="170px"></a>
+                </div>
+                <div class="workmessage">
                     <div>
-                        <span>产品宣传画册-3</span>
+                        <span th:text="${xyt.title}">产品宣传画册-3</span>
                         <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
+                        <span style="font-size: 10px"><span th:text="${xyt.cata1Name}">插画</span>-<span th:text="${xyt.cata2Name}">商业插画</span></span>
+                    </div>
+                    <div>
+                        <img src="/img/liuyan.png" height="15" width="16" alt="" />
+                        <span th:text="${xyt.comments}">12435</span>
+                        <img style="margin-left: 26px;" src="/img/dianzan.png" height="14" width="15" alt="" />
+                        <span th:text="${xyt.likeNum}">2345</span>
+                        <img style="margin-left: 26px;" src="/img/liulan.png" height="13" width="20" alt="" />
+                        <span th:text="${xyt.pageView}">6754</span>
                     </div>
 
                     <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
+                        <a th:href="'http://localhost:80/growup/visitor?uid=' + ${xyt.uid}">
+                            <img th:src="${xyt.headPic}" src="/img/icon1.png" alt="" width="21px" height="21px">
+                            <span th:text="${xyt.nickName}">小路ge</span>
+                        </a>
+                        <font><span th:text="${xyt.days}"></span>天前</font>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd"align="center" >
-            <div class="img-thumbnail"align="center">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
-            <div class="img-thumbnail">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd"align="center" >
-            <div class="img-thumbnail"align="center">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
-            <div class="img-thumbnail">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd"align="center" >
-            <div class="img-thumbnail"align="center">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
-            <div class="img-thumbnail">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd"align="center" >
-            <div class="img-thumbnail"align="center">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
-            <div class="img-thumbnail">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd"align="center" >
-            <div class="img-thumbnail"align="center">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 cardpadd" align="center">
-            <div class="img-thumbnail">
-
-                <img src="/img/img1.png" alt="" width="210px" height="170px">
-
-                <div style="height: 100px">
-                    <div>
-                        <span>产品宣传画册-3</span>
-                        <br>
-                        <span style="font-size: 10px">插画-商业插画</span>
-                    </div>
-
-                    <div >
-                        <img src="/img/icon1.png" alt="" width="21px" height="21px">
-                        <span>小路ge</span>
-                        <span>1天前</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 
 
 
     </div>
 
 </div>
-<!--分页-->
- <div class="container" align="center">
-     <nav aria-label="Page navigation" >
-         <ul class="pagination">
-             <li>
-                 <a href="#" aria-label="Previous">
-                     <span aria-hidden="true">&laquo;</span>
-                 </a>
-             </li>
-             <li><a href="#">1</a></li>
-             <li><a href="#">2</a></li>
-             <li><a href="#">3</a></li>
-             <li><a href="#">4</a></li>
-             <li><a href="#">5</a></li>
-             <li>
-                 <a href="#" aria-label="Next">
-                     <span aria-hidden="true">&raquo;</span>
-                 </a>
-             </li>
-         </ul>
-     </nav>
- </div>
+<div class="indexseemore" align="center" >
+    <a href="/xyt/index">
+    <button >
+       查看更多
+
+    </button>
+       </a>
+</div>
+
 
 <footer class="container-fluid"> 
 

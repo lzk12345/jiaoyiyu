@@ -16,6 +16,7 @@ if (token != null) {
                 $("#phonenum").val(result);
                 $("#phonenum").attr("disabled", "disabled");
             }
+
             // 展示 你好
             $("#headp").css("display", "block");
 
