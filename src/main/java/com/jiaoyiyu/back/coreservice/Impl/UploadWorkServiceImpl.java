@@ -53,7 +53,7 @@ public class UploadWorkServiceImpl implements UploadWorkService {
             allWorks.setuId(memberId);
             allWorks.setTitle(worksTitle);
             return allWorksMapper.insertSelective(allWorks);
-        }else {
+        } else {
             AllWorks allWorks = new AllWorks();
             allWorks.setCataId(industryV);
             allWorks.setClassOfIndustryId(workTypeV);
@@ -64,7 +64,7 @@ public class UploadWorkServiceImpl implements UploadWorkService {
             allWorks.setuId(memberId);
             allWorks.setTitle(worksTitle);
             Example example = new Example(AllWorks.class);
-            example.createCriteria().andEqualTo("id",i);
+            example.createCriteria().andEqualTo("id", i);
             return allWorksMapper.updateByExampleSelective(allWorks, example);
         }
     }
@@ -78,11 +78,11 @@ public class UploadWorkServiceImpl implements UploadWorkService {
         if (allWorks2 == null) {
             allWorks1.setCoverUrl(url);
             res = allWorksMapper.insertSelective(allWorks1);
-        }else {
+        } else {
             AllWorks allWorks = new AllWorks();
             allWorks.setCoverUrl(url);
             Example example = new Example(AllWorks.class);
-            example.createCriteria().andEqualTo("id",workId);
+            example.createCriteria().andEqualTo("id", workId);
             res = allWorksMapper.updateByExampleSelective(allWorks, example);
         }
         return res;
@@ -92,18 +92,8 @@ public class UploadWorkServiceImpl implements UploadWorkService {
     public int uploaderZip(String url, String workId) {
         UploaderZip uploaderZip = new UploaderZip();
         uploaderZip.setWorkId(Integer.parseInt(workId));
-        UploaderZip uploaderZip1 = uploaderUrlMapper.selectOne(uploaderZip);
-        int res = 0;
-        if (uploaderZip1 == null) {
-            uploaderZip.setZipUrl(url);
-            res = uploaderUrlMapper.insertSelective(uploaderZip);
-        }else {
-            UploaderZip uploaderZip2 = new UploaderZip();
-            uploaderZip2.setZipUrl(url);
-            Example example = new Example(UploaderZip.class);
-            example.createCriteria().andEqualTo("workId", workId);
-            res = uploaderUrlMapper.updateByExampleSelective(uploaderZip2, example);
-        }
+        uploaderZip.setZipUrl(url);
+        int res = uploaderUrlMapper.insertSelective(uploaderZip);
         return res;
     }
 
@@ -111,18 +101,8 @@ public class UploadWorkServiceImpl implements UploadWorkService {
     public int uploadImg(String workId, String url) {
         UploaderImg uploaderImg = new UploaderImg();
         uploaderImg.setWorkId(Integer.parseInt(workId));
-        UploaderImg uploaderImg1 = uploaderImgMapper.selectOne(uploaderImg);
-        int res = 0;
-        if (uploaderImg1 == null) {
-            uploaderImg.setUrl(url);
-            res = uploaderImgMapper.insertSelective(uploaderImg);
-        }else {
-            UploaderImg uploaderImg2 = new UploaderImg();
-            uploaderImg2.setUrl(url);
-            Example example = new Example(UploaderImg.class);
-            example.createCriteria().andEqualTo("workId", workId);
-            res = uploaderImgMapper.updateByExampleSelective(uploaderImg2, example);
-        }
+        uploaderImg.setUrl(url);
+        int res = uploaderImgMapper.insertSelective(uploaderImg);
         return res;
     }
 
@@ -130,18 +110,8 @@ public class UploadWorkServiceImpl implements UploadWorkService {
     public int uploaderAvi(String workId, String url) {
         UploaderVideo uploaderVideo = new UploaderVideo();
         uploaderVideo.setWorkId(Integer.parseInt(workId));
-        UploaderVideo uploaderVideo1 = uploaderVideoMapper.selectOne(uploaderVideo);
-        int res = 0;
-        if (uploaderVideo1 == null) {
-            uploaderVideo.setUrl(url);
-            res = uploaderVideoMapper.insertSelective(uploaderVideo);
-        }else {
-            UploaderVideo uploaderVideo2 = new UploaderVideo();
-            uploaderVideo2.setUrl(url);
-            Example example = new Example(UploaderVideo.class);
-            example.createCriteria().andEqualTo("workId", workId);
-            res = uploaderVideoMapper.updateByExampleSelective(uploaderVideo2, example);
-        }
+        uploaderVideo.setUrl(url);
+        int res = uploaderVideoMapper.insertSelective(uploaderVideo);
         return res;
     }
 }

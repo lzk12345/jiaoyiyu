@@ -50,8 +50,13 @@ public class WorksDetailsController {
             String creatDate = allWorks.getCreatDate();
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date parse = simpleDateFormat.parse(creatDate);
-            int nDay = (int) ((parse.getTime() - new Date().getTime() ) / (24 * 60 * 60 * 1000));
+            int nDay = (int) ((new Date().getTime() - parse.getTime()) / (24 * 60 * 60 * 1000));
             modelMap.put("days", nDay);
+
+            List<UploaderImg> uploaderImgList = workDetailService.getImgsByWorkId(workId);
+            modelMap.put("uploaderImgList",uploaderImgList);
+            List<UploaderVideo> uploaderVideoList = workDetailService.getVideosByWorkId(workId);
+            modelMap.put("uploaderVideoList",uploaderVideoList);
         }
 
 

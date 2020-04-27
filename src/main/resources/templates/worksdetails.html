@@ -78,8 +78,7 @@
 
         </div>
         <div class="tupian">
-            <img src="/img/zi.jpg" width="1200px" height="675px" alt="" />
-            <img src="/img/zi.jpg" width="1200px" height="675px" alt="" />
+            <img th:each="uploadImg:${uploaderImgList}" th:src="${uploadImg.url}" src="/img/zi.jpg" width="1200px" height="675px" alt="" />
         </div>
 
         <div class="center-seven">
