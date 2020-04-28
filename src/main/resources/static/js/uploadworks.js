@@ -49,7 +49,7 @@ function getCookie(cookieName) {
 var uploader3 = new easyUploader({
     id: "uploaderZip",
     accept: '.zip,.rar',
-    action: 'http://localhost:80/uploadworks/uploaderZip',
+    action: 'http://121.36.85.218:9999/uploadworks/uploaderZip',
     dataFormat: 'formData',
     maxCount: 1,
     maxSize: 50,
@@ -124,7 +124,7 @@ $("#sureToSub").click(function () {
                                 radioV: radioV
                             }, function (res) {
                                 if (res == 1) {
-                                    window.location.href = "http://localhost:80/worksdetails/index?workId=" + workId;
+                                    window.location.href = "http://121.36.85.218:9999/worksdetails/index?workId=" + workId;
                                 }
                             });
                         }

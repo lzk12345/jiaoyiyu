@@ -99,7 +99,7 @@ public class SmsController {
 //            String s = jedis.get("email_checkcode_" + emailAddress);
 //            if (StringUtils.isNotBlank(s)) {
 //                if (s.equals(code)) {
-//                    return "redirect:http://localhost:80/emailAuthentication?sign=1";
+//                    return "redirect:http://121.36.85.218:9999/emailAuthentication?sign=1";
 //                }
 //            }
 //        }catch (Exception e) {
@@ -107,7 +107,7 @@ public class SmsController {
 //        }finally {
 //            jedis.close();
 //        }
-        return "redirect:http://localhost:80/emailAuthentication?sign=0";
+        return "redirect:http://121.36.85.218:9999/emailAuthentication?sign=0";
     }
 
 

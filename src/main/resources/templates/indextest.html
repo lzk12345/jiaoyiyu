@@ -84,7 +84,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 cardpadd" align="center" th:each="xyt:${xytVOList}">
             <div class="img-thumbnail">
                 <div>
-                    <a th:href="'http://localhost:80/worksdetails/index?workId=' + ${xyt.id}"><img th:src="${xyt.coverUrl}" src="/img/img1.png" alt="" width="224px" height="170px"></a>
+                    <a th:href="'http://121.36.85.218:9999/worksdetails/index?workId=' + ${xyt.id}"><img th:src="${xyt.coverUrl}" src="/img/img1.png" alt="" width="224px" height="170px"></a>
                 </div>
                 <div class="workmessage">
                     <div>
@@ -102,7 +102,7 @@
                     </div>
 
                     <div >
-                        <a th:href="'http://localhost:80/growup/visitor?uid=' + ${xyt.uid}">
+                        <a th:href="'http://121.36.85.218:9999/growup/visitor?uid=' + ${xyt.uid}">
                             <img th:src="${xyt.headPic}" src="/img/icon1.png" alt="" width="21px" height="21px">
                             <span th:text="${xyt.nickName}">小路ge</span>
                         </a>

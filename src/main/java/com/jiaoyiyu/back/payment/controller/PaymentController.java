@@ -139,7 +139,7 @@ public class PaymentController {
         String form = null;
         AlipayTradePagePayRequest alipayTradePagePayRequest = new AlipayTradePagePayRequest();
         Map<String, Object> map = new HashMap<>();
-        alipayTradePagePayRequest.setReturnUrl("http://121.36.85.218:80/payment/alipay/callback/return/zhongbiao");
+        alipayTradePagePayRequest.setReturnUrl("http://121.36.85.218:9999/payment/alipay/callback/return/zhongbiao");
         alipayTradePagePayRequest.setNotifyUrl(AlipayConfig.notify_payment_url);
         map.put("out_trade_no", outTradeNo);
         map.put("product_code", "FAST_INSTANT_TRADE_PAY");
@@ -166,7 +166,7 @@ public class PaymentController {
         //跳转到支付成功的页面。
 
 //        return "redirect:/fabao/taskPage";
-        return "redirect:http://localhost:80/shejishi/index";
+        return "redirect:http://121.36.85.218:9999/shejishi/index";
     }
 
     /**
@@ -183,7 +183,7 @@ public class PaymentController {
         publishTaskService.setIsBiddingByManuScriptId(manuscriptId);
         String assignmentId = CookieUtils.getCookieValue(request, "assignmentId", true);
         int res = publishTaskService.setAssignmentScheduleStatus(assignmentId);
-        return "redirect:http://localhost:80/shejishi/index?sign=1";
+        return "redirect:http://121.36.85.218:9999/shejishi/index?sign=1";
     }
 
     /**

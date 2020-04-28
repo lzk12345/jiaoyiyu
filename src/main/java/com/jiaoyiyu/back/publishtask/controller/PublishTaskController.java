@@ -790,7 +790,7 @@ public class PublishTaskController {
                 cookie.setPath("/");
                 response.addCookie(cookie);
             }
-            String str = "redirect:http://localhost:80/payment/index?orderSn=" + orderCodeSn +"&assignmentId=" + assignmentId;
+            String str = "redirect:http://121.36.85.218:9999/payment/index?orderSn=" + orderCodeSn +"&assignmentId=" + assignmentId;
             // 创建订单，并填写相应的数据
 
             int res = publishTaskService.saveorder(totalAmount, assignmentId, orderCodeSn);

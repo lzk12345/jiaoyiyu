@@ -62,7 +62,7 @@ public class CookieUtils {
             if (cookieMaxage >= 0)
                 cookie.setMaxAge(cookieMaxage);
             if (null != request)// 设置域名的cookie
-                cookie.setDomain("localhost");
+                cookie.setDomain("121.36.85.218");
             // 在域名的根路径下保存
             cookie.setPath("/");
             response.addCookie(cookie);

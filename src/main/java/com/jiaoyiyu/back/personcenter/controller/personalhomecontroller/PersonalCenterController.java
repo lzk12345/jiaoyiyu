@@ -39,7 +39,7 @@ public class PersonalCenterController {
         String key = "26sdasd2sds9848SDASD9484SADASDAS29";
         Map<String, Object> decode = JwtUtil.decode(oldToken, key, salt);
         modelMap.put("token", oldToken);
-        String pic = HttpclientUtil.doGet("http://localhost:80/index/getPic?token=" + oldToken);
+        String pic = HttpclientUtil.doGet("http://121.36.85.218:9999/index/getPic?token=" + oldToken);
         modelMap.put("uploadImg", pic);
 
         if (decode != null) {
