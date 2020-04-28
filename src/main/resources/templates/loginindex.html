@@ -100,7 +100,7 @@
                     <input class="text-five text" type="password" name="password1" placeholder="输入密码,长度**位字母数字组合" /><hr />
                     <input class="text-five text" type="password" placeholder="输入密码,长度**位字母数字组合" /><hr />
                     <input class="text-five text" type="text" name="phonenum1" placeholder="请输入手机号" /><hr />
-                    <input class="left-five" type="submit" value="注册"  style="margin-top:40px;"/>
+                    <input class="left-five" type="submit" value="注册"  style="margin-top:30px;border: none"/>
                 </form>
             </div>
 
@@ -118,11 +118,14 @@
                 </div><hr />
                 <!--<input class="text-three text" type="text" placeholder="请输入图形验证码" />-->
                 <!--<canvas id="auth-codeb" class="yan"></canvas><hr />-->
-                <input class="text-four text" type="text" placeholder="请输入短信验证码" />
-                <span class="center-three">发送验证码</span><hr />
+                <div class="form-inline" style="border-bottom: solid 1px rgba(153,153,153,1);width: 374px;height: 80px;margin-left: 50px;">
+                    <input class="text-four text form-group" type="text" placeholder="请输入短信验证码"  name="messageCode" style="outline: none;margin-top: 30px "/>
+                    <input type="button"  class=" form-group" onclick="sendMsg()" value="获取验证码" style="margin-left: 80px;margin-top: 30px ;border: none;background:none;font-size: 18px;outline: none;cursor: pointer"/>
+                </div>
+
                 <input class="text-five text" type="text" placeholder="输入密码,长度**位字母数字组合" /><hr />
                 <input class="text-five text" type="password" placeholder="输入密码,长度**位字母数字组合" /><hr />
-                <div class="left-five" onclick="auth(2)" style="margin-top:40px;">
+                <div class="left-five" onclick="auth(2)" style="margin-top:30px;">
                     完成
                 </div>
             </div>
