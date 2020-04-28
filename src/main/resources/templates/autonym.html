@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <meta http-equiv="X-UA-COMPATIBLE" CONTENT="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="/css/autonym.css" />
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="/css/iF.step.css" rel="stylesheet" type="text/css">
@@ -14,6 +16,28 @@
     <link rel="stylesheet" href="/css/left2.css">
     <link rel="stylesheet" href="/css/upload-img.css">
     <script src="/js/headpic.js"></script>
+
+    <style>
+        .rninstruction{
+            background: rgb(255, 221, 221);padding: 10px 0 10px 20px;margin: 20px 50px 0 50px;
+        }
+        .rninstruction p{
+            margin-bottom: 0;
+        }
+        .rnmsgtable{
+            margin-top: 50px;
+        }
+        .rnmsgtable input{
+            width: 300px;
+            height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;
+        }
+        .rnmsgtable tr td{
+            padding: 15px;
+        }
+
+
+
+    </style>
 </head>
 <body>
 
@@ -23,60 +47,56 @@
 <div style="background-color: #F4F4F4 ;width: 100% ">
     <div class="jijiji"></div>
     <!--两个div-->
-    <div style="margin-left: 360px;margin-top: 20px">
-        <font style="font-size: 14px" color="#7D7D7D">
-            我的小红鱼>账号管理><font id="path3">实名认证</font></font>
-    </div>
-    <div style="width:1240px;" class="container">
-        <div style="float: left">
+
+    <div class="container">
+        <div class="row">
+            <font  color="#7D7D7D" style="margin-left: 15px">
+                我的小红鱼>账号管理><font id="path3">实名认证</font>
+            </font>
+        </div>
+        <div style="float: left" class="hidden-xs hidden-sm">
             <!--左-->
             <div class="leftpage" th:replace="left2 :: left2"></div>
         </div>
         <!--右-->
-        <div style="float: left;"  >
-            <div class="panel panel-default" style="margin-left: 20px;margin-top: 10px" >
-                <div class="panel-body" style="width: 1002px;" >
-                    <div style="width: 975px;height: 46px;border-bottom:solid 1px #E7E7E7">
+        <div style="float: left;" class="left-one"  >
+            <div class="panel panel-default" style="margin: 10px 0 0 10px;padding: 15px 0 0px 0" >
+                <div style="height: 46px;border-bottom:solid 1px #E7E7E7">
                         <div style="float: left;">
                             <img src="/img/Rectangle@2.png" width="6px" height="20px" style="margin-top: 10px;margin-left: 22px" ></div>
                         <div style="margin-top: 5px;float: left">
                             <font style="font-size: 20px;margin-left: 16px;"><b>实名认证</b></font></div>
 
                     </div>
-
-
-                    <div class="left-three"></div>
-                    <div class="left-four">
-                        <span>实名认证成功后: <br>能够提升账户安全性:提现时银行卡开户名必须与真实姓名相同,方可提现,防止提现至他人银行卡 <br>能够提升客户责任感:客户更加信任与认可通过实名认证的用户</span>
-                    </div>
-                    <div class="left-five" style="height: 38px;margin-left: 293px;color:#ff5251">以个人身份认证
-                        <div></div>
-                    </div>
-                    <div class="left-five" style="height: 33px;margin-left: 80px;">以企业身份认证</div>
-                    <div style="clear: both;"></div>
-                    <hr />
-                    <div class="left-six" style="margin-top: 67px;">
-                        <span>姓名:</span>
-                        <input style="width: 353px;height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;margin-left: 82px;" placeholder="根据下方传入身份证照片自动生成" id="username1" type="text" disabled/>
-                    </div>
-                    <div class="left-six" style="margin-top: 30px;">
-                        <span>身份证号:</span>
-                        <input style="width: 353px;height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;margin-left: 50px;"placeholder="根据下方传入身份证照片自动生成" id="idcardnum1" type="text" disabled/>
+                    <div  class="rninstruction">
+                            <p>实名认证成功后：</p>
+                            <p>能够提升账户安全性：提现时银行卡开户名必须与真实姓名相同,方可提现,防止提现至他人银行卡； </p>
+                            <p>能够提升客户责任感：客户更加信任与认可通过实名认证的用户。</p>
                     </div>
 
-                    <div class="left-six" style="margin-top: 30px;">
-                        <span>身份证到期时间:</span>
-                        <input id="shixiaodate" disabled style="width: 353px;height: 45px;padding-left: 10px;border: solid 1px #E7E7E7;margin-left: 2px"placeholder="根据下方传入身份证照片自动生成" type="text" />
-                    </div>
+
+                <table align="center" class="rnmsgtable" >
+                    <tr>
+                        <td><span>姓名:</span></td>
+                        <td ><input placeholder="根据下方传入身份证照片自动生成" id="username1" type="text" disabled/></td>
+                    </tr>
+                    <tr>
+                        <td><span>身份证号:</span></td>
+                        <td><input placeholder="根据下方传入身份证照片自动生成" id="idcardnum1" type="text" disabled/></td>
+                    </tr>
+                    <tr>
+                        <td><span>身份证到期时间:</span></td>
+                        <td><input id="shixiaodate" disabled placeholder="根据下方传入身份证照片自动生成" type="text" /></td>
+                    </tr>
+                </table>
+                <div style="margin: 30px 50px 0 50px">
                     <div class="left-eight">上传身份证照片</div>
-                    <div style="width:664px;height:72px;background:rgba(255,229,186,1);margin-left: 180px;margin-top: 10px">
-
-                        <div style="width:601px;height:52px;font-size:12px;margin-left: 32px;padding-top:  10px;color: #333333">
+                    <div style="background:rgba(255,229,186,1);margin-top: 10px;padding:10px 20px 10px 20px;">
+                        <div style="font-size:12px;color: #333333">
                             1.请保证所传证件照文字清晰可见！上传单个附件大小限制为1M，格式限定为jpeg/jpg/png<br>
-
-
                             2.上传的手持身份证照必须满足：a.持件人与证件必须是同一人；b.照片中证件人像面部信息清晰可见；c.单手或双手持证，持件人面部不能有任何遮挡且必须保持清晰</div>
                     </div>
+                </div>
 
                     <div id="app" class="container1" v-cloak>
                         <div class="uploading-data" v-if="isUploading"></div>
@@ -101,7 +121,7 @@
                                         </div>
                                     </div>
                                 </template>
-                                <div style="float: left;margin-left: 50px;margin-top: 100px;font-size: 20px">
+                                <div style="float: left;margin-top: 100px;font-size: 20px">
                                     <span id="appspan1"></span>
                                 </div>
                             </div>
@@ -109,12 +129,6 @@
 
                         <button class="l-btn" @click="onUploadImg">提交</button>
 
-                        <!-- 图片上传成功后返回的路径(没必要的) -->
-<!--                        <div class="success-path">-->
-<!--                            <template v-for="(item, index) in successPath">-->
-<!--                                <a :href="item" target="_blank">{{item}}</a>-->
-<!--                            </template>-->
-<!--                        </div>-->
 
                     </div>
                     <div id="app1" class="container1" v-cloak>
@@ -140,7 +154,7 @@
                                         </div>
                                     </div>
                                 </template>
-                                <div style="float: left;margin-left: 50px;margin-top: 100px;font-size: 20px">
+                                <div style="float: left;margin-top: 100px;font-size: 20px">
                                     <span id="appspan2"></span>
                                 </div>
                             </div>
@@ -148,12 +162,6 @@
 
                         <button class="l-btn" @click="onUploadImg">提交</button>
 
-                        <!-- 图片上传成功后返回的路径(没必要的) -->
-<!--                        <div class="success-path">-->
-<!--                            <template v-for="(item, index) in successPath">-->
-<!--                                <a :href="item" target="_blank">{{item}}</a>-->
-<!--                            </template>-->
-<!--                        </div>-->
 
                     </div>
 
@@ -180,7 +188,7 @@
                                         </div>
                                     </div>
                                 </template>
-                                <div style="float: left;margin-left: 50px;margin-top: 100px;font-size: 20px">
+                                <div style="float: left;margin-top: 100px;font-size: 20px">
                                     <span id="appspan3"></span>
                                 </div>
                             </div>
@@ -188,28 +196,13 @@
 
                         <button class="l-btn" @click="onUploadImg">提交</button>
 
-<!--                        &lt;!&ndash; 图片上传成功后返回的路径(没必要的) &ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="success-path">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <template v-for="(item, index) in successPath">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <a :href="item" target="_blank">{{item}}</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </template>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
 
-<!--                    </div>-->
-<!--                    <div class="end-one">-->
-<!--                        <span>提交</span>-->
-<!--                    </div>-->
-                    <div style= "width: 882px;height: 50px;border-bottom:1px dashed #E7E7E7;margin-left: 50px"></div>
-                    <div style="width: 882px;height: 100px;background-color:#F3F4F8;margin-left: 50px;margin-top: 40px">
-                        <div style="color: #333333;width: 701px;height: 90px;margin-left: 92px;padding-top: 20px">
-                            <FONT style="font-size: 16px">友情提示：</FONT><br>1.实名认证成功，能够提升账户安全性:提现时银行卡开户名必须与真实姓名相同,方可提现,防止提现至他人
-                            银行卡 2.能够提升客户责任感:客户更加信任与认可通过实名认证的用户
-                        </div>
-                    </div>
+
+
 
                 </div>
 
-            </div>
+
         </div>
     </div>
 </div>
@@ -249,7 +242,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>
 </body>
 <script src="https://www.jq22.com/jquery/vue.min.js"></script>
